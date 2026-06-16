@@ -1,0 +1,1765 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7221124999999997,
+          53.42351
+        ]
+      },
+      "properties": {
+        "countline_id": "16354",
+        "countline_name": "S14_clockFaceRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7222075,
+          53.423512
+        ]
+      },
+      "properties": {
+        "countline_id": "16355",
+        "countline_name": "S14_clockFaceRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7219759999999997,
+          53.4234105
+        ]
+      },
+      "properties": {
+        "countline_id": "16396",
+        "countline_name": "S14_clockfaceRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7253309999999997,
+          53.419265499999995
+        ]
+      },
+      "properties": {
+        "countline_id": "16672",
+        "countline_name": "S23_ChesterLane_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72541,
+          53.419256000000004
+        ]
+      },
+      "properties": {
+        "countline_id": "16673",
+        "countline_name": "S23_ChesterLane_RHSpath_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7251255,
+          53.419037
+        ]
+      },
+      "properties": {
+        "countline_id": "16676",
+        "countline_name": "S23_ChesterLane_lhs_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9177155,
+          53.394898999999995
+        ]
+      },
+      "properties": {
+        "countline_id": "22877",
+        "countline_name": "S42_PrinceAlfredRd_Path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006588",
+        "lsoa21nm": "Liverpool 042C",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 10,
+        "same_lad": "yes",
+        "distance_km": 2.498368032673055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.91779,
+          53.394884000000005
+        ]
+      },
+      "properties": {
+        "countline_id": "22878",
+        "countline_name": "S42_PrinceAlfredRd_Road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006588",
+        "lsoa21nm": "Liverpool 042C",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 10,
+        "same_lad": "yes",
+        "distance_km": 2.498368032673055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9178930000000003,
+          53.394895500000004
+        ]
+      },
+      "properties": {
+        "countline_id": "22879",
+        "countline_name": "S42_PrinceAlfredRd_Path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006588",
+        "lsoa21nm": "Liverpool 042C",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 10,
+        "same_lad": "yes",
+        "distance_km": 2.498368032673055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.91771,
+          53.395097500000006
+        ]
+      },
+      "properties": {
+        "countline_id": "23780",
+        "countline_name": "s31_FirLane_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006588",
+        "lsoa21nm": "Liverpool 042C",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 10,
+        "same_lad": "yes",
+        "distance_km": 2.498368032673055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9177394999999997,
+          53.39513
+        ]
+      },
+      "properties": {
+        "countline_id": "23781",
+        "countline_name": "s31_FirLane_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006588",
+        "lsoa21nm": "Liverpool 042C",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 10,
+        "same_lad": "yes",
+        "distance_km": 2.498368032673055
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0893059999999997,
+          53.366663
+        ]
+      },
+      "properties": {
+        "countline_id": "23796",
+        "countline_name": "s52_ArroweParkRoad_LHS_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01007255",
+        "lsoa21nm": "Wirral 034B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 29,
+        "same_lad": "yes",
+        "distance_km": 6.700454560685953
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0891815,
+          53.366661
+        ]
+      },
+      "properties": {
+        "countline_id": "23797",
+        "countline_name": "s52_ArroweParkRoad_road_and_cyclelane_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01007255",
+        "lsoa21nm": "Wirral 034B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 29,
+        "same_lad": "yes",
+        "distance_km": 6.700454560685953
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.089089,
+          53.366661
+        ]
+      },
+      "properties": {
+        "countline_id": "23798",
+        "countline_name": "s52_ArroweParkRoad_RHS_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01007255",
+        "lsoa21nm": "Wirral 034B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 29,
+        "same_lad": "yes",
+        "distance_km": 6.700454560685953
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0706075,
+          53.432072
+        ]
+      },
+      "properties": {
+        "countline_id": "23802",
+        "countline_name": "s53_HarrisonDrive_LHS_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01007308",
+        "lsoa21nm": "Wirral 003B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 15,
+        "same_lad": "yes",
+        "distance_km": 3.2967560065147814
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.070719,
+          53.432069999999996
+        ]
+      },
+      "properties": {
+        "countline_id": "23803",
+        "countline_name": "s53_HarrisonDrive_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01007308",
+        "lsoa21nm": "Wirral 003B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 15,
+        "same_lad": "yes",
+        "distance_km": 3.2967560065147814
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.0708265,
+          53.432068
+        ]
+      },
+      "properties": {
+        "countline_id": "23804",
+        "countline_name": "s53_HarrisonDrive_RHS_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01007308",
+        "lsoa21nm": "Wirral 003B",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 15,
+        "same_lad": "yes",
+        "distance_km": 3.2967560065147814
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7181249999999997,
+          53.3330495
+        ]
+      },
+      "properties": {
+        "countline_id": "46460",
+        "countline_name": "s86_RuncornSpurRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012397",
+        "lsoa21nm": "Halton 013C",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 2.309818924992134
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.71802,
+          53.3331395
+        ]
+      },
+      "properties": {
+        "countline_id": "46461",
+        "countline_name": "s86_RuncornSpurRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012402",
+        "lsoa21nm": "Halton 011C",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 35,
+        "same_lad": "yes",
+        "distance_km": 1.6646349654687693
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.718075,
+          53.333086
+        ]
+      },
+      "properties": {
+        "countline_id": "46462",
+        "countline_name": "s86_RuncornSpurRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01012397",
+        "lsoa21nm": "Halton 013C",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 2.309818924992134
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8791,
+          53.381330500000004
+        ]
+      },
+      "properties": {
+        "countline_id": "46627",
+        "countline_name": "s114_BeaconsfieldRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006792",
+        "lsoa21nm": "Liverpool 046A",
+        "lad": "Liverpool",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 10,
+        "same_lad": "no",
+        "distance_km": 4.505583460532473
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.879105,
+          53.381376
+        ]
+      },
+      "properties": {
+        "countline_id": "46628",
+        "countline_name": "s114_BeaconsfieldRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006792",
+        "lsoa21nm": "Liverpool 046A",
+        "lad": "Liverpool",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 10,
+        "same_lad": "no",
+        "distance_km": 4.505583460532473
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.87922,
+          53.381435499999995
+        ]
+      },
+      "properties": {
+        "countline_id": "46629",
+        "countline_name": "s114_BeaconsfieldRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006792",
+        "lsoa21nm": "Liverpool 046A",
+        "lad": "Liverpool",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 10,
+        "same_lad": "no",
+        "distance_km": 4.505583460532473
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72422,
+          53.426604999999995
+        ]
+      },
+      "properties": {
+        "countline_id": "47636",
+        "countline_name": "S122_CyclopsJunctionRoundabout_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72476,
+          53.425782999999996
+        ]
+      },
+      "properties": {
+        "countline_id": "47638",
+        "countline_name": "S125_CyclopsJunctionRoundabout_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.723941,
+          53.425745000000006
+        ]
+      },
+      "properties": {
+        "countline_id": "47639",
+        "countline_name": "S124_CyclopsJunctionRoundabout_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7239965,
+          53.4259775
+        ]
+      },
+      "properties": {
+        "countline_id": "47641",
+        "countline_name": "S129_CyclopsJunctionRoundabout_cyclelane_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724075,
+          53.426010000000005
+        ]
+      },
+      "properties": {
+        "countline_id": "47642",
+        "countline_name": "S129_CyclopsJunctionRoundabout_crossing_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7244145,
+          53.4260845
+        ]
+      },
+      "properties": {
+        "countline_id": "47643",
+        "countline_name": "S130_CyclopsJunctionRoundabout_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724385,
+          53.4264085
+        ]
+      },
+      "properties": {
+        "countline_id": "47719",
+        "countline_name": "s126_CyclopsJn_cycleln_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724405,
+          53.4263745
+        ]
+      },
+      "properties": {
+        "countline_id": "47720",
+        "countline_name": "s126_CyclopsJn_crossing_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72457,
+          53.426325
+        ]
+      },
+      "properties": {
+        "countline_id": "47725",
+        "countline_name": "s127_CyclopsJn_cycleln_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7240875,
+          53.4261225
+        ]
+      },
+      "properties": {
+        "countline_id": "47825",
+        "countline_name": "S129_CyclopsJunctionRoundabout_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724332,
+          53.425972
+        ]
+      },
+      "properties": {
+        "countline_id": "47826",
+        "countline_name": "S130_CyclopsJunctionRoundabout_cyclelane_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724257,
+          53.426025499999994
+        ]
+      },
+      "properties": {
+        "countline_id": "47827",
+        "countline_name": "S130_CyclopsJunctionRoundabout_crossing_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.722898,
+          53.388727
+        ]
+      },
+      "properties": {
+        "countline_id": "49558",
+        "countline_name": "S161_LuntsHeathRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01012395",
+        "lsoa21nm": "Halton 001C",
+        "lad": "Halton",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 44,
+        "same_lad": "no",
+        "distance_km": 5.593418510160239
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7227449999999997,
+          53.388746499999996
+        ]
+      },
+      "properties": {
+        "countline_id": "49559",
+        "countline_name": "S161_LuntsHeathRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012395",
+        "lsoa21nm": "Halton 001C",
+        "lad": "Halton",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 44,
+        "same_lad": "no",
+        "distance_km": 5.593418510160239
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.723103,
+          53.3887175
+        ]
+      },
+      "properties": {
+        "countline_id": "49562",
+        "countline_name": "S161_LuntsHeathRd_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012395",
+        "lsoa21nm": "Halton 001C",
+        "lad": "Halton",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 44,
+        "same_lad": "no",
+        "distance_km": 5.593418510160239
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7230255000000003,
+          53.388706
+        ]
+      },
+      "properties": {
+        "countline_id": "49563",
+        "countline_name": "S161_LuntsHeathRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012395",
+        "lsoa21nm": "Halton 001C",
+        "lad": "Halton",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 44,
+        "same_lad": "no",
+        "distance_km": 5.593418510160239
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7364935,
+          53.3535805
+        ]
+      },
+      "properties": {
+        "countline_id": "50313",
+        "countline_name": "S201_WaterlooRd_pathLHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7364505,
+          53.353525
+        ]
+      },
+      "properties": {
+        "countline_id": "50314",
+        "countline_name": "S201_WaterlooRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7364135000000003,
+          53.353468
+        ]
+      },
+      "properties": {
+        "countline_id": "50315",
+        "countline_name": "S201_WaterlooRd_pathRHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.07408,
+          53.4181845
+        ]
+      },
+      "properties": {
+        "countline_id": "50325",
+        "countline_name": "S180_CrossLn_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01007309",
+        "lsoa21nm": "Wirral 006D",
+        "lad": "Wirral",
+        "matched_to": "12f / Wirral 006A",
+        "candidate_rank": 22,
+        "same_lad": "yes",
+        "distance_km": 2.38032206516938
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.734897,
+          53.359079
+        ]
+      },
+      "properties": {
+        "countline_id": "51662",
+        "countline_name": "S202_VictoriaRd_road_LHS_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.73498,
+          53.359068
+        ]
+      },
+      "properties": {
+        "countline_id": "51663",
+        "countline_name": "S202_VictoriaRd_road_RHS_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7347995000000003,
+          53.359050499999995
+        ]
+      },
+      "properties": {
+        "countline_id": "51679",
+        "countline_name": "S202_VictoriaRd_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01012441",
+        "lsoa21nm": "Halton 007D",
+        "lad": "Halton",
+        "matched_to": "13 / Halton 010B",
+        "candidate_rank": 14,
+        "same_lad": "yes",
+        "distance_km": 2.290327456479472
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6826685,
+          53.4510935
+        ]
+      },
+      "properties": {
+        "countline_id": "51810",
+        "countline_name": "S205_NewtonRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006816",
+        "lsoa21nm": "St. Helens 017A",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 32,
+        "same_lad": "yes",
+        "distance_km": 2.1006048924806637
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6826685,
+          53.451038
+        ]
+      },
+      "properties": {
+        "countline_id": "51811",
+        "countline_name": "S205_NewtonRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006816",
+        "lsoa21nm": "St. Helens 017A",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 32,
+        "same_lad": "yes",
+        "distance_km": 2.1006048924806637
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.682594,
+          53.4511775
+        ]
+      },
+      "properties": {
+        "countline_id": "51813",
+        "countline_name": "S205_NewtonRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006816",
+        "lsoa21nm": "St. Helens 017A",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 32,
+        "same_lad": "yes",
+        "distance_km": 2.1006048924806637
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6803790000000003,
+          53.444626
+        ]
+      },
+      "properties": {
+        "countline_id": "51826",
+        "countline_name": "S178_FleetLane_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006899",
+        "lsoa21nm": "St. Helens 017D",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 27,
+        "same_lad": "yes",
+        "distance_km": 2.5080279490312236
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.680446,
+          53.4446925
+        ]
+      },
+      "properties": {
+        "countline_id": "51827",
+        "countline_name": "S178_FleetLane_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006816",
+        "lsoa21nm": "St. Helens 017A",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 32,
+        "same_lad": "yes",
+        "distance_km": 2.1006048924806637
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7253629999999998,
+          53.456365500000004
+        ]
+      },
+      "properties": {
+        "countline_id": "51846",
+        "countline_name": "S188_WatersideRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7252445,
+          53.4563925
+        ]
+      },
+      "properties": {
+        "countline_id": "51847",
+        "countline_name": "S188_WatersideRd_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.724125,
+          53.4258155
+        ]
+      },
+      "properties": {
+        "countline_id": "52939",
+        "countline_name": "S124_CyclopsJunctionRoundabout_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7248349999999997,
+          53.425745
+        ]
+      },
+      "properties": {
+        "countline_id": "52940",
+        "countline_name": "S125_CyclopsJunctionRoundabout_path_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006911",
+        "lsoa21nm": "St. Helens 022F",
+        "lad": "St. Helens",
+        "matched_to": "12b / Knowsley 017B",
+        "candidate_rank": 30,
+        "same_lad": "no",
+        "distance_km": 6.382740822724618
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9008950000000002,
+          53.406649
+        ]
+      },
+      "properties": {
+        "countline_id": "54534",
+        "countline_name": "S263_BowringParkRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006575",
+        "lsoa21nm": "Liverpool 034A",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 3.877440836017368
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.90082,
+          53.4067365
+        ]
+      },
+      "properties": {
+        "countline_id": "54535",
+        "countline_name": "S264_BowringParkRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006575",
+        "lsoa21nm": "Liverpool 034A",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 3.877440836017368
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9013299999999997,
+          53.4072745
+        ]
+      },
+      "properties": {
+        "countline_id": "54545",
+        "countline_name": "S270_QueensDr_road_turn_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006584",
+        "lsoa21nm": "Liverpool 034E",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 38,
+        "same_lad": "yes",
+        "distance_km": 4.503883692754431
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.901875,
+          53.4072495
+        ]
+      },
+      "properties": {
+        "countline_id": "54583",
+        "countline_name": "S271_BroadGreenRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006575",
+        "lsoa21nm": "Liverpool 034A",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 3.877440836017368
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.726105,
+          53.451105
+        ]
+      },
+      "properties": {
+        "countline_id": "54619",
+        "countline_name": "S235_PeasleyCrossLane_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.726155,
+          53.4510805
+        ]
+      },
+      "properties": {
+        "countline_id": "54620",
+        "countline_name": "S235_PeasleyCrossLane_road_LHS_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72628,
+          53.451031
+        ]
+      },
+      "properties": {
+        "countline_id": "54621",
+        "countline_name": "S235_PeasleyCrossLane_road_RHS_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.72634,
+          53.4510005
+        ]
+      },
+      "properties": {
+        "countline_id": "54622",
+        "countline_name": "S235_PeasleyCrossLane_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006872",
+        "lsoa21nm": "St. Helens 014C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 4,
+        "same_lad": "yes",
+        "distance_km": 0.8293637345733512
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.900515,
+          53.406296
+        ]
+      },
+      "properties": {
+        "countline_id": "54838",
+        "countline_name": "S265_QueensDr_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006575",
+        "lsoa21nm": "Liverpool 034A",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 3.877440836017368
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.741745,
+          53.4557805
+        ]
+      },
+      "properties": {
+        "countline_id": "55103",
+        "countline_name": "S261_DukeSt_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006877",
+        "lsoa21nm": "St. Helens 012C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 1,
+        "same_lad": "yes",
+        "distance_km": 1.741529584283987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.741785,
+          53.455746000000005
+        ]
+      },
+      "properties": {
+        "countline_id": "55104",
+        "countline_name": "S261_DukeSt_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006877",
+        "lsoa21nm": "St. Helens 012C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 1,
+        "same_lad": "yes",
+        "distance_km": 1.741529584283987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.741715,
+          53.4558205
+        ]
+      },
+      "properties": {
+        "countline_id": "55105",
+        "countline_name": "S261_DukeSt_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006877",
+        "lsoa21nm": "St. Helens 012C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 1,
+        "same_lad": "yes",
+        "distance_km": 1.741529584283987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7418,
+          53.4557555
+        ]
+      },
+      "properties": {
+        "countline_id": "55106",
+        "countline_name": "S261_DukeSt_crossing_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006877",
+        "lsoa21nm": "St. Helens 012C",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 1,
+        "same_lad": "yes",
+        "distance_km": 1.741529584283987
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7468,
+          53.4589255
+        ]
+      },
+      "properties": {
+        "countline_id": "55112",
+        "countline_name": "S259_WynneRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.746765,
+          53.4589695
+        ]
+      },
+      "properties": {
+        "countline_id": "55113",
+        "countline_name": "S259_WynneRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7467449999999998,
+          53.459015
+        ]
+      },
+      "properties": {
+        "countline_id": "55114",
+        "countline_name": "S259_WynneRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.749015,
+          53.46005649999999
+        ]
+      },
+      "properties": {
+        "countline_id": "55115",
+        "countline_name": "S260_BishopRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.749085,
+          53.46006
+        ]
+      },
+      "properties": {
+        "countline_id": "55116",
+        "countline_name": "S260_BishopRd_crossing_mt001",
+        "route_type_guess": "Other",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.74895,
+          53.460024000000004
+        ]
+      },
+      "properties": {
+        "countline_id": "55117",
+        "countline_name": "S260_BishopRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7406449999999998,
+          53.459875
+        ]
+      },
+      "properties": {
+        "countline_id": "55118",
+        "countline_name": "S258_WindleSt/NorthRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006881",
+        "lsoa21nm": "St. Helens 012E",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 45,
+        "same_lad": "yes",
+        "distance_km": 1.3934853657593078
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.74061,
+          53.45994
+        ]
+      },
+      "properties": {
+        "countline_id": "55119",
+        "countline_name": "S258_WindleSt/NorthRd_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006881",
+        "lsoa21nm": "St. Helens 012E",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 45,
+        "same_lad": "yes",
+        "distance_km": 1.3934853657593078
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.74061,
+          53.4599995
+        ]
+      },
+      "properties": {
+        "countline_id": "55120",
+        "countline_name": "S258_WindleSt/NorthRd_path_RHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006881",
+        "lsoa21nm": "St. Helens 012E",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 014D",
+        "candidate_rank": 45,
+        "same_lad": "yes",
+        "distance_km": 1.3934853657593078
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.901455,
+          53.407314
+        ]
+      },
+      "properties": {
+        "countline_id": "55270",
+        "countline_name": "S270_QueensDr_road_mt001",
+        "route_type_guess": "Road",
+        "lsoa21cd": "E01006584",
+        "lsoa21nm": "Liverpool 034E",
+        "lad": "Liverpool",
+        "matched_to": "12d / Liverpool 052A",
+        "candidate_rank": 38,
+        "same_lad": "yes",
+        "distance_km": 4.503883692754431
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.74913,
+          53.4600395
+        ]
+      },
+      "properties": {
+        "countline_id": "59154",
+        "countline_name": "S260_BishopRd_path_LHS_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.749155,
+          53.4600395
+        ]
+      },
+      "properties": {
+        "countline_id": "59155",
+        "countline_name": "S260_BishopRd_path_ParkEntrance_mt001",
+        "route_type_guess": "Path/cycle facility",
+        "lsoa21cd": "E01006915",
+        "lsoa21nm": "St. Helens 007B",
+        "lad": "St. Helens",
+        "matched_to": "12e / St. Helens 008C",
+        "candidate_rank": 13,
+        "same_lad": "yes",
+        "distance_km": 2.3920249512727914
+      }
+    }
+  ]
+}

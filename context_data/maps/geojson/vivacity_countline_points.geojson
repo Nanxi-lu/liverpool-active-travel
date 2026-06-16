@@ -1,0 +1,572 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9367330000000003,
+          53.374586
+        ]
+      },
+      "properties": {
+        "scheme_id": "12d",
+        "road_group": "Aigburth Road",
+        "countline_id": "16373",
+        "countline_name": "S17_AigburthRd_road_east_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_pct_households_no_car": "37.123745819397996",
+        "census_population_density_ppsqkm": "2584.2",
+        "color": "#009E73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9366925,
+          53.374641
+        ]
+      },
+      "properties": {
+        "scheme_id": "12d",
+        "road_group": "Aigburth Road",
+        "countline_id": "16374",
+        "countline_name": "S17_AigburthRd_path_LHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_pct_households_no_car": "37.123745819397996",
+        "census_population_density_ppsqkm": "2584.2",
+        "color": "#009E73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9367035,
+          53.374500499999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "12d",
+        "road_group": "Aigburth Road",
+        "countline_id": "16393",
+        "countline_name": "S17_AigburthRd_west_mt001",
+        "route_type": "Other",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_pct_households_no_car": "37.123745819397996",
+        "census_population_density_ppsqkm": "2584.2",
+        "color": "#009E73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.936743,
+          53.374452500000004
+        ]
+      },
+      "properties": {
+        "scheme_id": "12d",
+        "road_group": "Aigburth Road",
+        "countline_id": "16394",
+        "countline_name": "S17_AigburthRd_path_RHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_pct_households_no_car": "37.123745819397996",
+        "census_population_density_ppsqkm": "2584.2",
+        "color": "#009E73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.9366250000000003,
+          53.374500499999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "12d",
+        "road_group": "Aigburth Road",
+        "countline_id": "23779",
+        "countline_name": "s45_AigburthRoad_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_pct_households_no_car": "37.123745819397996",
+        "census_population_density_ppsqkm": "2584.2",
+        "color": "#009E73"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.1101905,
+          53.416241
+        ]
+      },
+      "properties": {
+        "scheme_id": "12f",
+        "road_group": "Leasowe Road / Wallasey corridor",
+        "countline_id": "23799",
+        "countline_name": "s51_LeasoweRoad_LHS_path_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-06",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01007203",
+        "analysis_lsoa21nm": "Wirral 006A",
+        "LAD22NM": "Wirral",
+        "imd_decile": "7.0",
+        "income_decile": "6.0",
+        "census_pct_households_no_car": "11.611374407582938",
+        "census_population_density_ppsqkm": "1799.8",
+        "color": "#CC79A7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.110164,
+          53.4161625
+        ]
+      },
+      "properties": {
+        "scheme_id": "12f",
+        "road_group": "Leasowe Road / Wallasey corridor",
+        "countline_id": "23800",
+        "countline_name": "s51_LeasoweRoad_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-06",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01007203",
+        "analysis_lsoa21nm": "Wirral 006A",
+        "LAD22NM": "Wirral",
+        "imd_decile": "7.0",
+        "income_decile": "6.0",
+        "census_pct_households_no_car": "11.611374407582938",
+        "census_population_density_ppsqkm": "1799.8",
+        "color": "#CC79A7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -3.110143,
+          53.416101499999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "12f",
+        "road_group": "Leasowe Road / Wallasey corridor",
+        "countline_id": "23801",
+        "countline_name": "s51_LeasoweRoad_RHS_path_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-06",
+        "first_reliable_date": "2022-11-15",
+        "analysis_lsoa21cd": "E01007203",
+        "analysis_lsoa21nm": "Wirral 006A",
+        "LAD22NM": "Wirral",
+        "imd_decile": "7.0",
+        "income_decile": "6.0",
+        "census_pct_households_no_car": "11.611374407582938",
+        "census_population_density_ppsqkm": "1799.8",
+        "color": "#CC79A7"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.820125,
+          53.398655
+        ]
+      },
+      "properties": {
+        "scheme_id": "12b",
+        "road_group": "Cronton Road / Sandy Lane",
+        "countline_id": "46676",
+        "countline_name": "s96_CrontonRd_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2023-06-13",
+        "analysis_lsoa21cd": "E01006424",
+        "analysis_lsoa21nm": "Knowsley 017B",
+        "LAD22NM": "Knowsley",
+        "imd_decile": "6.0",
+        "income_decile": "7.0",
+        "census_pct_households_no_car": "10.817610062893081",
+        "census_population_density_ppsqkm": "535.0",
+        "color": "#0072B2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.820795,
+          53.398775
+        ]
+      },
+      "properties": {
+        "scheme_id": "12b",
+        "road_group": "Cronton Road / Sandy Lane",
+        "countline_id": "46686",
+        "countline_name": "s97_CrontonRd_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2023-06-13",
+        "analysis_lsoa21cd": "E01006424",
+        "analysis_lsoa21nm": "Knowsley 017B",
+        "LAD22NM": "Knowsley",
+        "imd_decile": "6.0",
+        "income_decile": "7.0",
+        "census_pct_households_no_car": "10.817610062893081",
+        "census_population_density_ppsqkm": "535.0",
+        "color": "#0072B2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.8207950000000004,
+          53.3987295
+        ]
+      },
+      "properties": {
+        "scheme_id": "12b",
+        "road_group": "Cronton Road / Sandy Lane",
+        "countline_id": "46687",
+        "countline_name": "s97_CrontonRd_path_LHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2023-06-13",
+        "analysis_lsoa21cd": "E01006424",
+        "analysis_lsoa21nm": "Knowsley 017B",
+        "LAD22NM": "Knowsley",
+        "imd_decile": "6.0",
+        "income_decile": "7.0",
+        "census_pct_households_no_car": "10.817610062893081",
+        "census_population_density_ppsqkm": "535.0",
+        "color": "#0072B2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.820175,
+          53.398615
+        ]
+      },
+      "properties": {
+        "scheme_id": "12b",
+        "road_group": "Cronton Road / Sandy Lane",
+        "countline_id": "46688",
+        "countline_name": "s96_CrontonRd_path_RHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2023-06-14",
+        "analysis_lsoa21cd": "E01006424",
+        "analysis_lsoa21nm": "Knowsley 017B",
+        "LAD22NM": "Knowsley",
+        "imd_decile": "6.0",
+        "income_decile": "7.0",
+        "census_pct_households_no_car": "10.817610062893081",
+        "census_population_density_ppsqkm": "535.0",
+        "color": "#0072B2"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.708157,
+          53.343235
+        ]
+      },
+      "properties": {
+        "scheme_id": "13",
+        "road_group": "Astmoor Busway / Warrington Road",
+        "countline_id": "47768",
+        "countline_name": "S102_AstmoorBusway_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2024-03",
+        "first_reliable_date": "2023-09-27",
+        "analysis_lsoa21cd": "E01012382",
+        "analysis_lsoa21nm": "Halton 010B",
+        "LAD22NM": "Halton",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "43.60699865410498",
+        "census_population_density_ppsqkm": "486.0",
+        "color": "#56B4E9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.708208,
+          53.343154999999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "13",
+        "road_group": "Astmoor Busway / Warrington Road",
+        "countline_id": "47769",
+        "countline_name": "S102_AstmoorBusway_path_RHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2024-03",
+        "first_reliable_date": "2023-09-27",
+        "analysis_lsoa21cd": "E01012382",
+        "analysis_lsoa21nm": "Halton 010B",
+        "LAD22NM": "Halton",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "43.60699865410498",
+        "census_population_density_ppsqkm": "486.0",
+        "color": "#56B4E9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.690263,
+          53.3464225
+        ]
+      },
+      "properties": {
+        "scheme_id": "13",
+        "road_group": "Astmoor Busway / Warrington Road",
+        "countline_id": "47772",
+        "countline_name": "S103_WarringtonRd_path_LHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2024-03",
+        "first_reliable_date": "2023-09-27",
+        "analysis_lsoa21cd": "E01012382",
+        "analysis_lsoa21nm": "Halton 010B",
+        "LAD22NM": "Halton",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "43.60699865410498",
+        "census_population_density_ppsqkm": "486.0",
+        "color": "#56B4E9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.6900955,
+          53.346394000000004
+        ]
+      },
+      "properties": {
+        "scheme_id": "13",
+        "road_group": "Astmoor Busway / Warrington Road",
+        "countline_id": "47773",
+        "countline_name": "S103_WarringtonRd_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2024-03",
+        "first_reliable_date": "2023-09-27",
+        "analysis_lsoa21cd": "E01012382",
+        "analysis_lsoa21nm": "Halton 010B",
+        "LAD22NM": "Halton",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "43.60699865410498",
+        "census_population_density_ppsqkm": "486.0",
+        "color": "#56B4E9"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.716037,
+          53.456075999999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "12e",
+        "road_group": "Park Road / Path off Park Road",
+        "countline_id": "51794",
+        "countline_name": "S175_ParkRd_road_mt001",
+        "route_type": "Road",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2024-08-01",
+        "analysis_lsoa21cd": "E01006873",
+        "analysis_lsoa21nm": "St. Helens 014D",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "48.242811501597444",
+        "census_population_density_ppsqkm": "2417.6",
+        "color": "#D55E00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7159415,
+          53.4560415
+        ]
+      },
+      "properties": {
+        "scheme_id": "12e",
+        "road_group": "Park Road / Path off Park Road",
+        "countline_id": "51795",
+        "countline_name": "S175_ParkRd_path_LHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2024-08-01",
+        "analysis_lsoa21cd": "E01006873",
+        "analysis_lsoa21nm": "St. Helens 014D",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "48.242811501597444",
+        "census_population_density_ppsqkm": "2417.6",
+        "color": "#D55E00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7160415,
+          53.4561365
+        ]
+      },
+      "properties": {
+        "scheme_id": "12e",
+        "road_group": "Park Road / Path off Park Road",
+        "countline_id": "51796",
+        "countline_name": "S175_ParkRd_path_RHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2024-08-01",
+        "analysis_lsoa21cd": "E01006873",
+        "analysis_lsoa21nm": "St. Helens 014D",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "48.242811501597444",
+        "census_population_density_ppsqkm": "2417.6",
+        "color": "#D55E00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7100005,
+          53.458028999999996
+        ]
+      },
+      "properties": {
+        "scheme_id": "12e",
+        "road_group": "Park Road / Path off Park Road",
+        "countline_id": "51817",
+        "countline_name": "S177_PathOffParkRd_path_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2024-08-01",
+        "analysis_lsoa21cd": "E01006812",
+        "analysis_lsoa21nm": "St. Helens 008C",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "30.63973063973064",
+        "census_population_density_ppsqkm": "4840.4",
+        "color": "#D55E00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -2.7100415,
+          53.4580095
+        ]
+      },
+      "properties": {
+        "scheme_id": "12e",
+        "road_group": "Park Road / Path off Park Road",
+        "countline_id": "51818",
+        "countline_name": "S177_PathOffParkRd_path_RHS_mt001",
+        "route_type": "Path/cycle facility",
+        "installation_month": "2023-03",
+        "first_reliable_date": "2024-08-01",
+        "analysis_lsoa21cd": "E01006812",
+        "analysis_lsoa21nm": "St. Helens 008C",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_pct_households_no_car": "30.63973063973064",
+        "census_population_density_ppsqkm": "4840.4",
+        "color": "#D55E00"
+      }
+    }
+  ]
+}

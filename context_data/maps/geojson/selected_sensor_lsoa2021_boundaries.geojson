@@ -1,0 +1,495 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.83176841489471,
+              53.4009783578435
+            ],
+            [
+              -2.82660663143917,
+              53.3998112122643
+            ],
+            [
+              -2.8156133060631,
+              53.4031637944743
+            ],
+            [
+              -2.80281162801798,
+              53.3953135343252
+            ],
+            [
+              -2.78531940926841,
+              53.395992786008
+            ],
+            [
+              -2.78849343923259,
+              53.3917600080513
+            ],
+            [
+              -2.80494378951894,
+              53.3892492006984
+            ],
+            [
+              -2.81341937498507,
+              53.3837128563725
+            ],
+            [
+              -2.83229467665323,
+              53.3928803153663
+            ],
+            [
+              -2.83365566822151,
+              53.3961761484504
+            ],
+            [
+              -2.83734532387973,
+              53.3998687802469
+            ],
+            [
+              -2.83662232116281,
+              53.4034290429368
+            ],
+            [
+              -2.83176841489471,
+              53.4009783578435
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 6106,
+        "LSOA21CD": "E01006424",
+        "LSOA21NM": "Knowsley 017B",
+        "LSOA21NMW": " ",
+        "BNG_E": 346214,
+        "BNG_N": 388840,
+        "LAT": 53.3937,
+        "LONG": -2.81028,
+        "GlobalID": "3f53544a-39c8-4c1a-a5cc-b41fd7eec84b",
+        "LSOA21CD_1": "E01006424",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 9348.31098061,
+        "Shape__Area": 3480091.898918152,
+        "Shape__Length": 9348.310980613234,
+        "analysis_lsoa21cd": "E01006424",
+        "analysis_lsoa21nm": "Knowsley 017B",
+        "LAD22NM": "Knowsley",
+        "imd_decile": "6.0",
+        "income_decile": "7.0",
+        "census_population_density_ppsqkm": "535.0",
+        "census_pct_households_no_car": "10.817610062893081",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 4,
+        "schemes": "12b",
+        "road_groups": "Cronton Road / Sandy Lane"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.93222566908918,
+              53.3745410341583
+            ],
+            [
+              -2.93394566149939,
+              53.372874617991
+            ],
+            [
+              -2.93895158192163,
+              53.3705560276578
+            ],
+            [
+              -2.94007227395702,
+              53.3754326823731
+            ],
+            [
+              -2.94073213719006,
+              53.375782553653
+            ],
+            [
+              -2.94210268762726,
+              53.3806575220936
+            ],
+            [
+              -2.93931297280234,
+              53.3830471682167
+            ],
+            [
+              -2.93031346859833,
+              53.3771219306526
+            ],
+            [
+              -2.93222566908918,
+              53.3745410341583
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 6194,
+        "LSOA21CD": "E01006521",
+        "LSOA21NM": "Liverpool 052A",
+        "LSOA21NMW": " ",
+        "BNG_E": 337785,
+        "BNG_N": 386948,
+        "LAT": 53.3757,
+        "LONG": -2.93664,
+        "GlobalID": "27775965-1ca9-4ff5-b42d-b9a550270fea",
+        "LSOA21CD_1": "E01006521",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 3324.28274289,
+        "Shape__Area": 587595.3536911011,
+        "Shape__Length": 3324.2827428861183,
+        "analysis_lsoa21cd": "E01006521",
+        "analysis_lsoa21nm": "Liverpool 052A",
+        "LAD22NM": "Liverpool",
+        "imd_decile": "3.0",
+        "income_decile": "4.0",
+        "census_population_density_ppsqkm": "2584.2",
+        "census_pct_households_no_car": "37.123745819397996",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 5,
+        "schemes": "12d",
+        "road_groups": "Aigburth Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.70220756683373,
+              53.458698118558
+            ],
+            [
+              -2.70525931217083,
+              53.4576740252896
+            ],
+            [
+              -2.70945200752541,
+              53.4573501058537
+            ],
+            [
+              -2.71389983245999,
+              53.4598716968896
+            ],
+            [
+              -2.71506705657888,
+              53.4610766734475
+            ],
+            [
+              -2.70779475417551,
+              53.4643064820572
+            ],
+            [
+              -2.70220756683373,
+              53.458698118558
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 6464,
+        "LSOA21CD": "E01006812",
+        "LSOA21NM": "St. Helens 008C",
+        "LSOA21NMW": " ",
+        "BNG_E": 353042,
+        "BNG_N": 396209,
+        "LAT": 53.4605,
+        "LONG": -2.70871,
+        "GlobalID": "ddd58386-5509-4f65-a671-3c2807c22700",
+        "LSOA21CD_1": "E01006812",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 2403.20084143,
+        "Shape__Area": 366117.3966522217,
+        "Shape__Length": 2403.2008414321595,
+        "analysis_lsoa21cd": "E01006812",
+        "analysis_lsoa21nm": "St. Helens 008C",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_population_density_ppsqkm": "4840.4",
+        "census_pct_households_no_car": "30.63973063973064",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 2,
+        "schemes": "12e",
+        "road_groups": "Park Road / Path off Park Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.71389983245999,
+              53.4598716968896
+            ],
+            [
+              -2.70945200752541,
+              53.4573501058537
+            ],
+            [
+              -2.71080124503589,
+              53.4563348751233
+            ],
+            [
+              -2.72001082057918,
+              53.4524267532163
+            ],
+            [
+              -2.72454597995269,
+              53.4590090939827
+            ],
+            [
+              -2.72450268952667,
+              53.4611969843441
+            ],
+            [
+              -2.72113833246491,
+              53.461692719964
+            ],
+            [
+              -2.71389983245999,
+              53.4598716968896
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 6524,
+        "LSOA21CD": "E01006873",
+        "LSOA21NM": "St. Helens 014D",
+        "LSOA21NMW": " ",
+        "BNG_E": 352505,
+        "BNG_N": 395820,
+        "LAT": 53.457,
+        "LONG": -2.71674,
+        "GlobalID": "52806211-b051-4293-9e96-40ca2fe20c55",
+        "LSOA21CD_1": "E01006873",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 3088.84918753,
+        "Shape__Area": 589381.7975311279,
+        "Shape__Length": 3088.849187532443,
+        "analysis_lsoa21cd": "E01006873",
+        "analysis_lsoa21nm": "St. Helens 014D",
+        "LAD22NM": "St. Helens",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_population_density_ppsqkm": "2417.6",
+        "census_pct_households_no_car": "48.242811501597444",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 3,
+        "schemes": "12e",
+        "road_groups": "Park Road / Path off Park Road"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -3.10244641425747,
+              53.4172401693841
+            ],
+            [
+              -3.10025613037424,
+              53.4104886456828
+            ],
+            [
+              -3.10115176836921,
+              53.4101660215884
+            ],
+            [
+              -3.10973306732349,
+              53.41209400315
+            ],
+            [
+              -3.11552163498046,
+              53.4087915849257
+            ],
+            [
+              -3.11677911035528,
+              53.4110742348171
+            ],
+            [
+              -3.11967029016409,
+              53.4162505562754
+            ],
+            [
+              -3.11887667147798,
+              53.4164140953626
+            ],
+            [
+              -3.11831396797343,
+              53.4166185081997
+            ],
+            [
+              -3.09777643553322,
+              53.4240758881822
+            ],
+            [
+              -3.10244641425747,
+              53.4172401693841
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 6842,
+        "LSOA21CD": "E01007203",
+        "LSOA21NM": "Wirral 006A",
+        "LSOA21NMW": " ",
+        "BNG_E": 326272,
+        "BNG_N": 391607,
+        "LAT": 53.4161,
+        "LONG": -3.11075,
+        "GlobalID": "dd2b5e17-d3e5-4f13-8c64-bc117377fd4b",
+        "LSOA21CD_1": "E01007203",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 5369.10858508,
+        "Shape__Area": 1159919.7020950317,
+        "Shape__Length": 5369.108585076601,
+        "analysis_lsoa21cd": "E01007203",
+        "analysis_lsoa21nm": "Wirral 006A",
+        "LAD22NM": "Wirral",
+        "imd_decile": "7.0",
+        "income_decile": "6.0",
+        "census_population_density_ppsqkm": "1799.8",
+        "census_pct_households_no_car": "11.611374407582938",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 3,
+        "schemes": "12f",
+        "road_groups": "Leasowe Road / Wallasey corridor"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -2.67797885124013,
+              53.3547108537069
+            ],
+            [
+              -2.67464076192837,
+              53.3536644611715
+            ],
+            [
+              -2.68956103977281,
+              53.3499254290215
+            ],
+            [
+              -2.68667736344014,
+              53.3436250570575
+            ],
+            [
+              -2.68666580215872,
+              53.3435626683256
+            ],
+            [
+              -2.68886789851724,
+              53.3388771243419
+            ],
+            [
+              -2.69557087998307,
+              53.3384907783303
+            ],
+            [
+              -2.69313814858976,
+              53.3368258770158
+            ],
+            [
+              -2.69364373125029,
+              53.3368722308611
+            ],
+            [
+              -2.70336154822184,
+              53.3385613166146
+            ],
+            [
+              -2.70594227537768,
+              53.3414543322087
+            ],
+            [
+              -2.71536786054559,
+              53.3412578797065
+            ],
+            [
+              -2.72003661859602,
+              53.3409421267767
+            ],
+            [
+              -2.72094293514593,
+              53.3450654900534
+            ],
+            [
+              -2.6995157370485,
+              53.3566828463273
+            ],
+            [
+              -2.67797885124013,
+              53.3547108537069
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "FID": 11751,
+        "LSOA21CD": "E01012382",
+        "LSOA21NM": "Halton 010B",
+        "LSOA21NMW": " ",
+        "BNG_E": 353607,
+        "BNG_N": 383555,
+        "LAT": 53.3469,
+        "LONG": -2.69834,
+        "GlobalID": "61b56923-033a-418e-b8ca-175d6748c891",
+        "LSOA21CD_1": "E01012382",
+        "RUC21CD": "UN1",
+        "RUC21NM": "Urban: Nearer to a major town or city",
+        "Urban_rura": "Urban",
+        "Shape_Leng": 9148.5890482,
+        "Shape__Area": 3448466.0651016235,
+        "Shape__Length": 9148.589048200223,
+        "analysis_lsoa21cd": "E01012382",
+        "analysis_lsoa21nm": "Halton 010B",
+        "LAD22NM": "Halton",
+        "imd_decile": "1.0",
+        "income_decile": "1.0",
+        "census_population_density_ppsqkm": "486.0",
+        "census_pct_households_no_car": "43.60699865410498",
+        "is_sensor_lsoa": true,
+        "sensor_countlines": 4,
+        "schemes": "13",
+        "road_groups": "Astmoor Busway / Warrington Road"
+      }
+    }
+  ]
+}

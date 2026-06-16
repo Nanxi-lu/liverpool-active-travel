@@ -1,0 +1,3 @@
+scheme,current_intervention_date_field,pre_dated_rows,pre_unique_dates,pre_quality_ok_rows,pre_active_positive_rows,pre_quality_ok_active_positive_rows,first_quality_positive_active_date,correct_wording
+12b,2023-03-01,4380,1095,0,0,0,2023-06-13/2023-06-14 by countline,"Pre-installation rows exist, but no usable/positive pre-installation active-travel baseline after quality filtering."
+12e,2023-03-01,5475,1095,0,0,0,2024-08-01,"Pre-installation rows exist, but no usable/positive pre-installation active-travel baseline after quality filtering."

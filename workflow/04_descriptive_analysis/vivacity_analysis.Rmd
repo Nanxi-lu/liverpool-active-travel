@@ -1,0 +1,505 @@
+---
+title: "Vivacity Active Travel Sensor Analysis Cleaned"
+author: "Nanxi Lu"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+  pdf_document:
+    toc: true
+    toc_depth: '3'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 11,
+  fig.height = 6
+)
+```
+
+## Purpose
+
+This notebook takes the cleaned daily Vivacity sensor files as its starting point and prepares them for the main analysis stage. 
+
+The core tasks are: identifying the first date on which each sensor produced reliable data; distinguishing structural periods of sensor absence from genuine zero active travel flows; and producing sensor-level and scheme-level weekly and monthly count summaries. 
+
+The output is a set of analysis-ready tables and initial descriptive plots. At this stage the work is diagnostic — the central question is whether each sensor has sufficient pre-installation data to support a before/after comparison, or whether only a post-installation trajectory can be described.
+
+## Packages and Paths
+
+```{r packages}
+packages <- c(
+  "tidyverse",
+  "lubridate",
+  "janitor",
+  "scales",
+  "fs",
+  "slider"
+)
+
+missing_packages <- packages[!packages %in% rownames(installed.packages())]
+if (length(missing_packages) > 0) {
+  install.packages(missing_packages)
+}
+
+library(tidyverse)
+library(lubridate)
+library(janitor)
+library(scales)
+library(fs)
+```
+
+```{r paths}
+clean_dir <- "/Users/lu_nanxi/CASA/Dissertation_Data/Vivacity_full_day_cutoff_20260526/treated"
+qa_dir <- file.path(clean_dir, "quality_checks")
+output_dir <- "/Users/lu_nanxi/CASA/Dissertation_Data/Vivacity_R_outputs"
+
+dir_create(output_dir)
+dir_create(file.path(output_dir, "plots"))
+dir_create(file.path(output_dir, "tables"))
+```
+
+## Load Cleaned Daily Sensor Files
+
+```{r load-data}
+sensor_files <- dir_ls(
+  clean_dir,
+  recurse = TRUE,
+  regexp = "_daily\\.csv$"
+) |>
+  as.character() |>
+  keep(~ !str_detect(basename(.x), "_all_countlines_daily\\.csv$"))
+
+sensor_files
+```
+
+```{r combine-data}
+sensor_daily <- map_dfr(sensor_files, function(path) {
+  read_csv(
+    path,
+    show_col_types = FALSE,
+    col_types = cols(
+      scheme_id = col_character(),
+      scheme_name = col_character(),
+      road_group = col_character(),
+      installation_month = col_character(),
+      period = col_character(),
+      countlineName = col_character()
+    )
+  ) |>
+    mutate(
+      source_clean_file = basename(path),
+      scheme_folder = basename(dirname(path))
+    )
+})
+
+sensor_daily <- sensor_daily |>
+  clean_names() |>
+  mutate(
+    date = as_date(date),
+    month_date = floor_date(date, "month"),
+    week_date = floor_date(date, "week", week_start = 1),
+    active_travel_total = pedestrian + cyclist,
+    countline_label = paste0(countline_id, " - ", countline_name),
+    route_type = case_when(
+      str_detect(str_to_lower(countline_name), "path|cycle") ~ "Path/cycle facility",
+      str_detect(str_to_lower(countline_name), "road") ~ "Road",
+      TRUE ~ "Other"
+    )
+  )
+
+if (!"intervention_date" %in% names(sensor_daily)) {
+  stop("The prepared sensor_daily input must include an intervention_date column.")
+}
+
+sensor_daily <- sensor_daily |>
+  mutate(intervention_date = as_date(intervention_date))
+
+if (any(is.na(sensor_daily$intervention_date))) {
+  missing_schemes <- sensor_daily |>
+    filter(is.na(intervention_date)) |>
+    distinct(scheme_id) |>
+    pull(scheme_id)
+  stop(
+    "The prepared sensor_daily input has missing intervention_date values for: ",
+    paste(missing_schemes, collapse = ", ")
+  )
+}
+
+glimpse(sensor_daily)
+```
+
+## Check Duplicate Dates
+
+Before proceeding, each sensor was checked for duplicate date entries, which would indicate an error in the earlier cleaning stage. No duplicates were found across any of the 21 countlines, confirming that each sensor contributes exactly one row per date.
+
+```{r duplicate-date-check}
+duplicate_dates <- sensor_daily |>
+  count(scheme_id, countline_id, countline_name, date, name = "rows_per_date") |>
+  filter(rows_per_date > 1)
+
+duplicate_dates
+
+write_csv(
+  duplicate_dates,
+  file.path(output_dir, "tables", "duplicate_dates_check.csv")
+)
+```
+
+```{r duplicate-date-summary}
+duplicate_summary <- sensor_daily |>
+  count(scheme_id, countline_id, countline_name, date, name = "rows_per_date") |>
+  group_by(scheme_id, countline_id, countline_name) |>
+  summarise(
+    duplicate_dates = sum(rows_per_date > 1),
+    .groups = "drop"
+  )
+
+duplicate_summary
+```
+
+## First Reliable Date
+
+The cleaned data contains long early periods where `data_availability_percent_min` is missing and flows are zero. These are likely structural missingness before sensors were active, not real zero walking/cycling.
+
+The rule for first reliable date:
+
+- availability is not missing;
+- no data error;
+- daily active travel total is greater than zero;
+- this condition appears within a rolling run of at least 14 reliable days in a 21-day window.
+
+```{r reliable-date-parameters}
+min_reliable_days_in_window <- 14
+window_days <- 21
+availability_threshold <- 80
+```
+
+```{r first-reliable-date}
+first_reliable <- sensor_daily |>
+  arrange(countline_id, date) |>
+  group_by(
+    scheme_id, scheme_name, road_group, installation_month, intervention_date,
+    countline_id, countline_name, route_type
+  ) |>
+  mutate(
+    reliable_day = !availability_missing &
+      !data_error_any &
+      active_travel_total > 0,
+    good_availability_day = !availability_missing &
+      data_availability_percent_min >= availability_threshold &
+      !data_error_any,
+    reliable_days_rolling = slider::slide_int(
+      reliable_day,
+      sum,
+      .before = 0,
+      .after = window_days - 1,
+      .complete = TRUE
+    ),
+    first_reliable_candidate = reliable_day &
+      reliable_days_rolling >= min_reliable_days_in_window
+  ) |>
+  summarise(
+    raw_first_date = min(date, na.rm = TRUE),
+    raw_last_date = max(date, na.rm = TRUE),
+    first_reliable_date = if_else(
+      any(first_reliable_candidate, na.rm = TRUE),
+      min(date[first_reliable_candidate], na.rm = TRUE),
+      as_date(NA)
+    ),
+    first_good_availability_date = if_else(
+      any(good_availability_day, na.rm = TRUE),
+      min(date[good_availability_day], na.rm = TRUE),
+      as_date(NA)
+    ),
+    total_days = n(),
+    availability_missing_days = sum(availability_missing, na.rm = TRUE),
+    structural_missing_candidate_days = sum(structural_missing_candidate, na.rm = TRUE),
+    low_availability_days = sum(low_availability, na.rm = TRUE),
+    data_error_days = sum(data_error_any, na.rm = TRUE),
+    annotation_days = sum(has_annotation, na.rm = TRUE),
+    pedestrian_total_raw = sum(pedestrian, na.rm = TRUE),
+    cyclist_total_raw = sum(cyclist, na.rm = TRUE),
+    active_travel_total_raw = sum(active_travel_total, na.rm = TRUE),
+    .groups = "drop"
+  ) |>
+  mutate(
+    has_pre_installation_reliable_data = first_reliable_date <
+      intervention_date
+  )
+
+first_reliable
+
+write_csv(
+  first_reliable,
+  file.path(output_dir, "tables", "first_reliable_date_by_sensor.csv")
+)
+```
+
+## Filter to Analysis-Ready Daily Data
+
+All rows prior to each sensor's first reliable date were excluded from the main analysis dataset, as were any remaining rows with missing availability or data errors. The broader dataset, with reliability flags attached, was retained as a separate file for reference. The filtered dataset forms the basis for all subsequent aggregation and modelling.
+
+```{r analysis-daily}
+analysis_daily <- sensor_daily |>
+  left_join(
+    first_reliable |>
+      select(countline_id, first_reliable_date),
+    by = "countline_id"
+  ) |>
+  mutate(
+    before_first_reliable_date = date < first_reliable_date,
+    use_in_main_analysis = !before_first_reliable_date &
+      !availability_missing &
+      !data_error_any,
+    period_refined = case_when(
+      date < intervention_date ~ "pre",
+      date >= intervention_date & date < intervention_date + months(1) ~ "transition_month",
+      date >= intervention_date + months(1) ~ "post",
+      TRUE ~ NA_character_
+    )
+  )
+
+analysis_daily_main <- analysis_daily |>
+  filter(use_in_main_analysis)
+
+write_csv(
+  analysis_daily,
+  file.path(output_dir, "tables", "sensor_daily_with_reliability_flags.csv")
+)
+
+write_csv(
+  analysis_daily_main,
+  file.path(output_dir, "tables", "sensor_daily_main_analysis.csv")
+)
+```
+
+## Weekly and Monthly Aggregation
+
+The analysis-ready daily data were aggregated to three summary tables. Weekly and monthly totals were calculated at sensor level, retaining pedestrian, cyclist, combined active travel, car, and LGV counts alongside data availability metrics. A separate monthly scheme-level table was produced by summing across all countlines within each scheme, giving a higher-level view of active travel trends for each road group.
+
+```{r weekly-monthly}
+weekly_sensor <- analysis_daily_main |>
+  group_by(
+    scheme_id, scheme_name, road_group, installation_month, intervention_date,
+    countline_id, countline_name, route_type, week_date
+  ) |>
+  summarise(
+    days_observed = n(),
+    pedestrian = sum(pedestrian, na.rm = TRUE),
+    cyclist = sum(cyclist, na.rm = TRUE),
+    active_travel_total = sum(active_travel_total, na.rm = TRUE),
+    car = sum(car, na.rm = TRUE),
+    lgv = sum(lgv, na.rm = TRUE),
+    min_availability = min(data_availability_percent_min, na.rm = TRUE),
+    mean_availability = mean(data_availability_percent_mean, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+monthly_sensor <- analysis_daily_main |>
+  group_by(
+    scheme_id, scheme_name, road_group, installation_month, intervention_date,
+    countline_id, countline_name, route_type, month_date
+  ) |>
+  summarise(
+    days_observed = n(),
+    pedestrian = sum(pedestrian, na.rm = TRUE),
+    cyclist = sum(cyclist, na.rm = TRUE),
+    active_travel_total = sum(active_travel_total, na.rm = TRUE),
+    car = sum(car, na.rm = TRUE),
+    lgv = sum(lgv, na.rm = TRUE),
+    min_availability = min(data_availability_percent_min, na.rm = TRUE),
+    mean_availability = mean(data_availability_percent_mean, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+monthly_scheme <- analysis_daily_main |>
+  group_by(
+    scheme_id, scheme_name, road_group, installation_month, intervention_date,
+    month_date
+  ) |>
+  summarise(
+    countlines_observed = n_distinct(countline_id),
+    days_observed = n_distinct(date),
+    pedestrian = sum(pedestrian, na.rm = TRUE),
+    cyclist = sum(cyclist, na.rm = TRUE),
+    active_travel_total = sum(active_travel_total, na.rm = TRUE),
+    car = sum(car, na.rm = TRUE),
+    lgv = sum(lgv, na.rm = TRUE),
+    .groups = "drop"
+  )
+
+write_csv(weekly_sensor, file.path(output_dir, "tables", "weekly_sensor_totals.csv"))
+write_csv(monthly_sensor, file.path(output_dir, "tables", "monthly_sensor_totals.csv"))
+write_csv(monthly_scheme, file.path(output_dir, "tables", "monthly_scheme_totals.csv"))
+```
+
+## First QA Table for Supervisor
+
+```{r supervisor-qa-table}
+supervisor_qa <- first_reliable |>
+  mutate(
+    reliable_pre_post_use = case_when(
+      is.na(first_reliable_date) ~ "Not usable without manual checking",
+      has_pre_installation_reliable_data ~ "Potential pre/post analysis",
+      TRUE ~ "Post-installation trajectory only"
+    )
+  ) |>
+  select(
+    scheme_id,
+    road_group,
+    countline_id,
+    countline_name,
+    route_type,
+    raw_first_date,
+    raw_last_date,
+    first_reliable_date,
+    installation_month,
+    reliable_pre_post_use,
+    availability_missing_days,
+    structural_missing_candidate_days,
+    low_availability_days,
+    pedestrian_total_raw,
+    cyclist_total_raw
+  )
+
+supervisor_qa
+
+write_csv(
+  supervisor_qa,
+  file.path(output_dir, "tables", "supervisor_sensor_qa_table.csv")
+)
+```
+
+## Monthly Scheme-Level Trends
+
+Monthly pedestrian, cyclist, and combined active travel counts were plotted for each scheme, with a vertical reference line marking the installation month. Plots were faceted by scheme to allow visual comparison across road groups. These charts provide an initial view of whether active travel volumes show a discernible change around the time of the intervention, and highlight any schemes where data coverage or count levels warrant further scrutiny before modelling.
+
+```{r plot-monthly-scheme, fig.height=7}
+p_scheme <- monthly_scheme |>
+  pivot_longer(
+    cols = c(pedestrian, cyclist, active_travel_total),
+    names_to = "mode",
+    values_to = "count"
+  ) |>
+  mutate(
+    mode = recode(
+      mode,
+      pedestrian = "Pedestrian",
+      cyclist = "Cyclist",
+      active_travel_total = "Pedestrian + Cyclist"
+    )
+  ) |>
+  ggplot(aes(month_date, count, colour = mode)) +
+  geom_line(linewidth = 0.8, na.rm = TRUE) +
+  geom_vline(
+    aes(xintercept = intervention_date),
+    linetype = "dashed",
+    colour = "grey35"
+  ) +
+  facet_wrap(~ scheme_id + road_group, scales = "free_y", ncol = 1) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Monthly Active Travel Counts by Scheme",
+    x = NULL,
+    y = "Monthly count",
+    colour = NULL
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "top")
+
+p_scheme
+
+ggsave(
+  filename = file.path(output_dir, "plots", "monthly_scheme_active_travel.png"),
+  plot = p_scheme,
+  width = 12,
+  height = 14,
+  dpi = 300
+)
+```
+
+## Monthly Sensor-Level Trends
+
+The monthly trend plots were repeated at sensor level, faceted by countline. Separating pedestrian and cyclist counts at this stage allows differences in mode response to be identified — for instance, schemes where cyclist counts change more markedly than pedestrian counts, or vice versa. These plots also make it easier to identify individual countlines with anomalous patterns that may affect scheme-level aggregates.
+
+```{r plot-monthly-sensor, fig.height=12}
+p_sensor <- monthly_sensor |>
+  pivot_longer(
+    cols = c(pedestrian, cyclist),
+    names_to = "mode",
+    values_to = "count"
+  ) |>
+  mutate(
+    mode = recode(mode, pedestrian = "Pedestrian", cyclist = "Cyclist")
+  ) |>
+  ggplot(aes(month_date, count, colour = mode)) +
+  geom_line(linewidth = 0.7, na.rm = TRUE) +
+  geom_vline(
+    aes(xintercept = intervention_date),
+    linetype = "dashed",
+    colour = "grey35"
+  ) +
+  facet_wrap(~ scheme_id + countline_name, scales = "free_y", ncol = 2) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Monthly Pedestrian and Cyclist Counts by Sensor",
+    x = NULL,
+    y = "Monthly count",
+    colour = NULL
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(legend.position = "top")
+
+p_sensor
+
+ggsave(
+  filename = file.path(output_dir, "plots", "monthly_sensor_pedestrian_cyclist.png"),
+  plot = p_sensor,
+  width = 14,
+  height = 16,
+  dpi = 300
+)
+```
+
+## Weekly Trends
+
+```{r plot-weekly-active, fig.height=12}
+p_weekly <- weekly_sensor |>
+  ggplot(aes(week_date, active_travel_total)) +
+  geom_line(colour = "#2C7FB8", linewidth = 0.6, na.rm = TRUE) +
+  geom_vline(
+    aes(xintercept = intervention_date),
+    linetype = "dashed",
+    colour = "grey35"
+  ) +
+  facet_wrap(~ scheme_id + countline_name, scales = "free_y", ncol = 2) +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Weekly Active Travel Counts by Sensor",
+    x = NULL,
+    y = "Weekly pedestrian + cyclist count"
+  ) +
+  theme_minimal(base_size = 10)
+
+p_weekly
+
+ggsave(
+  filename = file.path(output_dir, "plots", "weekly_sensor_active_travel.png"),
+  plot = p_weekly,
+  width = 14,
+  height = 16,
+  dpi = 300
+)
+```
+
+## Interpretation Notes
+
+The QA summary table should be the reference point for deciding how each sensor is used in the dissertation analysis. Of the 21 countlines, those categorised as potential pre/post are the only ones for which a before/after impact evaluation is methodologically defensible. Those with post-installation data only can contribute to a descriptive account of active travel patterns since the scheme opened, but should not be used to make claims about the effect of the intervention.
+
+For the sensors that do support a pre/post comparison, any observed change in active travel following installation should not be attributed to the scheme without accounting for background trends, seasonal variation, and the reliability profile of the sensor itself. Where a comparable control site is available, it should be incorporated before drawing conclusions about scheme impact.

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Vivacity peak average visualisations</title>
+<style>
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; margin: 32px; color: #111827; }
+h1 { margin-bottom: 0.2rem; }
+h2 { margin-top: 2rem; border-top: 1px solid #e5e7eb; padding-top: 1rem; }
+p { line-height: 1.45; max-width: 980px; }
+.note { background: #f8fafc; border-left: 4px solid #2563eb; padding: 12px 14px; margin: 16px 0; }
+img { max-width: 100%; border: 1px solid #e5e7eb; margin: 8px 0 20px; background: white; }
+.small { color: #6b7280; font-size: 12px; }
+a { color: #1d4ed8; }
+</style>
+</head>
+<body>
+<h1>Vivacity Peak Average Visualisations</h1>
+<p class="small">Generated from <code>vivacity_peak_average_before_after_summary.csv</code> and <code>vivacity_peak_average_route_type_summary.csv</code>.</p>
+<p><strong>Grouped bar graphs:</strong> <a href="vivacity_before_after_peak_bar_graphs.html">Open before/after peak grouped bar graphs</a>.</p>
+<div class="note">
+<p><strong>Metric:</strong> pre-installation peak average = highest weekly average before installation; post-installation peak average = highest weekly average after installation; time-to-peak = weeks between installation date and the post-peak week.</p>
+<p><strong>Reading caution:</strong> this is descriptive peak timing, not causal proof of scheme effect.</p>
+</div>
+<p><strong>Direct comparison:</strong> <a href="vivacity_direct_before_after_peak_comparison.html">Open direct before/after peak comparison by scheme</a>.</p>
+<h2>1. Before vs after peak averages</h2>
+<p>This compares the highest pre-installation and post-installation weekly averages for treated locations, separated by active travel, pedestrian, and cyclist outcomes.</p>
+<img src="vivacity_peak_average_before_after_treated_weekly.svg" alt="Pre and post peak averages for treated locations">
+<h2>2. Time to post-installation peak</h2>
+<p>This shows how many weeks after installation each treated scheme/outcome reached its highest post-installation weekly average.</p>
+<img src="vivacity_weeks_to_post_peak_treated_weekly.svg" alt="Weeks to post-installation peak for treated locations">
+<h2>3. Road/path split</h2>
+<p>This shows the post-installation peak average separately for road and path/cycle-facility countlines.</p>
+<img src="vivacity_route_type_post_peak_treated_weekly.svg" alt="Road and path post-installation peak averages">
+<p>Underlying tables: <a href="vivacity_peak_average_before_after_summary.csv">scheme-role CSV</a> and <a href="vivacity_peak_average_route_type_summary.csv">route-type CSV</a>.</p>
+</body>
+</html>

@@ -1,0 +1,7 @@
+route_type,sensors,observed_countline_days,outcome,count_total,outcome_label,average_per_observed_day
+Road,7,1818,pedestrian,15643,Pedestrian,8.60451045104511
+Path/cycle facility,13,3489,pedestrian,553016,Pedestrian,158.502722843222
+Road,7,1818,cyclist,94994,Cyclist,52.2519251925193
+Path/cycle facility,13,3489,cyclist,80061,Cyclist,22.9466895958727
+Road,7,1818,active_travel_total,110637,Active travel,60.8564356435644
+Path/cycle facility,13,3489,active_travel_total,633077,Active travel,181.449412439094

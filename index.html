@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dissertation Data Analysis Outputs: Consolidated Workflow Summary</title>
+  <style>
+    :root {
+      --ink: #1f2933;
+      --muted: #64748b;
+      --line: #d7dde5;
+      --bg: #f8fafc;
+      --panel: #ffffff;
+      --accent: #2f6f73;
+      --accent-soft: #e7f3f1;
+      --warn: #8a5a00;
+      --warn-soft: #fff5d6;
+      --bad: #8a1f1f;
+      --bad-soft: #fde8e8;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.55;
+    }
+    main {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 32px 0 56px;
+    }
+    header {
+      padding: 28px 0 22px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 24px;
+    }
+    h1 {
+      font-size: 30px;
+      line-height: 1.15;
+      margin: 0 0 10px;
+      letter-spacing: 0;
+    }
+    h2 {
+      margin: 34px 0 12px;
+      font-size: 23px;
+      letter-spacing: 0;
+    }
+    h3 {
+      margin: 24px 0 8px;
+      font-size: 18px;
+      letter-spacing: 0;
+    }
+    p { margin: 8px 0 12px; }
+    a { color: #155e75; text-decoration-thickness: 1px; }
+    .subtitle {
+      max-width: 900px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .pill {
+      display: inline-block;
+      padding: 4px 9px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    section {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 18px 0;
+      box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
+    }
+    .note {
+      border-left: 4px solid var(--accent);
+      background: var(--accent-soft);
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+    .warning {
+      border-left: 4px solid var(--warn);
+      background: var(--warn-soft);
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+    .issue {
+      border-left: 4px solid var(--bad);
+      background: var(--bad-soft);
+      padding: 10px 12px;
+      margin: 12px 0;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 12px 0 18px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid var(--line);
+      padding: 8px 9px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #eef2f7;
+      font-weight: 650;
+    }
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.95em;
+      background: #eef2f7;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+    ul { margin: 8px 0 12px 22px; padding: 0; }
+    li { margin: 5px 0; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 12px;
+      margin-top: 10px;
+    }
+    .mini {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 12px;
+      background: #fbfdff;
+    }
+    .mini h3 { margin-top: 0; }
+    .small { color: var(--muted); font-size: 13px; }
+    .figure-list a { display: inline-block; margin-right: 10px; margin-bottom: 6px; }
+    @media print {
+      body { background: #fff; }
+      main { width: 100%; padding: 0; }
+      section { box-shadow: none; break-inside: avoid; }
+      a { color: #000; }
+    }
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Dissertation Data Analysis Outputs: Consolidated Workflow Summary</h1>
+    <p class="subtitle">Single-file progress summary of the current dissertation data analysis, organised by workflow stage. It labels what each section does, what outputs exist, and how the findings should currently be interpreted.</p>
+    <div class="meta">
+      <span class="pill">Project: Vivacity active travel dissertation</span>
+      <span class="pill">Generated: 2026-06-01</span>
+      <span class="pill">Main evidence: Vivacity sensor counts</span>
+      <span class="pill">Supplementary context: rail, spatial, IMD/LSOA context</span>
+    </div>
+  </header>
+
+  <section id="overview">
+    <h2>0. Overall Position</h2>
+    <p>The current work has built a descriptive and exploratory evidence base for assessing active-travel scheme areas using Vivacity countline data, supported by spatial context, matched control candidate mapping, and supplementary rail station time-series context.</p>
+    <div class="note">
+      <strong>Current conclusion in one sentence:</strong> the analysis prepares quality-checked Vivacity active-travel outputs, separates pedestrian/cyclist and road/path outcomes, compares before/after peak averages where usable baselines exist, and uses maps plus rail trends as supporting context rather than causal proof.
+    </div>
+    <div class="warning">
+      <strong>Important interpretation rule:</strong> exact scheme dates are available and certain. Current output fields showing common or placeholder dates should be treated as the date used in that output run, not as evidence that exact dates are unavailable. Final analysis should keep the exact confirmed dates consistent across all reruns.
+    </div>
+  </section>
+
+  <section id="workflow-map">
+    <h2>1. Workflow Logic</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Workflow stage</th>
+          <th>Purpose</th>
+          <th>Main files</th>
+          <th>Current status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>01 Data preparation</td>
+          <td>Prepare Vivacity count data, integrity checks, full-day filtering, modelling-ready inputs, and scheme date fields.</td>
+          <td><a href="workflow/01_data_preparation/vivacity_integrity_gate.ipynb">vivacity_integrity_gate.ipynb</a><br><a href="workflow/01_data_preparation/vivacity_full_day_cutoff_20260526.ipynb">vivacity_full_day_cutoff_20260526.ipynb</a><br><a href="workflow/01_data_preparation/vivacity_modelling_ready_inputs.ipynb">vivacity_modelling_ready_inputs.ipynb</a></td>
+          <td>Core preparation workflow exists. Final consistency check should ensure exact confirmed dates are used consistently in every downstream output.</td>
+        </tr>
+        <tr>
+          <td>02 Context matching</td>
+          <td>Join sensors to spatial context, build matched control candidates, map treated/control LSOAs, and add supplementary rail context.</td>
+          <td><a href="workflow/02_context_matching/matched_control_candidates.ipynb">matched_control_candidates.ipynb</a><br><a href="workflow/02_context_matching/sensor_lsoa_context_join.ipynb">sensor_lsoa_context_join.ipynb</a><br><a href="workflow/02_context_matching/rail_station_time_series_trends.Rmd">rail_station_time_series_trends.Rmd</a></td>
+          <td>Maps and supplementary rail report created. Non-intervention areas are represented through control candidates and mapped comparison areas.</td>
+        </tr>
+        <tr>
+          <td>03 Modelling diagnostics</td>
+          <td>Explore causal modelling feasibility and diagnose whether control relationships are strong enough for robust causal inference.</td>
+          <td><a href="workflow/03_modelling_diagnostics/causal_diagnostics_report.ipynb">causal_diagnostics_report.ipynb</a><br><a href="workflow/03_modelling_diagnostics/vivacity_causal_diagnostics.Rmd">vivacity_causal_diagnostics.Rmd</a><br><a href="workflow/03_modelling_diagnostics/vivacity_exploratory_models.Rmd">vivacity_exploratory_models.Rmd</a></td>
+          <td>Exploratory diagnostics exist. ERA5 weather controls have now been added as a sensitivity analysis and do not materially change the scheme estimates. Relationships between scheme and control areas remain weak, so results should still be framed cautiously and strengthened with better counterfactuals, holidays, and additional design checks.</td>
+        </tr>
+        <tr>
+          <td>04 Descriptive analysis</td>
+          <td>Produce current descriptive Vivacity outputs, before/after comparisons, peak averages, and visual summaries.</td>
+          <td><a href="workflow/04_descriptive_analysis/vivacity_analysis.Rmd">vivacity_analysis.Rmd</a><br><a href="workflow/04_descriptive_analysis/vivacity_first_stage_analysis.Rmd">vivacity_first_stage_analysis.Rmd</a><br><a href="workflow/04_descriptive_analysis/first_stage_analysis_outputs.Rmd">first_stage_analysis_outputs.Rmd</a><br><a href="workflow/04_descriptive_analysis/download_vivacity_era5_weather.R">download_vivacity_era5_weather.R</a></td>
+          <td>Main current evidence. Outputs now separate pedestrian/cyclist and road/path where available and include a reproducible ERA5 weather-control sensitivity.</td>
+        </tr>
+        <tr>
+          <td>05 Document generation</td>
+          <td>Turn analysis into draft chapters, methods descriptions, results narratives, and presentation materials.</td>
+          <td><a href="workflow/05_document_generation/methodology_chapter_draft.ipynb">methodology_chapter_draft.ipynb</a><br><a href="workflow/05_document_generation/results_chapter_draft.ipynb">results_chapter_draft.ipynb</a><br><a href="reports/chapter_drafts/overall_draft_1.html">overall_draft_1.html</a></td>
+          <td>Supervisor-facing draft and presentation exist. The current report should help explain what each output is for.</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="data-preparation">
+    <h2>2. Data Preparation and Integrity</h2>
+    <p>This section prepares the Vivacity data so later comparisons are not based on incomplete days, invalid records, or mixed outcome definitions.</p>
+    <ul>
+      <li><strong>Integrity gate:</strong> screens records for usable observations before descriptive or modelling analysis.</li>
+      <li><strong>Full-day cutoff:</strong> applies count completeness rules so daily/weekly outputs are less affected by partial collection.</li>
+      <li><strong>Modelling-ready inputs:</strong> creates analysis-ready datasets with intervention fields, outcomes, roles, and control matching variables.</li>
+      <li><strong>Scheme dates:</strong> exact dates are available and should remain the final authoritative dates across all outputs.</li>
+    </ul>
+  </section>
+
+  <section id="spatial-context">
+    <h2>3. Spatial Context and Control Areas</h2>
+    <p>This section explains where treated sensors and candidate non-intervention/control areas are located. It supports the interpretation of whether a comparison site is spatially and socio-economically plausible.</p>
+    <div class="grid">
+      <div class="mini">
+        <h3>Treated and Control Candidate Map</h3>
+        <p>Shows treated sensors, selected LSOA boundaries, top candidate control countlines, and matched control areas.</p>
+        <p><a href="context_data/maps/matched_control_candidate_map.html">Open matched_control_candidate_map.html</a></p>
+      </div>
+      <div class="mini">
+        <h3>Vivacity LSOA OSM Map</h3>
+        <p>Shows sensor locations and surrounding LSOA context on a street-map base.</p>
+        <p><a href="context_data/maps/vivacity_lsoa_osm_map.html">Open vivacity_lsoa_osm_map.html</a></p>
+      </div>
+      <div class="mini">
+        <h3>GeoJSON Layers</h3>
+        <p>Map layers for treated sensors, control candidates, matched LSOAs, and countline points.</p>
+        <p><a href="context_data/maps/geojson/">Open geojson folder</a></p>
+      </div>
+    </div>
+    <p><strong>How to explain this section:</strong> non-intervention locations now provide both a wider LCR benchmark and selected IMD-matched street comparisons. They strengthen contextual interpretation, but the design remains observational rather than a randomized experimental arm.</p>
+  </section>
+
+  <section id="vivacity-descriptive">
+    <h2>4. Vivacity Descriptive Analysis</h2>
+    <p>This is the main empirical section. It compares active-travel count patterns across treated and control roles, with pedestrian and cyclist outcomes separated, and with road/path outcomes separated where relevant.</p>
+
+    <h3>4.1 Fixed-Year Before/After Summary</h3>
+    <p>This output now visualises the requested fixed calendar-year comparisons. For schemes installed in 2023, it compares 2021 vs 2024 and 2022 vs 2025. For the scheme installed in 2024, it compares 2022 vs 2026 and 2023 vs 2025.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Output</th>
+          <th>What it does</th>
+          <th>File</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Peak average summary</td>
+          <td>Summarises pre/post peak averages and weeks/months to post peak.</td>
+          <td><a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.html">HTML</a> | <a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.csv">CSV</a></td>
+        </tr>
+        <tr>
+          <td>Peak visualisations</td>
+          <td>Shows current peak timing and treated weekly trends.</td>
+          <td><a href="reports/analysis_reports/vivacity_peak_average_visualisations.html">HTML</a></td>
+        </tr>
+        <tr>
+          <td>Fixed-year before/after comparison</td>
+          <td>Shows the requested fixed-year comparison table by scheme, outcome, and observed countline-day average.</td>
+          <td><a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.html">HTML</a> | <a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.csv">CSV</a></td>
+        </tr>
+        <tr>
+          <td>Active-travel decomposition check</td>
+          <td>Checks that active travel equals pedestrian plus cyclist within each fixed-year comparison, apart from rounding or missing-year cases.</td>
+          <td><a href="reports/analysis_reports/vivacity_fixed_year_active_travel_decomposition.csv">CSV</a></td>
+        </tr>
+        <tr>
+          <td>Legacy direct before/after comparison link</td>
+          <td>Kept for existing links; it now opens the fixed-year comparison output.</td>
+          <td><a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.html">HTML</a> | <a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.csv">CSV</a></td>
+        </tr>
+        <tr>
+          <td>Fixed-year bar graph comparison</td>
+          <td>Visual comparison of fixed-year averages, the wider LCR benchmark, the corrected equal-scheme IMD-matched street analysis, and paired weather-adjusted sensitivity estimates.</td>
+          <td><a href="reports/analysis_reports/vivacity_before_after_peak_bar_graphs.html">HTML</a></td>
+        </tr>
+        <tr>
+          <td>IMD-matched context comparison</td>
+          <td>Preferred equal-scheme, matched-context change estimates with block-bootstrap uncertainty, plus the countline-model sensitivity and street-volume diagnostics.</td>
+          <td><a href="reports/analysis_reports/vivacity_imd_matched_context_change_results.csv">Preferred results</a> | <a href="reports/analysis_reports/vivacity_imd_matched_countline_model_sensitivity.csv">Sensitivity</a> | <a href="reports/analysis_reports/vivacity_imd_matched_level_diagnostics.csv">Diagnostics</a></td>
+        </tr>
+        <tr>
+          <td>Weather-control sensitivity</td>
+          <td>ERA5 daily temperature, precipitation, maximum wind speed, and solar radiation are added to the LCR and IMD-context models. The adjusted active-travel estimates move by less than one percentage point, so weather does not explain the headline direction.</td>
+          <td><a href="reports/analysis_reports/vivacity_weather_control_sensitivity_summary.csv">Summary</a> | <a href="reports/analysis_reports/vivacity_era5_weather_daily.csv">Daily weather</a> | <a href="reports/analysis_reports/vivacity_era5_weather_site_lookup.csv">Site lookup</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4.2 Current Key Descriptive Findings</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Scheme</th>
+          <th>Location</th>
+          <th>Current interpretation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12b</td>
+          <td>Cronton Road / Sandy Lane</td>
+          <td>Post-peak values exist, but there is no usable positive pre-installation active-travel baseline after quality filtering. Describe as post-peak only, not as no records at all.</td>
+        </tr>
+        <tr>
+          <td>12d</td>
+          <td>Aigburth Road / Otterspool Promenade</td>
+          <td>In the fixed-year 2022 vs 2025 comparison, active travel increases from 140.354 to 169.044 per observed countline-day, about +20.4 percent. The 2021 baseline year has no usable treated observations in the current quality-filtered weekly output.</td>
+        </tr>
+        <tr>
+          <td>12e</td>
+          <td>Park Road / Path off Park Road</td>
+          <td>Post-peak values exist, but no usable positive pre-installation active-travel baseline after quality filtering. Describe as post-peak only.</td>
+        </tr>
+        <tr>
+          <td>12f</td>
+          <td>Leasowe Road / Wallasey corridor</td>
+          <td>In the fixed-year 2022 vs 2025 comparison, active travel increases from 66.194 to 99.540 per observed countline-day, about +50.4 percent. Cyclist and pedestrian averages both increase.</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>Astmoor Busway / Warrington Road</td>
+          <td>In the fixed-year 2023 vs 2025 comparison, active travel decreases from 108.378 to 88.807 per observed countline-day, about -18.1 percent. Cyclist average increases but pedestrian average decreases. The 2026 comparison is partial to the available data cut-off.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>4.3 Fixed-Year Direct Comparison Values</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Scheme</th>
+          <th>Comparison</th>
+          <th>Outcome</th>
+          <th>Before average</th>
+          <th>After average</th>
+          <th>Change</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>12d</td><td>2022 vs 2025</td><td>Active travel</td><td>140.354</td><td>169.044</td><td>+20.4 percent</td></tr>
+        <tr><td>12d</td><td>2022 vs 2025</td><td>Pedestrian</td><td>107.204</td><td>130.798</td><td>+22.0 percent</td></tr>
+        <tr><td>12d</td><td>2022 vs 2025</td><td>Cyclist</td><td>33.150</td><td>38.246</td><td>+15.4 percent</td></tr>
+        <tr><td>12f</td><td>2022 vs 2025</td><td>Active travel</td><td>66.194</td><td>99.540</td><td>+50.4 percent</td></tr>
+        <tr><td>12f</td><td>2022 vs 2025</td><td>Pedestrian</td><td>45.694</td><td>66.428</td><td>+45.4 percent</td></tr>
+        <tr><td>12f</td><td>2022 vs 2025</td><td>Cyclist</td><td>20.500</td><td>33.112</td><td>+61.5 percent</td></tr>
+        <tr><td>13</td><td>2023 vs 2025</td><td>Active travel</td><td>108.378</td><td>88.807</td><td>-18.1 percent</td></tr>
+        <tr><td>13</td><td>2023 vs 2025</td><td>Pedestrian</td><td>64.677</td><td>41.430</td><td>-35.9 percent</td></tr>
+        <tr><td>13</td><td>2023 vs 2025</td><td>Cyclist</td><td>43.701</td><td>47.376</td><td>+8.4 percent</td></tr>
+      </tbody>
+    </table>
+
+    <h3>4.4 12b and 12e Baseline Audit</h3>
+    <p>The audit resolves an important wording issue: 12b and 12e do have pre-installation dated rows, but those rows do not provide usable positive pre-installation active-travel baselines after the current quality filters.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Scheme</th>
+          <th>Pre dated rows</th>
+          <th>Pre unique dates</th>
+          <th>Quality-ok rows</th>
+          <th>Positive active rows</th>
+          <th>Correct wording</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>12b</td><td>4,380</td><td>1,095</td><td>0</td><td>0</td><td>Pre-installation rows exist, but no usable/positive pre-installation active-travel baseline after quality filtering.</td></tr>
+        <tr><td>12e</td><td>5,475</td><td>1,095</td><td>0</td><td>0</td><td>Pre-installation rows exist, but no usable/positive pre-installation active-travel baseline after quality filtering.</td></tr>
+      </tbody>
+    </table>
+    <p><a href="reports/analysis_reports/vivacity_12b_12e_pre_installation_record_audit.csv">Open vivacity_12b_12e_pre_installation_record_audit.csv</a></p>
+
+    <h3>4.5 Visual Output Files</h3>
+    <p class="figure-list">
+      <a href="reports/analysis_reports/vivacity_before_after_peak_bar_graphs.html">Fixed-year before/after bar chart</a>
+      <a href="reports/analysis_reports/vivacity_grouped_bar_before_after_peak_all_schemes.svg">Grouped fixed-year SVG</a>
+      <a href="reports/analysis_reports/vivacity_direct_peak_comparison_scheme_12b.svg">Scheme 12b SVG</a>
+      <a href="reports/analysis_reports/vivacity_direct_peak_comparison_scheme_12d.svg">Scheme 12d SVG</a>
+      <a href="reports/analysis_reports/vivacity_direct_peak_comparison_scheme_12e.svg">Scheme 12e SVG</a>
+      <a href="reports/analysis_reports/vivacity_direct_peak_comparison_scheme_12f.svg">Scheme 12f SVG</a>
+      <a href="reports/analysis_reports/vivacity_direct_peak_comparison_scheme_13.svg">Scheme 13 SVG</a>
+    </p>
+  </section>
+
+  <section id="modelling">
+    <h2>5. Modelling Diagnostics and Current Limitations</h2>
+    <p>This section tests whether the current data structure can support stronger causal claims. The present evidence is better described as descriptive and exploratory unless additional design improvements are made.</p>
+    <div class="grid">
+      <div class="mini">
+        <h3>Causal Diagnostics</h3>
+        <p>Checks whether treated and candidate control series have sufficient pre-period comparability for causal analysis.</p>
+        <p><a href="reports/analysis_reports/causal_diagnostics_report_vivacity.docx">causal_diagnostics_report_vivacity.docx</a></p>
+      </div>
+      <div class="mini">
+        <h3>Exploratory Models</h3>
+        <p>Explores model relationships and the current weakness of control-variable relationships.</p>
+        <p><a href="workflow/03_modelling_diagnostics/vivacity_exploratory_models.Rmd">vivacity_exploratory_models.Rmd</a></p>
+      </div>
+      <div class="mini">
+        <h3>Methods Report</h3>
+        <p>Documents current exploratory methods and interpretation constraints.</p>
+        <p><a href="reports/analysis_reports/methods_vivacity_exploratory_analysis.docx">methods_vivacity_exploratory_analysis.docx</a></p>
+      </div>
+    </div>
+    <h3>What remains weak</h3>
+    <ul>
+      <li>Some control relationships are weak, limiting confidence in causal estimates.</li>
+      <li>12b and 12e cannot support a standard before/after comparison under the current quality-filtered baseline rules.</li>
+      <li>Weather, public holidays, seasonality, daylight, and event effects are not yet fully added as explanatory controls.</li>
+      <li>Non-intervention areas exist as candidates, but the final design needs a clear rule for when a control is valid versus descriptive-only.</li>
+    </ul>
+  </section>
+
+  <section id="rail-context">
+    <h2>6. Supplementary Rail Time-Series Context</h2>
+    <p>This section adds ORR rail station usage as broader contextual evidence for Liverpool City Region movement patterns. It is not used as direct evidence of active-travel scheme impact.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Output</th>
+          <th>What it does</th>
+          <th>File</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Rail Rmd</td>
+          <td>Reads ORR Table 1415 ODS, filters selected stations and Liverpool local-authority stations, and generates plots/tables.</td>
+          <td><a href="workflow/02_context_matching/rail_station_time_series_trends.Rmd">rail_station_time_series_trends.Rmd</a></td>
+        </tr>
+        <tr>
+          <td>Rendered rail report</td>
+          <td>Single HTML report of rail trends and visualisations.</td>
+          <td><a href="reports/rendered_html/rail_station_time_series_trends.html">rail_station_time_series_trends.html</a></td>
+        </tr>
+        <tr>
+          <td>Liverpool station inventory</td>
+          <td>All ORR stations whose local authority is Liverpool.</td>
+          <td><a href="reports/analysis_reports/rail_station_time_series/liverpool_local_authority_station_inventory_from_orr_1415.csv">CSV</a></td>
+        </tr>
+      </tbody>
+    </table>
+    <h3>Rail findings to report carefully</h3>
+    <ul>
+      <li>Maghull North latest entries/exits are above the 2019/20 pre-pandemic value in the current ORR series.</li>
+      <li>Prescot latest entries/exits are below the 2019/20 value, but much higher than the earliest observed value.</li>
+      <li>St Helens Junction latest entries/exits are slightly above the 2019/20 value.</li>
+      <li>The 2008/09 spike, especially for Prescot, is treated as an ORR methodology break rather than real sudden passenger growth.</li>
+      <li>The 2003/04 gap for Prescot and St Helens Junction is present in the original ORR workbook as <code>[x]</code>, meaning data not available.</li>
+    </ul>
+    <table>
+      <thead>
+        <tr>
+          <th>Station</th>
+          <th>2019/20</th>
+          <th>2020/21</th>
+          <th>Latest year</th>
+          <th>Latest value</th>
+          <th>Latest vs 2019/20</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Maghull North</td><td>517,166</td><td>138,794</td><td>2024/25</td><td>613,510</td><td>+18.63 percent</td></tr>
+        <tr><td>Prescot</td><td>314,180</td><td>77,728</td><td>2024/25</td><td>292,684</td><td>-6.84 percent</td></tr>
+        <tr><td>St Helens Junction</td><td>200,212</td><td>43,018</td><td>2024/25</td><td>206,320</td><td>+3.05 percent</td></tr>
+      </tbody>
+    </table>
+    <p class="figure-list">
+      <a href="reports/analysis_reports/rail_station_time_series/rail_station_entries_exits_trend.png">Entries/exits trend</a>
+      <a href="reports/analysis_reports/rail_station_time_series/rail_station_entries_exits_indexed_trend.png">Indexed trend</a>
+      <a href="reports/analysis_reports/rail_station_time_series/rail_station_entries_exits_yoy_change.png">YoY trend excluding 2008/09 break</a>
+      <a href="reports/analysis_reports/rail_station_time_series/liverpool_local_authority_entries_exits_facets.png">Liverpool station facets</a>
+      <a href="reports/analysis_reports/rail_station_time_series/liverpool_local_authority_latest_entries_exits_ranking.png">Liverpool latest-year ranking</a>
+    </p>
+  </section>
+
+  <section id="drafts-presentation">
+    <h2>7. Drafts, Presentation, and Supervisor-Facing Materials</h2>
+    <p>This section turns the analysis into text and slides for explanation to a supervisor. It should be used with caution where analysis is still provisional.</p>
+    <table>
+      <thead>
+        <tr>
+          <th>Material</th>
+          <th>Purpose</th>
+          <th>File</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Supervisor presentation</td>
+          <td>Progress deck explaining current data, methods, limitations, and provisional outputs.</td>
+          <td><a href="reports/presentation/vivacity_active_travel_update_1.pptx">vivacity_active_travel_update_1.pptx</a></td>
+        </tr>
+        <tr>
+          <td>Overall draft 1</td>
+          <td>First overall draft covering introduction, methodology/methods, data preprocessing, and brief results/discussion placeholders.</td>
+          <td><a href="reports/chapter_drafts/overall_draft_1.html">overall_draft_1.html</a> | <a href="reports/chapter_drafts/overall_draft_1.md">overall_draft_1.md</a></td>
+        </tr>
+        <tr>
+          <td>Chapter drafts</td>
+          <td>Separate methodology, results, and discussion chapter draft documents.</td>
+          <td><a href="reports/chapter_drafts/dissertation_methodology_chapter_draft_vivacity.docx">Methodology</a> | <a href="reports/chapter_drafts/dissertation_results_chapter_draft_vivacity.docx">Results</a> | <a href="reports/chapter_drafts/dissertation_discussion_chapter_draft_vivacity.docx">Discussion</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section id="next-actions">
+    <h2>8. Recommended Next Actions</h2>
+    <ol>
+      <li><strong>Preserve the confirmed scheme dates:</strong> treat the exact installation dates already used in the analysis as fixed inputs in every future rerun.</li>
+      <li><strong>Keep 12b and 12e wording precise:</strong> say pre-installation rows exist, but no usable positive pre-installation active-travel baseline remains after quality filtering.</li>
+      <li><strong>Separate outcomes consistently:</strong> continue reporting pedestrian, cyclist, active-travel total, road, and path/cycle-facility outputs separately.</li>
+      <li><strong>Strengthen the remaining model design:</strong> weather controls are now included; next add holidays/events where feasible and improve non-intervention comparison areas before making stronger causal claims.</li>
+      <li><strong>Use rail context only as context:</strong> report ORR station usage as background movement context, with explicit notes on the 2008/09 methodology break and 2003/04 missing data.</li>
+      <li><strong>Update presentation and draft wording:</strong> report that ERA5 adjustment changes the active-travel estimates by less than one percentage point and does not alter the interpretation.</li>
+    </ol>
+  </section>
+
+  <section id="inventory">
+    <h2>9. Output Inventory</h2>
+    <p>This inventory lists the main currently visible files that explain the analysis. It does not duplicate every source document, but it brings the analysis outputs into one navigable place.</p>
+    <h3>Rendered HTML outputs</h3>
+    <ul>
+      <li><a href="reports/rendered_html/vivacity_analysis.html">vivacity_analysis.html</a></li>
+      <li><a href="reports/rendered_html/vivacity_first_stage_analysis.html">vivacity_first_stage_analysis.html</a></li>
+      <li><a href="reports/rendered_html/rail_station_time_series_trends.html">rail_station_time_series_trends.html</a></li>
+      <li><a href="reports/analysis_reports/vivacity_peak_average_visualisations.html">vivacity_peak_average_visualisations.html</a></li>
+      <li><a href="reports/analysis_reports/vivacity_before_after_peak_bar_graphs.html">vivacity_before_after_peak_bar_graphs.html</a></li>
+    </ul>
+    <h3>CSV summaries and audits</h3>
+    <ul>
+      <li><a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.csv">vivacity_peak_average_before_after_summary.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_peak_average_route_type_summary.csv">vivacity_peak_average_route_type_summary.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.csv">vivacity_direct_before_after_peak_comparison.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.csv">vivacity_fixed_year_average_comparison.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_fixed_year_active_travel_decomposition.csv">vivacity_fixed_year_active_travel_decomposition.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_weather_control_sensitivity_summary.csv">vivacity_weather_control_sensitivity_summary.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_weather_adjusted_lcr_regression_2022_2024.csv">vivacity_weather_adjusted_lcr_regression_2022_2024.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_weather_adjusted_sensitivity.csv">vivacity_imd_weather_adjusted_sensitivity.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_era5_weather_daily.csv">vivacity_era5_weather_daily.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_era5_weather_site_lookup.csv">vivacity_era5_weather_site_lookup.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_12b_12e_pre_installation_record_audit.csv">vivacity_12b_12e_pre_installation_record_audit.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_matched_sensor_pairs.csv">vivacity_imd_matched_sensor_pairs.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_matched_active_travel_composition.csv">vivacity_imd_matched_active_travel_composition.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_matched_context_change_results.csv">vivacity_imd_matched_context_change_results.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_matched_countline_model_sensitivity.csv">vivacity_imd_matched_countline_model_sensitivity.csv</a></li>
+      <li><a href="reports/analysis_reports/vivacity_imd_matched_level_diagnostics.csv">vivacity_imd_matched_level_diagnostics.csv</a></li>
+      <li><a href="reports/analysis_reports/rail_station_time_series/rail_station_entries_exits_summary.csv">rail_station_entries_exits_summary.csv</a></li>
+      <li><a href="reports/analysis_reports/rail_station_time_series/rail_station_2008_methodology_break_values.csv">rail_station_2008_methodology_break_values.csv</a></li>
+    </ul>
+    <h3>Maps</h3>
+    <ul>
+      <li><a href="context_data/maps/matched_control_candidate_map.html">matched_control_candidate_map.html</a></li>
+      <li><a href="context_data/maps/vivacity_lsoa_osm_map.html">vivacity_lsoa_osm_map.html</a></li>
+    </ul>
+    <h3>Documents and slides</h3>
+    <ul>
+      <li><a href="reports/presentation/vivacity_active_travel_update_1.pptx">vivacity_active_travel_update_1.pptx</a></li>
+      <li><a href="reports/chapter_drafts/overall_draft_1.html">overall_draft_1.html</a></li>
+      <li><a href="reports/analysis_reports/descriptive_data_analysis_report_vivacity.docx">descriptive_data_analysis_report_vivacity.docx</a></li>
+      <li><a href="reports/analysis_reports/results_exploratory_analysis.docx">results_exploratory_analysis.docx</a></li>
+      <li><a href="reports/analysis_reports/causal_diagnostics_report_vivacity.docx">causal_diagnostics_report_vivacity.docx</a></li>
+    </ul>
+  </section>
+</main>
+</body>
+</html>

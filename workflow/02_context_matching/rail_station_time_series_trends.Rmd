@@ -1,0 +1,595 @@
+---
+title: "Liverpool City Region Rail Station Time-Series Context"
+subtitle: "ORR Table 1415 entries/exits and interchanges"
+author: "Nanxi Lu"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    number_sections: true
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(
+  echo = TRUE,
+  message = FALSE,
+  warning = FALSE,
+  fig.width = 9,
+  fig.height = 5.5,
+  dpi = 160
+)
+
+library(dplyr)
+library(tidyr)
+library(readr)
+library(ggplot2)
+library(scales)
+library(xml2)
+library(stringr)
+library(knitr)
+```
+
+## Purpose
+
+This document prepares a supplementary time-series view of rail station usage for selected Liverpool City Region stations. It uses Office of Rail and Road Table 1415 annual station entries/exits and interchanges, then filters a small set of relevant stations for descriptive comparison.
+
+This rail analysis is **contextual only**. It does not replace the Vivacity sensor analysis and should not be interpreted as evidence of active-travel scheme impact. Its role is to show broader station-area movement trends and time differences across years.
+
+The 2008/09 financial year is treated as a methodological break. ORR's 2008/09 station usage report explains that the Origin-Destination Matrix was integrated with the MOIRA Demand Matrix and began including estimates for Passenger Transport Executive (PTE) area journeys that were not included in previous years. For Liverpool City Region stations, this means the 2008/09 jump should be flagged rather than interpreted as a direct behavioural change.
+
+## Station Selection
+
+The default station list follows the current dissertation supplementary context workflow: Maghull North, Prescot, and St Helens Junction. These can be changed below if the supervisor asks for a different Liverpool/Liverpool City Region station set.
+
+The report also extracts all stations whose ORR local authority is recorded as Liverpool. This gives a clearer city-level station subset alongside the smaller dissertation context set.
+
+```{r parameters}
+base_dir <- "/Users/lu_nanxi/CASA/Dissertation_Data"
+
+source_ods <- file.path(
+  base_dir,
+  "source_documents",
+  "table-1415-time-series-of-passenger-entries-and-exits-and-interchanges-by-station.ods"
+)
+
+output_dir <- file.path(
+  base_dir,
+  "reports",
+  "analysis_reports",
+  "rail_station_time_series"
+)
+
+dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+
+target_stations <- c(
+  "Maghull North",
+  "Prescot",
+  "St Helens Junction"
+)
+
+liverpool_local_authority <- "Liverpool"
+methodology_break_year <- 2008
+
+lcr_local_authorities <- c(
+  "Liverpool",
+  "Knowsley",
+  "Sefton",
+  "St. Helens",
+  "Wirral",
+  "Halton"
+)
+```
+
+## ODS Reader
+
+The ODS file is read directly using `xml2`, avoiding an additional `readODS` dependency. The code below extracts repeated spreadsheet cells correctly enough for ORR Table 1415's station tables.
+
+```{r ods-reader}
+ns <- c(
+  office = "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
+  table = "urn:oasis:names:tc:opendocument:xmlns:table:1.0"
+)
+
+cell_text <- function(cell) {
+  paste(xml_text(cell), collapse = "") |> str_trim()
+}
+
+repeat_count <- function(node, attr_name) {
+  value <- xml_attr(node, attr_name)
+  if (is.na(value) || value == "") 1L else as.integer(value)
+}
+
+read_ods_sheet <- function(path, sheet_name) {
+  tmp <- tempfile(fileext = ".xml")
+  unzip(path, files = "content.xml", exdir = dirname(tmp))
+  content_path <- file.path(dirname(tmp), "content.xml")
+  doc <- read_xml(content_path)
+
+  tables <- xml_find_all(doc, ".//table:table", ns = ns)
+  sheet_index <- which(xml_attr(tables, "name") == sheet_name)
+
+  if (length(sheet_index) == 0) {
+    stop("Sheet not found: ", sheet_name)
+  }
+
+  rows <- xml_find_all(tables[[sheet_index[1]]], "table:table-row", ns = ns)
+
+  parsed <- lapply(rows, function(row) {
+    cells <- xml_find_all(row, "table:table-cell", ns = ns)
+    values <- character()
+
+    for (cell in cells) {
+      repeated <- repeat_count(cell, "number-columns-repeated")
+      txt <- cell_text(cell)
+      if (txt == "" && repeated > 50) repeated <- 1L
+      values <- c(values, rep(txt, repeated))
+    }
+
+    values
+  })
+
+  parsed[vapply(parsed, function(x) any(x != ""), logical(1))]
+}
+
+clean_number <- function(value) {
+  value <- as.character(value) |> str_trim()
+  value[value %in% c("", "[x]", "[z]", "[b]", "NA")] <- NA_character_
+  readr::parse_number(value)
+}
+
+table_to_long <- function(rows, metric) {
+  header_index <- which(vapply(
+    rows,
+    function(row) length(row) >= 3 &&
+      row[1] == "Sort" &&
+      row[2] == "Station name" &&
+      row[3] == "Three Letter Code(TLC)",
+    logical(1)
+  ))[1]
+
+  if (is.na(header_index)) {
+    stop("Could not find ORR station table header.")
+  }
+
+  headers <- rows[[header_index]]
+  year_cols <- which(str_detect(headers, "^Apr \\d{4} to Mar \\d{4}$"))
+
+  out <- list()
+  out_i <- 1L
+
+  for (row in rows[(header_index + 1):length(rows)]) {
+    if (length(row) < 6) next
+
+    station_name <- row[2]
+    if (is.na(station_name) || station_name == "") next
+
+    for (idx in year_cols) {
+      label <- headers[idx]
+      start_year <- as.integer(str_match(label, "Apr (\\d{4}) to Mar (\\d{4})")[, 2])
+      value <- if (idx <= length(row)) row[idx] else ""
+
+      out[[out_i]] <- tibble(
+        station_name = station_name,
+        three_letter_code = row[3],
+        national_location_code = row[4],
+        region = row[5],
+        local_authority = row[6],
+        financial_year = paste0(start_year, "/", str_sub(as.character(start_year + 1), -2)),
+        financial_year_start = start_year,
+        metric = metric,
+        value = clean_number(value),
+        raw_value = value
+      )
+
+      out_i <- out_i + 1L
+    }
+  }
+
+  bind_rows(out)
+}
+```
+
+## Build Rail Time Series
+
+```{r build-data}
+entries <- read_ods_sheet(source_ods, "1415a_Entries_and_Exits") |>
+  table_to_long("entries_and_exits")
+
+interchanges <- read_ods_sheet(source_ods, "1415b_Interchanges") |>
+  table_to_long("interchanges")
+
+rail_long_all <- bind_rows(entries, interchanges)
+
+station_inventory <- rail_long_all |>
+  filter(local_authority %in% lcr_local_authorities) |>
+  distinct(station_name, three_letter_code, national_location_code, region, local_authority) |>
+  arrange(local_authority, station_name)
+
+liverpool_station_inventory <- station_inventory |>
+  filter(local_authority == liverpool_local_authority) |>
+  arrange(station_name)
+
+rail_long <- rail_long_all |>
+  filter(station_name %in% target_stations) |>
+  mutate(
+    metric_label = recode(
+      metric,
+      entries_and_exits = "Entries and exits",
+      interchanges = "Interchanges"
+    )
+  ) |>
+  arrange(station_name, metric, financial_year_start)
+
+liverpool_long <- rail_long_all |>
+  filter(local_authority == liverpool_local_authority) |>
+  mutate(
+    metric_label = recode(
+      metric,
+      entries_and_exits = "Entries and exits",
+      interchanges = "Interchanges"
+    )
+  ) |>
+  arrange(station_name, metric, financial_year_start)
+
+rail_wide <- rail_long |>
+  select(
+    station_name, three_letter_code, national_location_code, region,
+    local_authority, financial_year, financial_year_start, metric, value, raw_value
+  ) |>
+  pivot_wider(
+    names_from = metric,
+    values_from = c(value, raw_value),
+    names_glue = "{metric}_{.value}"
+  ) |>
+  arrange(station_name, financial_year_start)
+
+liverpool_wide <- liverpool_long |>
+  select(
+    station_name, three_letter_code, national_location_code, region,
+    local_authority, financial_year, financial_year_start, metric, value, raw_value
+  ) |>
+  pivot_wider(
+    names_from = metric,
+    values_from = c(value, raw_value),
+    names_glue = "{metric}_{.value}"
+  ) |>
+  arrange(station_name, financial_year_start)
+
+readr::write_csv(station_inventory, file.path(output_dir, "lcr_station_inventory_from_orr_1415.csv"))
+readr::write_csv(liverpool_station_inventory, file.path(output_dir, "liverpool_local_authority_station_inventory_from_orr_1415.csv"))
+readr::write_csv(rail_long, file.path(output_dir, "selected_liverpool_region_station_usage_long.csv"))
+readr::write_csv(rail_wide, file.path(output_dir, "selected_liverpool_region_station_usage_wide.csv"))
+readr::write_csv(liverpool_long, file.path(output_dir, "liverpool_local_authority_station_usage_long.csv"))
+readr::write_csv(liverpool_wide, file.path(output_dir, "liverpool_local_authority_station_usage_wide.csv"))
+
+station_inventory |>
+  filter(station_name %in% target_stations) |>
+  kable(caption = "Selected station metadata")
+```
+
+## Liverpool Station Subset
+
+The table below confirms the stations filtered from ORR Table 1415 where the local authority is Liverpool. This is useful if the analysis needs to describe Liverpool city stations separately from the wider Liverpool City Region context stations.
+
+```{r liverpool-station-subset}
+liverpool_station_inventory |>
+  kable(caption = "Liverpool local-authority stations identified in ORR Table 1415")
+```
+
+## Data Coverage
+
+```{r coverage-table}
+coverage <- rail_long |>
+  group_by(station_name, local_authority, metric_label) |>
+  summarise(
+    first_year = min(financial_year_start[!is.na(value)], na.rm = TRUE),
+    last_year = max(financial_year_start[!is.na(value)], na.rm = TRUE),
+    observed_years = sum(!is.na(value)),
+    missing_or_suppressed_years = sum(is.na(value)),
+    .groups = "drop"
+  ) |>
+  mutate(
+    first_year = if_else(is.infinite(first_year), NA_integer_, first_year),
+    last_year = if_else(is.infinite(last_year), NA_integer_, last_year)
+  )
+
+coverage |>
+  kable(caption = "Annual data coverage for selected stations and metrics")
+```
+
+## Overall Trends
+
+```{r entries-trend-plot}
+entries_plot_data <- rail_long |>
+  filter(metric == "entries_and_exits")
+
+p_entries <- ggplot(entries_plot_data, aes(financial_year_start, value, colour = station_name)) +
+  geom_line(linewidth = 1.1, na.rm = TRUE) +
+  geom_point(size = 2, na.rm = TRUE) +
+  geom_vline(xintercept = methodology_break_year, linetype = "dotdash", colour = "#D95F02") +
+  geom_vline(xintercept = c(2019, 2020), linetype = "dashed", colour = "grey55") +
+  scale_y_continuous(labels = comma) +
+  scale_x_continuous(breaks = seq(1997, 2024, by = 2)) +
+  labs(
+    title = "Annual rail station entries and exits",
+    subtitle = "Orange line marks the 2008/09 ORR methodology break; grey dashed lines mark 2019/20 and 2020/21.",
+    x = "Financial year start",
+    y = "Entries and exits",
+    colour = "Station"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+
+p_entries
+
+ggsave(
+  file.path(output_dir, "rail_station_entries_exits_trend.png"),
+  p_entries,
+  width = 10,
+  height = 6,
+  dpi = 180
+)
+```
+
+## Indexed Comparison
+
+Raw passenger counts differ substantially across stations. The indexed chart below shows the relative pattern by setting each station's first observed entries/exits value to 100.
+
+```{r indexed-trend-plot}
+indexed_entries <- entries_plot_data |>
+  group_by(station_name) |>
+  arrange(financial_year_start, .by_group = TRUE) |>
+  mutate(
+    first_observed_value = first(value[!is.na(value)]),
+    indexed_to_first_observed = value / first_observed_value * 100
+  ) |>
+  ungroup()
+
+p_indexed <- ggplot(indexed_entries, aes(financial_year_start, indexed_to_first_observed, colour = station_name)) +
+  geom_hline(yintercept = 100, colour = "grey75") +
+  geom_line(linewidth = 1.1, na.rm = TRUE) +
+  geom_point(size = 2, na.rm = TRUE) +
+  geom_vline(xintercept = methodology_break_year, linetype = "dotdash", colour = "#D95F02") +
+  geom_vline(xintercept = c(2019, 2020), linetype = "dashed", colour = "grey55") +
+  scale_x_continuous(breaks = seq(1997, 2024, by = 2)) +
+  labs(
+    title = "Indexed entries/exits trend",
+    subtitle = "Each station is indexed to its first observed year, so the chart compares relative change rather than absolute scale.",
+    x = "Financial year start",
+    y = "Index: first observed year = 100",
+    colour = "Station"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+
+p_indexed
+
+ggsave(
+  file.path(output_dir, "rail_station_entries_exits_indexed_trend.png"),
+  p_indexed,
+  width = 10,
+  height = 6,
+  dpi = 180
+)
+```
+
+## Year-on-Year Change
+
+The year-on-year chart excludes the 2008/09 percentage-change bar because it compares values before and after an ORR methodology change. The raw 2008/09 values remain in the long and wide data outputs, but the visual trend should not present that discontinuity as normal growth.
+
+```{r yoy-change}
+yoy_entries <- entries_plot_data |>
+  group_by(station_name) |>
+  arrange(financial_year_start, .by_group = TRUE) |>
+  mutate(
+    previous_value = lag(value),
+    yoy_absolute_change = value - previous_value,
+    yoy_percent_change = (value / previous_value - 1) * 100,
+    exclude_from_yoy_chart = financial_year_start == methodology_break_year
+  ) |>
+  ungroup()
+
+methodology_break_values <- yoy_entries |>
+  filter(exclude_from_yoy_chart) |>
+  select(
+    station_name,
+    financial_year,
+    previous_value,
+    value,
+    yoy_absolute_change,
+    yoy_percent_change
+  )
+
+readr::write_csv(
+  methodology_break_values,
+  file.path(output_dir, "rail_station_2008_methodology_break_values.csv")
+)
+
+methodology_break_values |>
+  mutate(
+    across(c(previous_value, value, yoy_absolute_change), comma),
+    yoy_percent_change = round(yoy_percent_change, 2)
+  ) |>
+  kable(caption = "2008/09 values retained but excluded from the YoY chart")
+
+p_yoy <- yoy_entries |>
+  filter(!is.na(yoy_percent_change), !exclude_from_yoy_chart) |>
+  ggplot(aes(financial_year_start, yoy_percent_change, fill = station_name)) +
+  geom_col(position = "dodge", width = 0.8) +
+  geom_hline(yintercept = 0, colour = "grey35") +
+  scale_y_continuous(labels = label_percent(scale = 1)) +
+  scale_x_continuous(breaks = seq(1998, 2024, by = 2)) +
+  labs(
+    title = "Year-on-year change in station entries/exits, excluding the 2008/09 methodology break",
+    subtitle = "The 2008/09 bar is removed because ORR changed the station-usage estimation method; 2020/21 reflects COVID-19 disruption.",
+    x = "Financial year start",
+    y = "Year-on-year percentage change",
+    fill = "Station"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+
+p_yoy
+
+ggsave(
+  file.path(output_dir, "rail_station_entries_exits_yoy_change.png"),
+  p_yoy,
+  width = 10,
+  height = 6,
+  dpi = 180
+)
+```
+
+## Pre-Pandemic and Latest-Year Comparison
+
+```{r summary-comparison}
+station_summary <- entries_plot_data |>
+  group_by(station_name, local_authority) |>
+  summarise(
+    first_observed_year = financial_year_start[which(!is.na(value))[1]],
+    first_observed_entries_exits = first(value[!is.na(value)]),
+    pre_pandemic_2019_20 = value[financial_year_start == 2019][1],
+    pandemic_2020_21 = value[financial_year_start == 2020][1],
+    latest_year = max(financial_year_start[!is.na(value)], na.rm = TRUE),
+    latest_entries_exits = value[financial_year_start == latest_year][1],
+    .groups = "drop"
+  ) |>
+  mutate(
+    pandemic_drop_from_2019_20 = pandemic_2020_21 - pre_pandemic_2019_20,
+    pandemic_drop_percent = (pandemic_2020_21 / pre_pandemic_2019_20 - 1) * 100,
+    latest_vs_2019_20 = latest_entries_exits - pre_pandemic_2019_20,
+    latest_vs_2019_20_percent = (latest_entries_exits / pre_pandemic_2019_20 - 1) * 100,
+    latest_vs_first_observed_percent = (latest_entries_exits / first_observed_entries_exits - 1) * 100
+  ) |>
+  arrange(desc(latest_entries_exits))
+
+readr::write_csv(station_summary, file.path(output_dir, "rail_station_entries_exits_summary.csv"))
+
+station_summary |>
+  mutate(across(where(is.numeric), ~ round(.x, 2))) |>
+  kable(caption = "Station-level change summary")
+```
+
+## Liverpool Local-Authority Trends
+
+The charts below use the wider Liverpool local-authority station filter. The small-multiple chart keeps each station readable, while the latest-year ranking shows which stations dominate overall passenger entries/exits in the most recent ORR year.
+
+```{r liverpool-local-authority-trends}
+liverpool_entries <- liverpool_long |>
+  filter(metric == "entries_and_exits")
+
+p_liverpool_facets <- liverpool_entries |>
+  ggplot(aes(financial_year_start, value)) +
+  geom_line(colour = "#255C99", linewidth = 0.8, na.rm = TRUE) +
+  geom_point(colour = "#255C99", size = 1.2, na.rm = TRUE) +
+  geom_vline(xintercept = c(2019, 2020), linetype = "dashed", colour = "grey60") +
+  facet_wrap(~ station_name, scales = "free_y", ncol = 4) +
+  scale_y_continuous(labels = comma) +
+  scale_x_continuous(breaks = c(2000, 2010, 2020, 2024)) +
+  labs(
+    title = "Liverpool local-authority station entries/exits",
+    subtitle = "Each panel has its own y-axis so smaller stations remain visible.",
+    x = "Financial year start",
+    y = "Entries and exits"
+  ) +
+  theme_minimal(base_size = 10) +
+  theme(
+    strip.text = element_text(face = "bold"),
+    panel.grid.minor = element_blank()
+  )
+
+p_liverpool_facets
+
+ggsave(
+  file.path(output_dir, "liverpool_local_authority_entries_exits_facets.png"),
+  p_liverpool_facets,
+  width = 12,
+  height = 10,
+  dpi = 180
+)
+
+liverpool_latest <- liverpool_entries |>
+  filter(!is.na(value)) |>
+  group_by(station_name) |>
+  filter(financial_year_start == max(financial_year_start, na.rm = TRUE)) |>
+  ungroup() |>
+  arrange(desc(value))
+
+p_liverpool_latest <- liverpool_latest |>
+  ggplot(aes(reorder(station_name, value), value)) +
+  geom_col(fill = "#2A9D8F") +
+  coord_flip() +
+  scale_y_continuous(labels = comma) +
+  labs(
+    title = "Latest-year entries/exits for Liverpool local-authority stations",
+    subtitle = "Ranked by the most recent observed ORR value for each station.",
+    x = NULL,
+    y = "Entries and exits"
+  ) +
+  theme_minimal(base_size = 11)
+
+p_liverpool_latest
+
+ggsave(
+  file.path(output_dir, "liverpool_local_authority_latest_entries_exits_ranking.png"),
+  p_liverpool_latest,
+  width = 9,
+  height = 7,
+  dpi = 180
+)
+
+readr::write_csv(liverpool_latest, file.path(output_dir, "liverpool_local_authority_latest_entries_exits_ranking.csv"))
+```
+
+## Interchanges
+
+```{r interchanges-trend}
+interchange_plot_data <- rail_long |>
+  filter(metric == "interchanges")
+
+p_interchanges <- ggplot(interchange_plot_data, aes(financial_year_start, value, colour = station_name)) +
+  geom_line(linewidth = 1.1, na.rm = TRUE) +
+  geom_point(size = 2, na.rm = TRUE) +
+  scale_y_continuous(labels = comma) +
+  scale_x_continuous(breaks = seq(1997, 2024, by = 2)) +
+  labs(
+    title = "Annual rail station interchanges",
+    subtitle = "Interchange values are secondary context; many local stations have zero or suppressed interchange counts.",
+    x = "Financial year start",
+    y = "Interchanges",
+    colour = "Station"
+  ) +
+  theme_minimal(base_size = 12) +
+  theme(legend.position = "bottom")
+
+p_interchanges
+
+ggsave(
+  file.path(output_dir, "rail_station_interchanges_trend.png"),
+  p_interchanges,
+  width = 10,
+  height = 6,
+  dpi = 180
+)
+```
+
+## Interpretation Progress Notes
+
+```{r interpretation-notes, results='asis'}
+cat("### Current interpretation\\n\\n")
+
+cat("- The selected rail station series provide broad annual movement context, not street-level active-travel evidence.\\n")
+cat("- Entries and exits show long-term station-specific differences: some stations have long continuous histories, while Maghull North only has observed values from its opening period onward.\\n")
+cat("- The 2020/21 financial year shows a clear disruption across stations, consistent with pandemic-era rail demand collapse.\\n")
+cat("- Later years can be used to discuss recovery relative to 2019/20, but this should remain contextual rather than causal evidence for active-travel schemes.\\n")
+cat("- The Vivacity analysis remains the main dataset for walking and cycling trajectories; station usage is best reported as supplementary background.\\n")
+```
+
+## Output Files
+
+```{r output-files}
+list.files(output_dir, full.names = TRUE) |>
+  tibble(file = _) |>
+  kable(caption = "Files written by this Rmd")
+```

@@ -1,0 +1,67 @@
+analysis_scheme_id,scheme_name,dataset_role,role_label,route_group,outcome,outcome_label,frequency,intervention_date_used,pre_peak_period_start,pre_peak_average_per_observed_day,post_peak_period_start,post_peak_average_per_observed_day,post_minus_pre_peak_average,post_vs_pre_peak_percent_change,days_from_installation_to_post_peak,weeks_from_installation_to_post_peak,months_from_installation_to_post_peak,pre_period_rows,post_period_rows
+12b,WP3a Prescot to Cronton,treated,Treated,Path/cycle facility,Cyclist,Cyclist,weekly,2023-03-01,,,2024-05-13,40.286,,,439,62.7,14.4,0,155
+12b,WP3a Prescot to Cronton,treated,Treated,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-03-01,,,2024-05-13,236.786,,,439,62.7,14.4,0,155
+12b,WP3a Prescot to Cronton,treated,Treated,Path/cycle facility,active_travel_total,Active travel,weekly,2023-03-01,,,2024-05-13,277.071,,,439,62.7,14.4,0,155
+12b,WP3a Prescot to Cronton,treated,Treated,Road,Cyclist,Cyclist,weekly,2023-03-01,,,2025-08-11,52.929,,,894,127.7,29.4,0,155
+12b,WP3a Prescot to Cronton,treated,Treated,Road,Pedestrian,Pedestrian,weekly,2023-03-01,,,2026-05-18,26.143,,,1174,167.7,38.6,0,155
+12b,WP3a Prescot to Cronton,treated,Treated,Road,active_travel_total,Active travel,weekly,2023-03-01,,,2026-05-18,62.214,,,1174,167.7,38.6,0,155
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Path/cycle facility,Cyclist,Cyclist,weekly,2023-03-01,2023-02-27,5.5,2025-08-18,60.061,54.561,992.02,901,128.7,29.6,17,167
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-03-01,2023-02-20,181.143,2023-09-18,269.857,88.714,48.97,201,28.7,6.6,17,167
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Path/cycle facility,active_travel_total,Active travel,weekly,2023-03-01,2023-02-20,185.429,2023-09-18,277.857,92.429,49.85,201,28.7,6.6,17,167
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Road,Cyclist,Cyclist,weekly,2023-03-01,2022-11-14,144.833,2023-11-13,394,249.167,172.04,257,36.7,8.4,17,167
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Road,Pedestrian,Pedestrian,weekly,2023-03-01,2022-11-14,136.667,2024-05-06,154.35,17.683,12.94,432,61.7,14.2,17,167
+12d,WP1 Otterspool Promenade,control,Descriptive-only control,Road,active_travel_total,Active travel,weekly,2023-03-01,2022-11-14,281.5,2023-11-13,437.857,156.357,55.54,257,36.7,8.4,17,167
+12d,WP1 Otterspool Promenade,control,Valid control,Path/cycle facility,Cyclist,Cyclist,weekly,2023-03-01,2023-02-27,8,2024-08-26,12.5,4.5,56.25,544,77.7,17.9,17,169
+12d,WP1 Otterspool Promenade,control,Valid control,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-03-01,2023-02-20,261.357,2023-03-27,347.357,86,32.91,26,3.7,0.9,17,169
+12d,WP1 Otterspool Promenade,control,Valid control,Path/cycle facility,active_travel_total,Active travel,weekly,2023-03-01,2023-02-20,267.714,2023-03-27,353.429,85.714,32.02,26,3.7,0.9,17,169
+12d,WP1 Otterspool Promenade,control,Valid control,Road,Cyclist,Cyclist,weekly,2023-03-01,2023-02-20,69.571,2025-05-19,88.714,19.143,27.52,810,115.7,26.6,17,169
+12d,WP1 Otterspool Promenade,control,Valid control,Road,Pedestrian,Pedestrian,weekly,2023-03-01,2023-02-27,34,2024-05-20,69.286,35.286,103.78,446,63.7,14.7,17,169
+12d,WP1 Otterspool Promenade,control,Valid control,Road,active_travel_total,Active travel,weekly,2023-03-01,2023-02-20,98.714,2023-06-19,136.857,38.143,38.64,110,15.7,3.6,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Path/cycle facility,Cyclist,Cyclist,weekly,2023-03-01,2023-02-27,32.75,2023-08-07,42.286,9.536,29.12,159,22.7,5.2,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-03-01,2023-02-20,369.5,2023-11-20,426.286,56.786,15.37,264,37.7,8.7,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Path/cycle facility,active_travel_total,Active travel,weekly,2023-03-01,2023-02-27,399.5,2025-05-19,455.308,55.808,13.97,810,115.7,26.6,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Road,Cyclist,Cyclist,weekly,2023-03-01,2023-02-06,64.286,2023-06-05,85.381,21.095,32.81,96,13.7,3.2,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Road,Pedestrian,Pedestrian,weekly,2023-03-01,2022-11-21,6.857,2024-02-19,33,26.143,381.25,355,50.7,11.7,17,169
+12d,WP1 Otterspool Promenade,treated,Treated,Road,active_travel_total,Active travel,weekly,2023-03-01,2023-02-06,69.524,2023-06-05,93.524,24,34.52,96,13.7,3.2,17,169
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Path/cycle facility,Cyclist,Cyclist,weekly,2023-03-01,,,2024-08-05,42.071,,,523,74.7,17.2,0,96
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-03-01,,,2024-09-09,251.75,,,558,79.7,18.3,0,96
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Path/cycle facility,active_travel_total,Active travel,weekly,2023-03-01,,,2024-09-09,283.179,,,558,79.7,18.3,0,96
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Road,Cyclist,Cyclist,weekly,2023-03-01,,,2025-05-12,93.857,,,803,114.7,26.4,0,96
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Road,Pedestrian,Pedestrian,weekly,2023-03-01,,,2026-05-04,34.714,,,1160,165.7,38.1,0,96
+12e,WP5 Sankey Canal to St Helens,treated,Treated,Road,active_travel_total,Active travel,weekly,2023-03-01,,,2025-05-12,112.143,,,803,114.7,26.4,0,96
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Descriptive-only control,Road,Cyclist,Cyclist,weekly,2023-06-01,,,2025-02-24,570,,,634,90.6,20.8,0,112
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Descriptive-only control,Road,Pedestrian,Pedestrian,weekly,2023-06-01,,,2024-04-29,227,,,333,47.6,10.9,0,112
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Descriptive-only control,Road,active_travel_total,Active travel,weekly,2023-06-01,,,2025-02-24,720,,,634,90.6,20.8,0,112
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Path/cycle facility,Cyclist,Cyclist,weekly,2023-06-01,2023-05-29,35.75,2023-09-04,39.071,3.321,9.29,95,13.6,3.1,29,156
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-06-01,2023-05-29,394.25,2026-05-25,566.75,172.5,43.75,1089,155.6,35.8,29,156
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Path/cycle facility,active_travel_total,Active travel,weekly,2023-06-01,2023-05-29,430,2026-05-25,598.5,168.5,39.19,1089,155.6,35.8,29,156
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Road,Cyclist,Cyclist,weekly,2023-06-01,2023-05-29,213,2025-03-31,286.857,73.857,34.67,669,95.6,22,29,156
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Road,Pedestrian,Pedestrian,weekly,2023-06-01,2023-03-20,22,2025-03-31,48.429,26.429,120.13,669,95.6,22,29,156
+12f,WP6 Leasowe to Wallasey Bridge Rd,control,Valid control,Road,active_travel_total,Active travel,weekly,2023-06-01,2023-05-29,223.5,2025-03-31,335.286,111.786,50.02,669,95.6,22,29,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Path/cycle facility,Cyclist,Cyclist,weekly,2023-06-01,2023-03-20,36,2026-05-25,33.75,-2.25,-6.25,1089,155.6,35.8,30,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Path/cycle facility,Pedestrian,Pedestrian,weekly,2023-06-01,2023-05-29,181.333,2024-05-20,194.929,13.595,7.5,354,50.6,11.6,30,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Path/cycle facility,active_travel_total,Active travel,weekly,2023-06-01,2023-05-29,206.5,2024-05-20,207.357,0.857,0.42,354,50.6,11.6,30,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Road,Cyclist,Cyclist,weekly,2023-06-01,2023-05-29,174,2025-03-31,275.143,101.143,58.13,669,95.6,22,30,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Road,Pedestrian,Pedestrian,weekly,2023-06-01,2023-05-29,3.25,2023-08-07,7.571,4.321,132.97,67,9.6,2.2,30,156
+12f,WP6 Leasowe to Wallasey Bridge Road,treated,Treated,Road,active_travel_total,Active travel,weekly,2023-06-01,2023-05-29,177.25,2025-03-31,276.571,99.321,56.03,669,95.6,22,30,156
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Crossing,Cyclist,Cyclist,weekly,2024-03-01,2024-02-19,87.571,2024-07-22,123.714,36.143,41.27,143,20.4,4.7,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Crossing,Pedestrian,Pedestrian,weekly,2024-03-01,2024-02-12,724.167,2025-04-07,679.429,-44.738,-6.18,402,57.4,13.2,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Crossing,active_travel_total,Active travel,weekly,2024-03-01,2024-02-12,810.833,2025-04-07,780.714,-30.119,-3.71,402,57.4,13.2,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Path/cycle facility,Cyclist,Cyclist,weekly,2024-03-01,2024-02-12,44.333,2024-09-09,464.05,419.717,946.73,192,27.4,6.3,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Path/cycle facility,Pedestrian,Pedestrian,weekly,2024-03-01,2024-02-12,405.5,2026-04-13,548.19,142.69,35.19,773,110.4,25.4,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Path/cycle facility,active_travel_total,Active travel,weekly,2024-03-01,2024-02-12,449.833,2024-09-09,803.65,353.817,78.66,192,27.4,6.3,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Road,Cyclist,Cyclist,weekly,2024-03-01,2024-02-26,5.5,2025-05-12,52.536,47.036,855.19,437,62.4,14.4,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Road,Pedestrian,Pedestrian,weekly,2024-03-01,2024-02-26,10.667,2024-12-16,152.48,141.813,1329.5,290,41.4,9.5,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Descriptive-only control,Road,active_travel_total,Active travel,weekly,2024-03-01,2024-02-12,13.833,2024-12-16,182.6,168.767,1220,290,41.4,9.5,7,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Path/cycle facility,Cyclist,Cyclist,weekly,2024-03-01,2023-09-04,38.429,2024-07-22,31.333,-7.095,-18.46,143,20.4,4.7,69,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Path/cycle facility,Pedestrian,Pedestrian,weekly,2024-03-01,2023-01-09,311.833,2026-05-25,145.5,-166.333,-53.34,815,116.4,26.8,69,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Path/cycle facility,active_travel_total,Active travel,weekly,2024-03-01,2023-01-09,347,2026-05-25,158.5,-188.5,-54.32,815,116.4,26.8,69,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Road,Cyclist,Cyclist,weekly,2024-03-01,2023-10-23,59.593,2024-07-08,75.259,15.667,26.29,129,18.4,4.2,69,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Road,Pedestrian,Pedestrian,weekly,2024-03-01,2023-02-13,92.571,2026-05-25,94.833,2.262,2.44,815,116.4,26.8,69,117
+13,LCR Cycle Network phase 2 - Runcorn to Daresbury,control,Valid control,Road,active_travel_total,Active travel,weekly,2024-03-01,2023-09-04,149.286,2026-05-25,148.5,-0.786,-0.53,815,116.4,26.8,69,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Path/cycle facility,Cyclist,Cyclist,weekly,2024-03-01,2024-02-26,38.083,2025-05-26,131.81,93.726,246.11,451,64.4,14.8,24,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Path/cycle facility,Pedestrian,Pedestrian,weekly,2024-03-01,2024-02-26,43.667,2025-05-05,526.952,483.286,1106.76,430,61.4,14.1,24,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Path/cycle facility,active_travel_total,Active travel,weekly,2024-03-01,2024-02-26,81.75,2025-05-05,557.762,476.012,582.28,430,61.4,14.1,24,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Road,Cyclist,Cyclist,weekly,2024-03-01,2023-10-09,291.143,2025-10-27,1252.6,961.457,330.24,605,86.4,19.9,24,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Road,Pedestrian,Pedestrian,weekly,2024-03-01,2023-12-11,1244.143,2024-04-29,123.429,-1120.714,-90.08,59,8.4,1.9,24,117
+13,LCR Cycle Network phase 2 Runcorn to Daresbury,treated,Treated,Road,active_travel_total,Active travel,weekly,2024-03-01,2023-12-11,1294.857,2025-10-27,1341.4,46.543,3.59,605,86.4,19.9,24,117
