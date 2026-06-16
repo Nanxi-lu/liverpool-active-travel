@@ -1,7 +1,0 @@
-pair_id,scheme_id,scheme_active_travel_average,control_active_travel_average,scheme_to_control_level_ratio,level_match_diagnostic
-12b | Knowsley 017B,12b,102.401612903226,1693.30459770115,0.0604744196893149,Large volume difference
-12d | Liverpool 052A,12d,189.276978417266,189.970948012232,0.996346969880249,Closer volume match
-12e | St. Helens 008C,12e,232.690366972477,275.646788990826,0.844161355277829,Closer volume match
-12e | St. Helens 014D,12e,167.019877675841,147.406727828746,1.13305464503548,Closer volume match
-12f | Wirral 006A,12f,100.322629969419,208.966360856269,0.480089855411813,Large volume difference
-13 | Halton 010B,13,55.0531177829099,171.669733210672,0.320692044854227,Large volume difference

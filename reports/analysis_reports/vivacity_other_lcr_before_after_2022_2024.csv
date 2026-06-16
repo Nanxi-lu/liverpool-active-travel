@@ -1,7 +1,0 @@
-calendar_year,sensors,observed_countline_days,outcome,count_total,outcome_label,average_per_observed_day
-2022,149,6619,pedestrian,1935049,Pedestrian,292.347635594501
-2024,149,48285,pedestrian,14939391,Pedestrian,309.400248524386
-2022,149,6619,cyclist,285898,Cyclist,43.19353376643
-2024,149,48285,cyclist,2758521,Cyclist,57.1299782541162
-2022,149,6619,active_travel_total,2220947,Active travel,335.541169360931
-2024,149,48285,active_travel_total,17697912,Active travel,366.530226778503

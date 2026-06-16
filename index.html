@@ -6,17 +6,31 @@
   <title>Dissertation Data Analysis Outputs: Consolidated Workflow Summary</title>
   <style>
     :root {
-      --ink: #1f2933;
-      --muted: #64748b;
-      --line: #d7dde5;
-      --bg: #f8fafc;
+      /* Project palette */
+      --c-blue-grey: #6E8FB2;
+      --c-grey-green: #7DA494;
+      --c-warm-orange: #EAB67A;
+      --c-pink-orange: #E5A79A;
+      --c-warm-red: #C16E71;
+      --c-light-blue: #ABC8E5;
+      --c-purple-pink: #D8A0C1;
+      --c-grey-purple: #9F8DB8;
+      --c-yellow-green: #D0D08A;
+
+      /* Semantic roles */
+      --ink: #2b333d;
+      --muted: #6b7280;
+      --line: #dbe2ea;
+      --bg: #f7f9fb;
       --panel: #ffffff;
-      --accent: #2f6f73;
-      --accent-soft: #e7f3f1;
-      --warn: #8a5a00;
-      --warn-soft: #fff5d6;
-      --bad: #8a1f1f;
-      --bad-soft: #fde8e8;
+      --accent: var(--c-blue-grey);
+      --accent-soft: #eef4fa;
+      --link: #4f7197;
+      --warn: #a9742a;
+      --warn-soft: #fbf1df;
+      --bad: var(--c-warm-red);
+      --bad-soft: #f7e7e7;
+      --ok: var(--c-grey-green);
     }
     * { box-sizing: border-box; }
     body {
@@ -44,8 +58,10 @@
     }
     h2 {
       margin: 34px 0 12px;
+      padding-bottom: 6px;
       font-size: 23px;
       letter-spacing: 0;
+      border-bottom: 2px solid var(--accent);
     }
     h3 {
       margin: 24px 0 8px;
@@ -53,7 +69,7 @@
       letter-spacing: 0;
     }
     p { margin: 8px 0 12px; }
-    a { color: #155e75; text-decoration-thickness: 1px; }
+    a { color: var(--link); text-decoration-thickness: 1px; }
     .subtitle {
       max-width: 900px;
       color: var(--muted);
@@ -113,7 +129,8 @@
       text-align: left;
     }
     th {
-      background: #eef2f7;
+      background: var(--accent-soft);
+      color: #34414f;
       font-weight: 650;
     }
     code {
@@ -155,7 +172,6 @@
     <p class="subtitle">Single-file progress summary of the current dissertation data analysis, organised by workflow stage. It labels what each section does, what outputs exist, and how the findings should currently be interpreted.</p>
     <div class="meta">
       <span class="pill">Project: Vivacity active travel dissertation</span>
-      <span class="pill">Generated: 2026-06-01</span>
       <span class="pill">Main evidence: Vivacity sensor counts</span>
       <span class="pill">Supplementary context: rail, spatial, IMD/LSOA context</span>
     </div>
@@ -270,7 +286,7 @@
         <tr>
           <td>Peak average summary</td>
           <td>Summarises pre/post peak averages and weeks/months to post peak.</td>
-          <td><a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.html">HTML</a> | <a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.csv">CSV</a></td>
+          <td><a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.html">HTML</a></td>
         </tr>
         <tr>
           <td>Peak visualisations</td>
@@ -280,17 +296,17 @@
         <tr>
           <td>Fixed-year before/after comparison</td>
           <td>Shows the requested fixed-year comparison table by scheme, outcome, and observed countline-day average.</td>
-          <td><a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.html">HTML</a> | <a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.csv">CSV</a></td>
+          <td><a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.html">HTML</a></td>
         </tr>
         <tr>
           <td>Active-travel decomposition check</td>
           <td>Checks that active travel equals pedestrian plus cyclist within each fixed-year comparison, apart from rounding or missing-year cases.</td>
-          <td><a href="reports/analysis_reports/vivacity_fixed_year_active_travel_decomposition.csv">CSV</a></td>
+          <td>&mdash;</td>
         </tr>
         <tr>
           <td>Legacy direct before/after comparison link</td>
           <td>Kept for existing links; it now opens the fixed-year comparison output.</td>
-          <td><a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.html">HTML</a> | <a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.csv">CSV</a></td>
+          <td><a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.html">HTML</a></td>
         </tr>
         <tr>
           <td>Fixed-year bar graph comparison</td>
@@ -300,12 +316,12 @@
         <tr>
           <td>IMD-matched context comparison</td>
           <td>Preferred equal-scheme, matched-context change estimates with block-bootstrap uncertainty, plus the countline-model sensitivity and street-volume diagnostics.</td>
-          <td><a href="reports/analysis_reports/vivacity_imd_matched_context_change_results.csv">Preferred results</a> | <a href="reports/analysis_reports/vivacity_imd_matched_countline_model_sensitivity.csv">Sensitivity</a> | <a href="reports/analysis_reports/vivacity_imd_matched_level_diagnostics.csv">Diagnostics</a></td>
+          <td>&mdash;</td>
         </tr>
         <tr>
           <td>Weather-control sensitivity</td>
           <td>ERA5 daily temperature, precipitation, maximum wind speed, and solar radiation are added to the LCR and IMD-context models. The adjusted active-travel estimates move by less than one percentage point, so weather does not explain the headline direction.</td>
-          <td><a href="reports/analysis_reports/vivacity_weather_control_sensitivity_summary.csv">Summary</a> | <a href="reports/analysis_reports/vivacity_era5_weather_daily.csv">Daily weather</a> | <a href="reports/analysis_reports/vivacity_era5_weather_site_lookup.csv">Site lookup</a></td>
+          <td>&mdash;</td>
         </tr>
       </tbody>
     </table>
@@ -391,7 +407,6 @@
         <tr><td>12e</td><td>5,475</td><td>1,095</td><td>0</td><td>0</td><td>Pre-installation rows exist, but no usable/positive pre-installation active-travel baseline after quality filtering.</td></tr>
       </tbody>
     </table>
-    <p><a href="reports/analysis_reports/vivacity_12b_12e_pre_installation_record_audit.csv">Open vivacity_12b_12e_pre_installation_record_audit.csv</a></p>
 
     <h3>4.5 Visual Output Files</h3>
     <p class="figure-list">
@@ -459,7 +474,7 @@
         <tr>
           <td>Liverpool station inventory</td>
           <td>All ORR stations whose local authority is Liverpool.</td>
-          <td><a href="reports/analysis_reports/rail_station_time_series/liverpool_local_authority_station_inventory_from_orr_1415.csv">CSV</a></td>
+          <td>&mdash;</td>
         </tr>
       </tbody>
     </table>
@@ -550,27 +565,6 @@
       <li><a href="reports/rendered_html/rail_station_time_series_trends.html">rail_station_time_series_trends.html</a></li>
       <li><a href="reports/analysis_reports/vivacity_peak_average_visualisations.html">vivacity_peak_average_visualisations.html</a></li>
       <li><a href="reports/analysis_reports/vivacity_before_after_peak_bar_graphs.html">vivacity_before_after_peak_bar_graphs.html</a></li>
-    </ul>
-    <h3>CSV summaries and audits</h3>
-    <ul>
-      <li><a href="reports/analysis_reports/vivacity_peak_average_before_after_summary.csv">vivacity_peak_average_before_after_summary.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_peak_average_route_type_summary.csv">vivacity_peak_average_route_type_summary.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_direct_before_after_peak_comparison.csv">vivacity_direct_before_after_peak_comparison.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_fixed_year_average_comparison.csv">vivacity_fixed_year_average_comparison.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_fixed_year_active_travel_decomposition.csv">vivacity_fixed_year_active_travel_decomposition.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_weather_control_sensitivity_summary.csv">vivacity_weather_control_sensitivity_summary.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_weather_adjusted_lcr_regression_2022_2024.csv">vivacity_weather_adjusted_lcr_regression_2022_2024.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_weather_adjusted_sensitivity.csv">vivacity_imd_weather_adjusted_sensitivity.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_era5_weather_daily.csv">vivacity_era5_weather_daily.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_era5_weather_site_lookup.csv">vivacity_era5_weather_site_lookup.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_12b_12e_pre_installation_record_audit.csv">vivacity_12b_12e_pre_installation_record_audit.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_matched_sensor_pairs.csv">vivacity_imd_matched_sensor_pairs.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_matched_active_travel_composition.csv">vivacity_imd_matched_active_travel_composition.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_matched_context_change_results.csv">vivacity_imd_matched_context_change_results.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_matched_countline_model_sensitivity.csv">vivacity_imd_matched_countline_model_sensitivity.csv</a></li>
-      <li><a href="reports/analysis_reports/vivacity_imd_matched_level_diagnostics.csv">vivacity_imd_matched_level_diagnostics.csv</a></li>
-      <li><a href="reports/analysis_reports/rail_station_time_series/rail_station_entries_exits_summary.csv">rail_station_entries_exits_summary.csv</a></li>
-      <li><a href="reports/analysis_reports/rail_station_time_series/rail_station_2008_methodology_break_values.csv">rail_station_2008_methodology_break_values.csv</a></li>
     </ul>
     <h3>Maps</h3>
     <ul>
