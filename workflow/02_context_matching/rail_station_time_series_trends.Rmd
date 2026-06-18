@@ -40,7 +40,7 @@ The 2008/09 financial year is treated as a methodological break. ORR's 2008/09 s
 
 ## Station Selection
 
-The default station list follows the current dissertation supplementary context workflow: Maghull North, Prescot, and St Helens Junction. These can be changed below if the supervisor asks for a different Liverpool/Liverpool City Region station set.
+The default station list follows the current dissertation supplementary context workflow: Maghull North, Prescot, and St Helens Junction. These can be changed below if a different Liverpool/Liverpool City Region station set is needed.
 
 The report also extracts all stations whose ORR local authority is recorded as Liverpool. This gives a clearer city-level station subset alongside the smaller dissertation context set.
 

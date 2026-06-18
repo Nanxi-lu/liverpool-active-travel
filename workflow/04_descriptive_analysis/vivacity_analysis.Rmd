@@ -339,10 +339,10 @@ write_csv(monthly_sensor, file.path(output_dir, "tables", "monthly_sensor_totals
 write_csv(monthly_scheme, file.path(output_dir, "tables", "monthly_scheme_totals.csv"))
 ```
 
-## First QA Table for Supervisor
+## First Sensor QA Table
 
-```{r supervisor-qa-table}
-supervisor_qa <- first_reliable |>
+```{r sensor-qa-table}
+sensor_qa <- first_reliable |>
   mutate(
     reliable_pre_post_use = case_when(
       is.na(first_reliable_date) ~ "Not usable without manual checking",
@@ -368,11 +368,11 @@ supervisor_qa <- first_reliable |>
     cyclist_total_raw
   )
 
-supervisor_qa
+sensor_qa
 
 write_csv(
-  supervisor_qa,
-  file.path(output_dir, "tables", "supervisor_sensor_qa_table.csv")
+  sensor_qa,
+  file.path(output_dir, "tables", "sensor_qa_table.csv")
 )
 ```
 

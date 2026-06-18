@@ -370,8 +370,7 @@ Check Duplicate Dates</a></li>
 Data</a></li>
 <li><a href="#weekly-and-monthly-aggregation" id="toc-weekly-and-monthly-aggregation"><span class="toc-section-number">7</span> Weekly and Monthly
 Aggregation</a></li>
-<li><a href="#first-qa-table-for-supervisor" id="toc-first-qa-table-for-supervisor"><span class="toc-section-number">8</span> First QA Table for
-Supervisor</a></li>
+<li><a href="#first-sensor-qa-table" id="toc-first-sensor-qa-table"><span class="toc-section-number">8</span> First Sensor QA Table</a></li>
 <li><a href="#monthly-scheme-level-trends" id="toc-monthly-scheme-level-trends"><span class="toc-section-number">9</span> Monthly Scheme-Level Trends</a></li>
 <li><a href="#monthly-sensor-level-trends" id="toc-monthly-sensor-level-trends"><span class="toc-section-number">10</span> Monthly Sensor-Level
 Trends</a></li>
@@ -778,10 +777,9 @@ write_csv(weekly_sensor, file.path(output_dir, &quot;tables&quot;, &quot;weekly_
 write_csv(monthly_sensor, file.path(output_dir, &quot;tables&quot;, &quot;monthly_sensor_totals.csv&quot;))
 write_csv(monthly_scheme, file.path(output_dir, &quot;tables&quot;, &quot;monthly_scheme_totals.csv&quot;))</code></pre>
 </div>
-<div id="first-qa-table-for-supervisor" class="section level2" number="8">
-<h2><span class="header-section-number">8</span> First QA Table for
-Supervisor</h2>
-<pre class="r"><code>supervisor_qa &lt;- first_reliable |&gt;
+<div id="first-sensor-qa-table" class="section level2" number="8">
+<h2><span class="header-section-number">8</span> First Sensor QA Table</h2>
+<pre class="r"><code>sensor_qa &lt;- first_reliable |&gt;
   mutate(
     reliable_pre_post_use = case_when(
       is.na(first_reliable_date) ~ &quot;Not usable without manual checking&quot;,
@@ -807,7 +805,7 @@ Supervisor</h2>
     cyclist_total_raw
   )
 
-supervisor_qa</code></pre>
+sensor_qa</code></pre>
 <pre><code>## # A tibble: 21 × 15
 ##    scheme_id road_group    countline_id countline_name route_type raw_first_date
 ##    &lt;chr&gt;     &lt;chr&gt;                &lt;dbl&gt; &lt;chr&gt;          &lt;chr&gt;      &lt;date&gt;        
@@ -828,8 +826,8 @@ supervisor_qa</code></pre>
 ## #   low_availability_days &lt;int&gt;, pedestrian_total_raw &lt;dbl&gt;,
 ## #   cyclist_total_raw &lt;dbl&gt;</code></pre>
 <pre class="r"><code>write_csv(
-  supervisor_qa,
-  file.path(output_dir, &quot;tables&quot;, &quot;supervisor_sensor_qa_table.csv&quot;)
+  sensor_qa,
+  file.path(output_dir, &quot;tables&quot;, &quot;sensor_qa_table.csv&quot;)
 )</code></pre>
 </div>
 <div id="monthly-scheme-level-trends" class="section level2" number="9">
