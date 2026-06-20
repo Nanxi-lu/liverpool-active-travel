@@ -33,7 +33,7 @@ assert_true <- function(condition, message) {
   if (!isTRUE(condition)) stop(message, call. = FALSE)
 }
 
-report_name <- "vivacity_before_after_peak_bar_graphs.html"
+report_name <- "vivacity_current_analysis.html"
 report_path <- file.path(output_dir, report_name)
 
 treated_ids <- fread(file.path(input_dir, "treated_countline_coverage.csv"))
@@ -2198,6 +2198,7 @@ lad_plot <- ggplot(
   scale_y_continuous(expand = expansion(mult = c(0, 0.16))) +
   labs(
     title = "Eligible other sensors by local authority",
+    x = NULL,
     y = "Countlines"
   ) +
   theme_report()
@@ -2811,8 +2812,8 @@ regression_rows <- paste(vapply(seq_len(nrow(regression_results)), function(i) {
       row$relative_lower_95,
       row$relative_upper_95
     ), "</td>",
-    "<td>", format.pval(row$relative_p_value, digits = 3, eps = 0.001), "</td>",
-    "<td>", format.pval(row$sensor_level_p_value, digits = 3, eps = 0.001), "</td>",
+    "<td>", html_escape(format.pval(row$relative_p_value, digits = 3, eps = 0.001)), "</td>",
+    "<td>", html_escape(format.pval(row$sensor_level_p_value, digits = 3, eps = 0.001)), "</td>",
     "<td>", inference, "</td></tr>"
   )
 }, character(1)), collapse = "")
@@ -2951,7 +2952,7 @@ imd_baseline_detail_rows <- paste(vapply(
       "<td>", sprintf("%+.1f%%", row$control_adjusted_change_percent), "</td>",
       "<td>", sprintf("%+.1f%%", row$scheme_adjusted_change_percent), "</td>",
       "<td>", sprintf("%+.1f%%", row$scheme_relative_to_control_percent), "</td>",
-      "<td>", format.pval(row$relative_p_value, digits = 3, eps = 0.001),
+      "<td>", html_escape(format.pval(row$relative_p_value, digits = 3, eps = 0.001)),
       "</td></tr>"
     )
   },
@@ -3104,7 +3105,7 @@ html <- paste0(
   '<title>Vivacity five-scheme and city-region comparison</title>',
   '<style>', css, '</style></head><body><main>',
   '<header><div class="eyebrow">Liverpool City Region active-travel monitoring</div>',
-  '<h1>Vivacity before/after averages and wider sensor context</h1>',
+  '<h1>Vivacity active-travel comparison analysis</h1>',
   '<p class="lead">This updated report combines the five scheme temporal profiles, fixed-year comparisons, the wider Liverpool City Region benchmark, IMD-based comparisons, separate pedestrian and cyclist pre-intervention trajectory matching, and weather-control sensitivity analysis. Other sensors without the required comparison observations are excluded from the relevant analyses.</p>',
   '<nav class="toc"><a href="#before-after">Before/after</a><a href="#scheme-trends">Five-scheme trends</a><a href="#other-sensors">Other LCR sensors</a><a href="#network-comparison">Scheme vs rest</a><a href="#baseline-regression">LCR baseline</a><a href="#imd-matched">IMD matched</a><a href="#trajectory-matched">Trajectory matched</a><a href="#weather-control">Weather control</a><a href="#route-types">Road vs path</a><a href="#methods">Methods</a></nav>',
   '</header>',
@@ -3142,10 +3143,10 @@ html <- paste0(
   '<p class="note"><strong>How to read the percentages:</strong> active travel equals pedestrian plus cyclist, so active travel is 100% for both groups. The pedestrian and cyclist percentages show the composition within each group, not the relative number of movements between groups. Raw pooled averages remain in the table. The pooled average weights each observed sensor-day equally after restricting both groups to the same calendar dates.</p></section>',
 
   '<section class="section" id="baseline-regression"><div class="section-heading"><div><div class="eyebrow">Section 5</div><h2>Did the analysable schemes increase more than the LCR comparison trend?</h2></div><p>This 2022–2024 baseline-adjusted model is limited to schemes 12d and 12f because they are the only schemes with usable 2022 pre-installation observations. It cannot estimate a five-scheme causal effect.</p></div>',
-  '<div class="note warning"><strong>Headline finding:</strong> on paired 15 November–31 December dates, the 126 eligible LCR comparison sensors changed by an adjusted ', sprintf("%+.1f%%", active_regression$lcr_adjusted_change_percent), ' in combined active travel, while the seven balanced scheme countlines changed by approximately ', sprintf("%+.1f%%", active_regression$scheme_adjusted_change_percent), '. The scheme trajectory was therefore ', sprintf("%.1f%%", abs(active_regression$scheme_relative_to_lcr_percent)), ' lower relative to the LCR comparison trend. The clustered 95% interval is ', sprintf("%+.1f%% to %+.1f%%", active_regression$relative_lower_95, active_regression$relative_upper_95), ' with p = ', format.pval(active_regression$relative_p_value, digits = 3, eps = 0.001), '. An equal-weight sensor-level robustness test gives p = ', format.pval(active_regression$sensor_level_p_value, digits = 3, eps = 0.001), '. Combined active travel is therefore directionally lower, but statistically inconclusive.</div>',
+  '<div class="note warning"><strong>Headline finding:</strong> on paired 15 November–31 December dates, the 126 eligible LCR comparison sensors changed by an adjusted ', sprintf("%+.1f%%", active_regression$lcr_adjusted_change_percent), ' in combined active travel, while the seven balanced scheme countlines changed by approximately ', sprintf("%+.1f%%", active_regression$scheme_adjusted_change_percent), '. The scheme trajectory was therefore ', sprintf("%.1f%%", abs(active_regression$scheme_relative_to_lcr_percent)), ' lower relative to the LCR comparison trend. The clustered 95% interval is ', sprintf("%+.1f%% to %+.1f%%", active_regression$relative_lower_95, active_regression$relative_upper_95), ' with p = ', html_escape(format.pval(active_regression$relative_p_value, digits = 3, eps = 0.001)), '. An equal-weight sensor-level robustness test gives p = ', html_escape(format.pval(active_regression$sensor_level_p_value, digits = 3, eps = 0.001)), '. Combined active travel is therefore directionally lower, but statistically inconclusive.</div>',
   '<div class="wide-chart">', regression_svg, '</div>',
   '<div class="table-wrap"><table><thead><tr><th>Outcome</th><th>LCR adjusted change</th><th>Scheme adjusted change</th><th>Scheme relative to LCR</th><th>Clustered 95% CI</th><th>Clustered p</th><th>Sensor-level p</th><th>Interpretation</th></tr></thead><tbody>', regression_rows, '</tbody></table></div>',
-  '<p class="note">The cyclist result is the most consistent evidence of a weaker scheme trajectory: the eligible LCR comparison sensors increased by ', sprintf("%+.1f%%", cyclist_regression$lcr_adjusted_change_percent), ', whereas the balanced scheme countlines changed by ', sprintf("%+.1f%%", cyclist_regression$scheme_adjusted_change_percent), '; the relative difference is ', sprintf("%+.1f%%", cyclist_regression$scheme_relative_to_lcr_percent), '. Both the clustered model (p = ', format.pval(cyclist_regression$relative_p_value, digits = 3, eps = 0.001), ') and the equal-weight sensor-level check (p = ', format.pval(cyclist_regression$sensor_level_p_value, digits = 3, eps = 0.001), ') retain this direction. Nevertheless, these are exploratory associations. Only seven treated countlines are available and scheme placement was non-random. Pre-intervention trajectory matching is assessed separately in Section 7 and weather in Section 8.</p></section>',
+  '<p class="note">The cyclist result is the most consistent evidence of a weaker scheme trajectory: the eligible LCR comparison sensors increased by ', sprintf("%+.1f%%", cyclist_regression$lcr_adjusted_change_percent), ', whereas the balanced scheme countlines changed by ', sprintf("%+.1f%%", cyclist_regression$scheme_adjusted_change_percent), '; the relative difference is ', sprintf("%+.1f%%", cyclist_regression$scheme_relative_to_lcr_percent), '. Both the clustered model (p = ', html_escape(format.pval(cyclist_regression$relative_p_value, digits = 3, eps = 0.001)), ') and the equal-weight sensor-level check (p = ', html_escape(format.pval(cyclist_regression$sensor_level_p_value, digits = 3, eps = 0.001)), ') retain this direction. Nevertheless, these are exploratory associations. Only seven treated countlines are available and scheme placement was non-random. Pre-intervention trajectory matching is assessed separately in Section 7 and weather in Section 8.</p></section>',
 
   '<section class="section" id="imd-matched"><div class="section-heading"><div><div class="eyebrow">Section 6</div><h2>Cross-comparison with IMD-matched street sensors</h2></div><p>Each of the six scheme LSOA contexts is paired with the route-compatible non-intervention street whose available sensor area has the nearest selected IMD score.</p></div>',
   '<div class="note"><strong>Matching structure:</strong> the five schemes occupy six LSOA contexts because scheme 12e spans St. Helens 008C and St. Helens 014D. The descriptive comparison uses ', comma(imd_composition_day_count), ' exact dates from ', imd_composition_start, ' to ', imd_composition_end, ', when every scheme context and its paired street have usable observations. ', comma(uniqueN(imd_composition_daily[imd_role == "Five scheme sensors", countline_id])), ' scheme countlines and ', comma(uniqueN(imd_composition_daily[imd_role == "IMD-matched sensors", countline_id])), ' matched-street countlines contribute.</div>',
@@ -3209,7 +3210,7 @@ html <- paste0(
   '</dl>',
   '<div class="links"><a href="vivacity_analysis_integrity_audit.csv">Analysis integrity audit CSV</a><a href="vivacity_preintervention_trajectory_selected_controls.csv">Trajectory-selected controls CSV</a><a href="vivacity_preintervention_trajectory_candidate_scores.csv">All trajectory candidate scores CSV</a><a href="vivacity_preintervention_trajectory_results.csv">Trajectory comparison results CSV</a><a href="vivacity_preintervention_trajectory_unavailable_schemes.csv">Unavailable schemes CSV</a><a href="vivacity_baseline_adjusted_regression_2022_2024.csv">LCR baseline results CSV</a><a href="vivacity_weather_adjusted_lcr_regression_2022_2024.csv">Weather-adjusted LCR model CSV</a><a href="vivacity_weather_control_sensitivity_summary.csv">Weather sensitivity summary CSV</a><a href="vivacity_era5_weather_site_lookup.csv">Weather site lookup CSV</a><a href="vivacity_era5_weather_daily.csv">Daily ERA5 weather CSV</a><a href="vivacity_imd_weather_adjusted_sensitivity.csv">IMD weather sensitivity CSV</a><a href="vivacity_baseline_adjusted_regression_cohort.csv">LCR regression cohort CSV</a><a href="vivacity_imd_matched_sensor_pairs.csv">IMD matched pairs CSV</a><a href="vivacity_imd_matched_active_travel_composition.csv">Equal-scheme IMD composition CSV</a><a href="vivacity_imd_matched_context_change_results.csv">Preferred IMD context-change results CSV</a><a href="vivacity_imd_matched_countline_model_sensitivity.csv">Countline-model sensitivity CSV</a><a href="vivacity_imd_matched_level_diagnostics.csv">IMD match diagnostics CSV</a><a href="vivacity_imd_matched_baseline_cohort.csv">IMD baseline cohort CSV</a><a href="vivacity_imd_matched_exact_composition_dates.csv">IMD exact dates CSV</a><a href="vivacity_other_lcr_2022_2024_sensor_eligibility.csv">Other-sensor eligibility CSV</a><a href="vivacity_other_lcr_before_after_2022_2024.csv">Other-sensor before/after CSV</a><a href="vivacity_exact_five_scheme_matched_dates.csv">Exact five-scheme dates CSV</a><a href="vivacity_citywide_monthly_sensor_group_comparison.csv">Monthly comparison CSV</a><a href="vivacity_citywide_common_window_comparison.csv">Matched-day comparison CSV</a><a href="vivacity_other_lcr_sensor_summary_by_local_authority.csv">Local-authority summary CSV</a><a href="vivacity_five_scheme_common_window_route_comparison.csv">Road/path comparison CSV</a><a href="https://open-meteo.com/en/docs/historical-weather-api">Open-Meteo historical weather documentation</a><a href="https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels">Copernicus ERA5 dataset</a></div>',
   '</section>',
-  '<p class="footer">Generated from the validated official dashboard exports. Updated 15 June 2026.</p>',
+  '<p class="footer">Generated from the validated official dashboard exports. Aligned 20 June 2026.</p>',
   '</main></body></html>'
 )
 

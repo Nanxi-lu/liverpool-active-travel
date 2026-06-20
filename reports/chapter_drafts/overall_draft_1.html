@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2026-06-20">
 
-<title>overall_draft_1</title>
+<title>Vivacity Active Travel Dissertation: Integrated Draft</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -2170,737 +2171,302 @@ vertical-align: -.125em;
 
 <main class="content" id="quarto-document-content">
 
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Vivacity Active Travel Dissertation: Integrated Draft</h1>
+</div>
 
+
+
+<div class="quarto-title-meta">
+
+
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 20, 2026</p>
+    </div>
+  </div>
+
+
+  </div>
+
+
+
+</header>
 
 
 <section id="working-title" class="level2">
 <h2 class="anchored" data-anchor-id="working-title">Working Title</h2>
-<p>Do deprived and affluent neighbourhoods exhibit different time-series trajectories in walking and cycling uptake after active travel interventions, compared with matched non-intervention areas?</p>
+<p>Do walking and cycling trajectories at selected Liverpool City Region active travel schemes differ from wider and context-matched comparison areas, and what can the available monitoring data support about equity?</p>
 </section>
 <section id="introduction" class="level2">
 <h2 class="anchored" data-anchor-id="introduction">1. Introduction</h2>
-<p>Active travel has become a central policy concern in transport planning because walking and cycling can contribute to healthier, lower-carbon, and more spatially efficient urban mobility. In practice, however, the effects of active travel schemes are difficult to evaluate. New infrastructure is rarely introduced under experimental conditions, monitoring equipment is often installed after scheme planning has already begun, and observed changes in walking and cycling may reflect weather, seasonality, wider travel recovery, local land-use change, or pre-existing differences between places rather than the scheme itself. These challenges are particularly important for equity-focused evaluation. If active travel interventions are intended to support more inclusive mobility, then it is not enough to ask whether walking and cycling increased overall. It is also necessary to ask whether the observed trajectories differ across neighbourhood contexts, especially between more deprived and more affluent areas.</p>
-<p>This dissertation examines walking and cycling trajectories around selected Liverpool City Region active travel schemes using Vivacity automated countline sensor data. Vivacity sensors provide classified counts of pedestrians, cyclists and motorised traffic at specific countlines. This gives the dissertation a high-frequency, street-level evidence base that is more detailed than annual or area-level transport indicators. The analysis links these sensor records to small-area deprivation and Census context using LSOA 2021 geography, and compares treated countlines associated with active travel schemes against matched non-intervention countlines where suitable controls are available.</p>
-<p>The research question is:</p>
+<p>Active travel infrastructure may improve safety, continuity and convenience for walking and cycling, but its effects are difficult to isolate from seasonality, weather, post-pandemic travel recovery, land-use change and pre-existing differences between places. These attribution problems are especially important in equity-focused evaluation because neighbourhoods differ in car ownership, transport need, route quality and exposure to wider investment.</p>
+<p>This dissertation uses Vivacity automated countline data to examine pedestrian and cyclist trajectories around five Liverpool City Region active travel schemes. Sensor records are linked to LSOA 2021 geography, IMD 2019 and Census context. Scheme-linked countlines are compared with eligible wider-network countlines and selected comparison streets.</p>
+<p>The study asks:</p>
 <blockquote class="blockquote">
-<p>Do deprived and affluent neighbourhoods exhibit different time-series trajectories in walking and cycling uptake after active travel interventions, compared with matched non-intervention areas?</p>
+<p>Do walking and cycling trajectories at scheme-linked sensors differ from wider and context-matched comparison areas, and are the data sufficient for an equity-focused interpretation?</p>
 </blockquote>
-<p>The study is designed as an exploratory matched-control interrupted time-series analysis. It is exploratory because the available monitoring data were not produced through a planned experimental evaluation design. The key methodological task is therefore not only to estimate whether treated sites changed after intervention, but also to test whether the available data are strong enough to support causal interpretation. The dissertation prioritises transparent data cleaning, explicit inclusion rules, contextual matching, pre-trend diagnostics, and cautious interpretation.</p>
-<p>The dissertation has four main objectives:</p>
+<p>The design is an exploratory matched-comparison difference-in-differences study. It is exploratory because the schemes were not randomly assigned, monitoring was not designed prospectively for evaluation, the treated sample is small, and comparison streets require external verification.</p>
+<p>The objectives are:</p>
 <ol type="1">
-<li>To clean and prepare Vivacity countline data into reliable daily and weekly analysis tables.</li>
-<li>To link treated and candidate control countlines to LSOA 2021 deprivation and Census context.</li>
-<li>To compare walking and cycling trajectories at treated and matched non-intervention countlines.</li>
-<li>To assess whether the available evidence supports an equity-focused interpretation of active travel uptake across deprived and affluent neighbourhood contexts.</li>
+<li>construct reliable daily pedestrian and cyclist observations;</li>
+<li>distinguish sensor absence from genuine zero movement;</li>
+<li>compare scheme trajectories with wider and context-matched baselines;</li>
+<li>test sensitivity to control selection, weighting and weather; and</li>
+<li>assess what the evidence can support about neighbourhood equity.</li>
 </ol>
-<p>The intended contribution is both empirical and methodological. Empirically, the study describes observed pedestrian and cyclist trajectories around selected Liverpool City Region schemes. Methodologically, it demonstrates the conditions under which opportunistic sensor data can, and cannot, support active travel evaluation. The strongest contribution is therefore not a simple claim that the schemes succeeded or failed, but a structured assessment of how sensor coverage, intervention-date coding, control-site quality and neighbourhood context shape what can be inferred.</p>
 </section>
-<section id="brief-literature-review-position" class="level2">
-<h2 class="anchored" data-anchor-id="brief-literature-review-position">2. Brief Literature Review Position</h2>
-<p>The literature review will be developed separately, but its role in the dissertation is clear. It should support three linked arguments. First, active travel infrastructure can influence walking and cycling by changing perceived safety, convenience, route continuity and the attractiveness of non-car travel, but effects are often context-dependent. Second, causal attribution is difficult in built-environment evaluation because interventions are not randomly assigned and because travel behaviour is shaped by seasonality, wider urban change, and existing infrastructure networks. Third, equity matters because deprived and affluent neighbourhoods may differ in car ownership, transport need, safety conditions, access to bicycles, route quality, and exposure to wider investment patterns.</p>
-<p>The literature review should therefore justify the use of a quasi-experimental, matched-control time-series approach while also explaining why the analysis remains cautious. It should not promise a strong causal model that the data cannot support. Instead, it should frame the dissertation as an empirical test of relative trajectories and a critical assessment of monitoring capacity for equity-focused active travel evaluation.</p>
+<section id="literature-review-position" class="level2">
+<h2 class="anchored" data-anchor-id="literature-review-position">2. Literature Review Position</h2>
+<p>The literature review should justify three propositions. First, active travel infrastructure can affect behaviour, but effects vary by context and outcome. Second, built-environment interventions require careful counterfactual design because before/after changes may reflect wider trends. Third, equity concerns both the distribution of investment and whether different communities benefit.</p>
+<p>The dissertation therefore uses quasi-experimental comparison logic but avoids claiming that the available monitoring data produce a definitive causal impact estimate.</p>
 </section>
-<section id="methodology" class="level2">
-<h2 class="anchored" data-anchor-id="methodology">3. Methodology</h2>
-<section id="research-design" class="level3">
-<h3 class="anchored" data-anchor-id="research-design">3.1 Research Design</h3>
-<p>The dissertation uses an exploratory matched-control interrupted time-series design. Treated countlines are Vivacity countlines associated with selected active travel schemes. Control countlines are non-intervention Vivacity countlines selected through contextual matching and then filtered through a data-quality gate. The design compares whether treated countlines changed differently from controls after the confirmed scheme intervention date.</p>
-<p>The workflow uses the confirmed exact scheme dates as intervention dates. These dates are encoded in the current analysis and are used by the integrity gate, modelling-ready tables and current Vivacity outputs.</p>
-<p>The design is not presented as a definitive causal impact evaluation. It remains exploratory because the control pool is limited, some sensors may still lack reliable pre-intervention coverage even after exact-date recalculation, and control sites require manual verification to confirm that they were not affected by other transport or public-realm interventions. The analysis therefore estimates relative trajectory differences rather than definitive scheme effects.</p>
-</section>
-<section id="study-area-and-scheme-selection" class="level3">
-<h3 class="anchored" data-anchor-id="study-area-and-scheme-selection">3.2 Study Area and Scheme Selection</h3>
-<p>The study focuses on selected Liverpool City Region active travel schemes for which Vivacity countline data are available. Five treated scheme groups are included in the project workflow:</p>
+<section id="research-design" class="level2">
+<h2 class="anchored" data-anchor-id="research-design">3. Research Design</h2>
+<section id="schemes-and-analytical-roles" class="level3">
+<h3 class="anchored" data-anchor-id="schemes-and-analytical-roles">3.1 Schemes and analytical roles</h3>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 23%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>Scheme</th>
-<th>Location / corridor</th>
-<th>Current analytical role</th>
+<th>Corridor</th>
+<th style="text-align: right;">Confirmed date</th>
+<th>Current role</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>12b</td>
 <td>Cronton Road / Sandy Lane</td>
-<td>Descriptive only because no quality-passing pre-installation observations remain</td>
+<td style="text-align: right;">2023-03-01</td>
+<td>Descriptive only</td>
 </tr>
 <tr class="even">
 <td>12d</td>
 <td>Aigburth Road / Otterspool Promenade</td>
-<td>Exploratory treated-control model candidate</td>
+<td style="text-align: right;">2023-03-01</td>
+<td>2022–2024 comparison</td>
 </tr>
 <tr class="odd">
 <td>12e</td>
 <td>Park Road / Path off Park Road</td>
-<td>Descriptive only because no quality-passing pre-installation observations remain</td>
+<td style="text-align: right;">2023-03-01</td>
+<td>Descriptive only</td>
 </tr>
 <tr class="even">
 <td>12f</td>
 <td>Leasowe / Wallasey corridor</td>
-<td>Exploratory treated-control model candidate</td>
+<td style="text-align: right;">2023-06-01</td>
+<td>2022–2024 comparison</td>
 </tr>
 <tr class="odd">
 <td>13</td>
 <td>Astmoor / Warrington Road</td>
-<td>Exploratory treated-control model candidate</td>
+<td style="text-align: right;">2024-03-01</td>
+<td>Separate 2023–2024 comparison</td>
 </tr>
 </tbody>
 </table>
-<p>Schemes 12d, 12f and 13 provide usable pre/post observations for the current comparative analyses. Schemes 12b and 12e are retained for descriptive interpretation because their reliable treated records begin after their confirmed intervention dates.</p>
+<p>Schemes 12b and 12e have no quality-passing treated observations before their confirmed dates. They can support post-installation description and composition analysis but not a before/after comparison.</p>
 </section>
 <section id="data-sources" class="level3">
-<h3 class="anchored" data-anchor-id="data-sources">3.3 Data Sources</h3>
-<p>The primary dataset is Vivacity automated countline data. These data contain classified movement counts by date/time, countline, direction and mode. The main mode classes used in the dissertation are:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Mode class</th>
-<th>Analytical use</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Pedestrian</td>
-<td>Main walking outcome</td>
-</tr>
-<tr class="even">
-<td>Cyclist</td>
-<td>Main cycling outcome</td>
-</tr>
-<tr class="odd">
-<td>Car</td>
-<td>Motorised context / traffic outcome</td>
-</tr>
-<tr class="even">
-<td>Motorbike</td>
-<td>Motorised total</td>
-</tr>
-<tr class="odd">
-<td>Bus</td>
-<td>Motorised total</td>
-</tr>
-<tr class="even">
-<td>OGV1</td>
-<td>Motorised total</td>
-</tr>
-<tr class="odd">
-<td>OGV2</td>
-<td>Motorised total</td>
-</tr>
-<tr class="even">
-<td>LGV</td>
-<td>Motorised total</td>
-</tr>
-</tbody>
-</table>
-<p>Contextual data are linked at LSOA 2021 level. These include IMD 2019 deciles, income and employment deprivation deciles, Census 2021 population density, household car availability, walking and cycling commute shares, car-driver commute share, work-from-home share and household deprivation indicators. LSOA 2021 is used as the common spatial unit because Vivacity countline locations can be spatially joined to LSOA polygons, and Census 2021 variables are available at this geography. IMD 2019 is bridged from LSOA 2011 to LSOA 2021 using an exact-fit lookup.</p>
-<p>Supplementary context datasets include the Liverpool City Region LTP3 cycling indicator and Office of Rail and Road station usage data. These are not the main causal data sources. The LTP3 cycling index can contextualise broader annual cycling trends, while ORR station data can support separate descriptive rail context. Neither replaces the street-level Vivacity treated-control comparison.</p>
+<h3 class="anchored" data-anchor-id="data-sources">3.2 Data sources</h3>
+<p>The primary source is 90 official Vivacity dashboard exports covering 711 Liverpool City Region countlines from 1 January 2020 to 31 May 2025. A validated scheme-only archive extends selected fixed-year panels to 26 May 2026.</p>
+<p>Contextual sources are:</p>
+<ul>
+<li>LSOA 2021 boundaries;</li>
+<li>IMD 2019 deprivation scores and deciles;</li>
+<li>Census 2021 population, car availability and commuting context;</li>
+<li>ERA5 daily weather accessed through Open-Meteo; and</li>
+<li>ORR station usage, used separately as regional movement context.</li>
+</ul>
 </section>
 <section id="unit-of-analysis" class="level3">
-<h3 class="anchored" data-anchor-id="unit-of-analysis">3.4 Unit of Analysis</h3>
-<p>The raw unit is the Vivacity countline observation. For cleaning and descriptive analysis, observations are aggregated to daily countline-level records. For modelling, daily records are aggregated to weekly countline-level outcomes to reduce short-term noise and allow occasional missing days to be handled through observed-day weighting.</p>
-<p>The main modelling unit is therefore:</p>
-<blockquote class="blockquote">
-<p>countline-week, with outcomes expressed per observed countline-day.</p>
-</blockquote>
-<p>This avoids treating weeks with fewer valid days as equivalent to complete weeks. Model weights are based on the number of observed days contributing to each weekly countline record.</p>
-</section>
-<section id="outcome-specification" class="level3">
-<h3 class="anchored" data-anchor-id="outcome-specification">3.5 Outcome Specification</h3>
-<p>The dissertation should present outcomes in a disaggregated order. Pedestrian and cyclist outcomes should be reported separately first, followed by active travel total as a summary measure. Road and path/cycle-facility countlines should also be separated where the sample size allows.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Outcome</th>
-<th>Definition</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>pedestrian</code></td>
-<td>Daily pedestrian count</td>
-<td>Walking activity at the countline</td>
-</tr>
-<tr class="even">
-<td><code>cyclist</code></td>
-<td>Daily cyclist count</td>
-<td>Cycling activity at the countline</td>
-</tr>
-<tr class="odd">
-<td><code>active_travel_total</code></td>
-<td><code>pedestrian + cyclist</code></td>
-<td>Combined walking and cycling; summary only</td>
-</tr>
-<tr class="even">
-<td><code>motorised_total</code></td>
-<td><code>car + motorbike + bus + OGV1 + OGV2 + LGV</code></td>
-<td>Motorised traffic context</td>
-</tr>
-<tr class="odd">
-<td><code>total_count</code></td>
-<td><code>active_travel_total + motorised_total</code></td>
-<td>Total counted movement</td>
-</tr>
-<tr class="even">
-<td><code>active_travel_share</code></td>
-<td><code>active_travel_total / total_count</code></td>
-<td>Share of movement that is walking/cycling</td>
-</tr>
-<tr class="odd">
-<td><code>cycle_share</code></td>
-<td><code>cyclist / total_count</code></td>
-<td>Cycling share of total counted movement</td>
-</tr>
-<tr class="even">
-<td><code>pedestrian_per_observed_day</code></td>
-<td>Weekly pedestrian count divided by observed days</td>
-<td>Model outcome for walking</td>
-</tr>
-<tr class="odd">
-<td><code>cyclist_per_observed_day</code></td>
-<td>Weekly cyclist count divided by observed days</td>
-<td>Model outcome for cycling</td>
-</tr>
-<tr class="even">
-<td><code>active_per_observed_day</code></td>
-<td>Weekly active travel count divided by observed days</td>
-<td>Summary model outcome</td>
-</tr>
-</tbody>
-</table>
-<p>Route type is a second analytical dimension. Countlines are classified as road, path/cycle facility, crossing or unknown/other using exported metadata and countline names. This distinction matters because a scheme may change use on a dedicated path without producing the same trajectory on a road countline, or apparent change may reflect redistribution between carriageway and path rather than a net increase in walking or cycling.</p>
-<p>The preferred reporting hierarchy is:</p>
-<ol type="1">
-<li>Pedestrian outcomes by scheme and treated/control role.</li>
-<li>Cyclist outcomes by scheme and treated/control role.</li>
-<li>Road versus path/cycle-facility outcomes.</li>
-<li>Active travel total as a combined summary.</li>
-</ol>
+<h3 class="anchored" data-anchor-id="unit-of-analysis">3.3 Unit of analysis</h3>
+<p>The active comparison models use daily countline observations. Outcomes are:</p>
+<pre class="text"><code>pedestrian
+cyclist
+active_travel_total = pedestrian + cyclist</code></pre>
+<p>Counts are analysed as <code>log(1 + count)</code>. Countline fixed effects absorb stable location characteristics such as a site’s underlying busyness. Month-day and weekday controls align the compared calendar structure.</p>
 </section>
 </section>
-<section id="methods" class="level2">
-<h2 class="anchored" data-anchor-id="methods">4. Methods</h2>
-<section id="data-preparation-workflow" class="level3">
-<h3 class="anchored" data-anchor-id="data-preparation-workflow">4.1 Data Preparation Workflow</h3>
-<p>The project is organised as a reproducible workflow under <code>/Users/lu_nanxi/CASA/Dissertation_Data</code>. Raw and processed data are stored in local zip archives, and the executable workflow is divided into five stages:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 33%">
-<col style="width: 33%">
-<col style="width: 33%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Stage</th>
-<th>Folder</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1</td>
-<td><code>workflow/01_data_preparation/</code></td>
-<td>Clean treated/control data, apply full-day cutoff, build integrity gate</td>
-</tr>
-<tr class="even">
-<td>2</td>
-<td><code>workflow/02_context_matching/</code></td>
-<td>Join sensors to LSOA/IMD/Census context and select matched controls</td>
-</tr>
-<tr class="odd">
-<td>3</td>
-<td><code>workflow/03_modelling_diagnostics/</code></td>
-<td>Run exploratory models, pre-trend checks and event-study diagnostics</td>
-</tr>
-<tr class="even">
-<td>4</td>
-<td><code>workflow/04_descriptive_analysis/</code></td>
-<td>Produce descriptive trends, route-type summaries and sensitivity tables</td>
-</tr>
-<tr class="odd">
-<td>5</td>
-<td><code>workflow/05_document_generation/</code></td>
-<td>Generate methods, results, discussion and diagnostic report drafts</td>
-</tr>
-</tbody>
-</table>
-<p>The workflow contains current outputs using the confirmed intervention dates, together with archived earlier outputs retained only as provenance.</p>
-</section>
-<section id="daily-aggregation" class="level3">
-<h3 class="anchored" data-anchor-id="daily-aggregation">4.2 Daily Aggregation</h3>
-<p>Raw Vivacity exports contain classified counts by timestamp, direction and countline. These records are aggregated to daily countline-level totals. Directional observations are summed within each countline and date. The daily table retains countline metadata, scheme identifiers, route type, data availability, data error flags and mode-specific counts.</p>
-<p>The daily derived variables are:</p>
-<pre class="text"><code>active_travel_total = pedestrian + cyclist
-motorised_total = car + motorbike + bus + OGV1 + OGV2 + LGV
-total_count = active_travel_total + motorised_total
-active_travel_share = active_travel_total / total_count
-cycle_share = cyclist / total_count</code></pre>
-<p>This daily aggregation produces the base table for reliability checking, descriptive analysis and later weekly aggregation.</p>
-</section>
-<section id="full-day-cutoff" class="level3">
-<h3 class="anchored" data-anchor-id="full-day-cutoff">4.3 Full-Day Cutoff</h3>
-<p>The workflow applies a full-day cutoff at 26 May 2026. This avoids including incomplete recent observations. All daily treated and control datasets are filtered to complete days up to this cutoff. The cutoff is important because incomplete final-day data could artificially lower counts and distort trends.</p>
+<section id="data-preparation" class="level2">
+<h2 class="anchored" data-anchor-id="data-preparation">4. Data Preparation</h2>
+<section id="daily-aggregation-and-quality-rule" class="level3">
+<h3 class="anchored" data-anchor-id="daily-aggregation-and-quality-rule">4.1 Daily aggregation and quality rule</h3>
+<p>Hourly directional records are aggregated to one row per countline and date. A countline-day is retained when:</p>
+<ul>
+<li>at least 23 hourly periods are present;</li>
+<li>availability and pedestrian/cyclist fields are observed in at least 23 periods;</li>
+<li>minimum reported daily availability is at least 80%;</li>
+<li>no Vivacity data-error flag is present; and</li>
+<li>for scheme sensors, the date is on or after the confirmed first reliable date.</li>
+</ul>
+<p>Unavailable days are excluded rather than entered as zero.</p>
 </section>
 <section id="first-reliable-date" class="level3">
-<h3 class="anchored" data-anchor-id="first-reliable-date">4.4 First Reliable Date</h3>
-<p>A central preprocessing problem is that early zero counts may not be real zero movement. Some early rows contain zeros or missing availability because the sensor was not yet active or not producing usable data. Treating these rows as true zero pedestrian or cyclist flows would create artificial before/after changes.</p>
-<p>To address this, the workflow identifies a first reliable date for each countline. A reliable day must satisfy the following conditions:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Criterion</th>
-<th>Rule</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Date validity</td>
-<td>date is present</td>
-</tr>
-<tr class="even">
-<td>Availability</td>
-<td><code>dataAvailabilityPercent_min &gt;= 80</code></td>
-</tr>
-<tr class="odd">
-<td>Error status</td>
-<td>no data error</td>
-</tr>
-<tr class="even">
-<td>Observed movement</td>
-<td><code>active_travel_total &gt; 0</code></td>
-</tr>
-<tr class="odd">
-<td>Reliability window</td>
-<td>at least 14 reliable days within the following 21-day window</td>
-</tr>
-</tbody>
-</table>
-<p>Rows before the first reliable date are treated as outside the usable observation window rather than as true low-activity days. This is one of the most important cleaning decisions in the dissertation because it separates sensor absence from genuine behavioural absence.</p>
+<h3 class="anchored" data-anchor-id="first-reliable-date">4.2 First reliable date</h3>
+<p>Long early periods containing zero counts and missing availability are treated as structural sensor absence. The first reliable date is based on a sustained run of quality-passing positive observations. This prevents installation or commissioning gaps from becoming artificial treatment effects.</p>
 </section>
-<section id="quality-flags" class="level3">
-<h3 class="anchored" data-anchor-id="quality-flags">4.5 Quality Flags</h3>
-<p>Each daily row is assigned quality flags before analysis. The main flags are:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Flag</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>availability_missing_bool</code></td>
-<td>Daily availability is missing</td>
-</tr>
-<tr class="even">
-<td><code>low_availability_bool</code></td>
-<td>Daily availability is below the 80% threshold</td>
-</tr>
-<tr class="odd">
-<td><code>data_error_bool</code></td>
-<td>Vivacity data error is recorded</td>
-</tr>
-<tr class="even">
-<td><code>quality_ok_day</code></td>
-<td>Date is valid, confirmed intervention date is present, availability is sufficient and no error is recorded</td>
-</tr>
-<tr class="odd">
-<td><code>quality_reliable_day</code></td>
-<td><code>quality_ok_day</code> plus positive active travel flow</td>
-</tr>
-<tr class="even">
-<td><code>after_first_reliable_date</code></td>
-<td>Row occurs on or after the countline’s first reliable date</td>
-</tr>
-<tr class="odd">
-<td><code>use_row_after_gate</code></td>
-<td>Row passes first reliable date and daily quality checks</td>
-</tr>
-</tbody>
-</table>
-<p>These flags determine whether a row can enter descriptive analysis, causal-style analysis, or neither.</p>
+<section id="context-and-comparison-construction" class="level3">
+<h3 class="anchored" data-anchor-id="context-and-comparison-construction">4.3 Context and comparison construction</h3>
+<p>Countlines are spatially joined to LSOA 2021 and assigned IMD and Census context. The wider LCR benchmark retains other countlines with quality-passing observations in both 2022 and 2024.</p>
+<p>For the context-matched analysis, each treated LSOA context is paired with a route-compatible comparison street selected using continuous IMD similarity. Similar IMD does not guarantee a valid counterfactual, so absolute-volume diagnostics, trajectory matching and cautious interpretation are retained.</p>
 </section>
-<section id="integrity-gate" class="level3">
-<h3 class="anchored" data-anchor-id="integrity-gate">4.6 Integrity Gate</h3>
-<p>The integrity gate is applied before modelling. It classifies treated and control countlines according to whether they have enough reliable data before and after the confirmed intervention date.</p>
-<p>The gate assesses 55 countlines in the current project structure:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Countline category</th>
-<th style="text-align: right;">Count</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Total countlines assessed</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="even">
-<td>Treated countlines</td>
-<td style="text-align: right;">21</td>
-</tr>
-<tr class="odd">
-<td>Control countlines</td>
-<td style="text-align: right;">34</td>
-</tr>
-<tr class="even">
-<td>Pragmatic causal controls</td>
-<td style="text-align: right;">13</td>
-</tr>
-<tr class="odd">
-<td>Strict seasonal controls</td>
-<td style="text-align: right;">2</td>
-</tr>
-<tr class="even">
-<td>Descriptive-only controls</td>
-<td style="text-align: right;">21</td>
-</tr>
-</tbody>
-</table>
-<p>The pragmatic causal control rule requires:</p>
-<pre class="text"><code>first reliable date before confirmed intervention date
-at least 90 usable pre-intervention days
-at least 180 usable post-intervention days</code></pre>
-<p>The strict seasonal control rule requires:</p>
-<pre class="text"><code>first reliable date before confirmed intervention date
-at least 365 usable pre-intervention days
-at least 365 usable post-intervention days</code></pre>
-<p>Only two controls meet the strict seasonal threshold, which is an important limitation. The pragmatic threshold provides a workable exploratory comparison set, but it does not remove the need for manual control-site verification.</p>
 </section>
-<section id="treated-and-control-inclusion" class="level3">
-<h3 class="anchored" data-anchor-id="treated-and-control-inclusion">4.7 Treated and Control Inclusion</h3>
-<p>Countlines are assigned to one of the following analytical roles:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Role</th>
-<th>Meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Treated</td>
-<td>Countline linked to an active travel scheme</td>
-</tr>
-<tr class="even">
-<td>Valid control</td>
-<td>Control countline passing the pragmatic or strict gate</td>
-</tr>
-<tr class="odd">
-<td>Descriptive-only control</td>
-<td>Control countline retained for description but excluded from causal models</td>
-</tr>
-<tr class="even">
-<td>Descriptive-only treated</td>
-<td>Treated countline/scheme lacking sufficient pre/post coverage for modelling</td>
-</tr>
-</tbody>
-</table>
-<p>The previous modelling-ready dataset contained:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Output quantity</th>
-<th style="text-align: right;">Count</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Source rows</td>
-<td style="text-align: right;">117,711</td>
-</tr>
-<tr class="even">
-<td>Descriptive daily rows</td>
-<td style="text-align: right;">52,144</td>
-</tr>
-<tr class="odd">
-<td>Main causal daily rows</td>
-<td style="text-align: right;">28,344</td>
-</tr>
-<tr class="even">
-<td>Descriptive countlines</td>
-<td style="text-align: right;">55</td>
-</tr>
-<tr class="odd">
-<td>Main causal countlines</td>
-<td style="text-align: right;">25</td>
-</tr>
-<tr class="even">
-<td>Main causal schemes</td>
-<td style="text-align: right;">12d, 12f, 13</td>
-</tr>
-</tbody>
-</table>
-<p>These numbers describe the archived modelling output base. The current report separately recalculates eligibility from the official city-region exports; schemes 12b and 12e remain descriptive because they lack quality-passing pre-installation treated observations.</p>
+<section id="model-specification" class="level2">
+<h2 class="anchored" data-anchor-id="model-specification">5. Model Specification</h2>
+<section id="wider-lcr-difference-in-differences" class="level3">
+<h3 class="anchored" data-anchor-id="wider-lcr-difference-in-differences">5.1 Wider LCR difference-in-differences</h3>
+<p>For schemes 12d and 12f, the common comparison uses paired calendar days from 15 November to 31 December in 2022 and 2024:</p>
+<pre class="text"><code>log(1 + outcome) =
+  β0
+  + β1 post
+  + β2 treated × post
+  + countline fixed effects
+  + month-day controls
+  + weekday controls
+  + error</code></pre>
+<p>The <code>post</code> coefficient estimates the general change among eligible LCR countlines. The <code>treated × post</code> coefficient estimates the additional change at scheme countlines relative to that trend. Standard errors are clustered by countline.</p>
+<p>The cohort contains seven treated countlines—four from 12d and three from 12f—and 126 comparison countlines. The small treated sample limits statistical power and makes conventional inference sensitive to the clustering level.</p>
 </section>
-<section id="context-joining-and-equity-classification" class="level3">
-<h3 class="anchored" data-anchor-id="context-joining-and-equity-classification">4.8 Context Joining and Equity Classification</h3>
-<p>Vivacity countline locations are spatially joined to LSOA 2021. Each countline is then linked to IMD 2019 and Census 2021 context variables. The current context join successfully matched all dissertation countlines:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Join check</th>
-<th style="text-align: right;">Result</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>Dissertation countlines matched to LSOA 2021</td>
-<td style="text-align: right;">21 / 21</td>
-</tr>
-<tr class="even">
-<td>Countlines joined to Census 2021 context</td>
-<td style="text-align: right;">21 / 21</td>
-</tr>
-<tr class="odd">
-<td>Countlines joined to IMD 2019 context</td>
-<td style="text-align: right;">21 / 21</td>
-</tr>
-<tr class="even">
-<td>Unique treated LSOA 2021 areas</td>
-<td style="text-align: right;">6</td>
-</tr>
-<tr class="odd">
-<td>Daily sensor rows joined to LSOA context</td>
-<td style="text-align: right;">21,860 / 21,860</td>
-</tr>
-</tbody>
-</table>
-<p>For equity interpretation, IMD decile is grouped into deprivation bands. Lower IMD deciles indicate greater deprivation. The current causal modelling set contains 25 scheme-countline records, representing 25 physical countlines across eight LSOA 2021 areas. In that set, more deprived LSOAs account for 19 causal countlines and more affluent LSOAs account for three. This supports an equity-context discussion but not a robust deprivation-interaction causal model.</p>
+<section id="per-scheme-interaction-model" class="level3">
+<h3 class="anchored" data-anchor-id="per-scheme-interaction-model">5.2 Per-scheme interaction model</h3>
+<p>The pooled treatment indicator is replaced with separate interactions:</p>
+<pre class="text"><code>log(1 + outcome) =
+  post
+  + post × scheme_12d
+  + post × scheme_12f
+  + countline fixed effects
+  + month-day and weekday controls
+  + weather</code></pre>
+<p>This reveals whether the pooled result is shared across schemes or driven by one location.</p>
 </section>
-<section id="matched-control-selection" class="level3">
-<h3 class="anchored" data-anchor-id="matched-control-selection">4.9 Matched-Control Selection</h3>
-<p>Matched-control candidate areas are selected at LSOA 2021 level. Candidate LSOAs are ranked against treated sensor LSOAs using contextual similarity:</p>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>Matching variable</th>
-<th>Purpose</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>IMD decile</td>
-<td>Overall deprivation similarity</td>
-</tr>
-<tr class="even">
-<td>Income decile</td>
-<td>Income deprivation similarity</td>
-</tr>
-<tr class="odd">
-<td>Employment decile</td>
-<td>Labour-market context</td>
-</tr>
-<tr class="even">
-<td>Population density</td>
-<td>Urban form similarity</td>
-</tr>
-<tr class="odd">
-<td>Households with no car</td>
-<td>Transport dependency / car access context</td>
-</tr>
-<tr class="even">
-<td>Census commute by bicycle</td>
-<td>Baseline cycling context</td>
-</tr>
-<tr class="odd">
-<td>Census commute on foot</td>
-<td>Baseline walking context</td>
-</tr>
-</tbody>
-</table>
-<p>The matching process produces a shortlist of possible control countlines located in contextually similar non-intervention LSOAs. These are candidate controls, not final controls. Before being interpreted as controls, they must be manually checked to confirm that they are not themselves exposed to active travel, road, or public-realm interventions during the study period.</p>
+<section id="preferred-imd-matched-context-estimator" class="level3">
+<h3 class="anchored" data-anchor-id="preferred-imd-matched-context-estimator">5.3 Preferred IMD-matched context estimator</h3>
+<p>Within each scheme/control pair, countlines are first averaged to one daily context value. Pre/post log changes are calculated for the scheme and control contexts and then differenced. Schemes 12d and 12f receive equal weight.</p>
+<p>Seven-day circular moving-block resampling describes date-to-date uncertainty conditional on the selected pairs. It does not capture control-selection uncertainty and is not a population-level causal confidence interval.</p>
 </section>
-<section id="weekly-modelling-dataset" class="level3">
-<h3 class="anchored" data-anchor-id="weekly-modelling-dataset">4.10 Weekly Modelling Dataset</h3>
-<p>After the integrity gate, daily rows are aggregated to weekly countline-level outcomes. Weekly aggregation reduces short-term noise while preserving time-series structure. For each countline-week, the workflow calculates:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Weekly variable</th>
-<th>Definition</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>observed_days</code></td>
-<td>Number of valid daily observations in the week</td>
-</tr>
-<tr class="even">
-<td><code>pedestrian_per_observed_day</code></td>
-<td>Weekly pedestrian total / observed days</td>
-</tr>
-<tr class="odd">
-<td><code>cyclist_per_observed_day</code></td>
-<td>Weekly cyclist total / observed days</td>
-</tr>
-<tr class="even">
-<td><code>active_per_observed_day</code></td>
-<td>Weekly active travel total / observed days</td>
-</tr>
-<tr class="odd">
-<td><code>motorised_per_observed_day</code></td>
-<td>Weekly motorised total / observed days</td>
-</tr>
-<tr class="even">
-<td><code>week_start</code></td>
-<td>Start date of week</td>
-</tr>
-<tr class="odd">
-<td><code>intervention_date</code></td>
-<td>Confirmed scheme intervention date</td>
-</tr>
-<tr class="even">
-<td><code>analysis_period</code></td>
-<td>Pre or post relative to confirmed date</td>
-</tr>
-</tbody>
-</table>
-<p>The primary model outcomes are pedestrian, cyclist and active travel counts per observed countline-day. Active travel is retained as a summary outcome, but interpretation should begin with pedestrian and cyclist results separately.</p>
+<section id="sensitivity-analyses" class="level3">
+<h3 class="anchored" data-anchor-id="sensitivity-analyses">5.4 Sensitivity analyses</h3>
+<p>Two further checks are retained:</p>
+<ul>
+<li>pedestrian- and cyclist-specific controls selected using pre-installation percentage trajectories; and</li>
+<li>weather-adjusted models using temperature, precipitation, wind and solar radiation.</li>
+</ul>
 </section>
-<section id="exploratory-model-specification" class="level3">
-<h3 class="anchored" data-anchor-id="exploratory-model-specification">4.11 Exploratory Model Specification</h3>
-<p>For modelled schemes, weekly countline-level models are fitted separately by scheme and outcome. The model form is:</p>
-<pre class="text"><code>log1p(outcome_per_observed_day) ~
-  time +
-  post +
-  post_time +
-  treated_post +
-  treated_post_time +
-  seasonality +
-  countline fixed effects</code></pre>
-<p>The two key terms are:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Term</th>
-<th>Interpretation</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>treated_post</code></td>
-<td>Immediate treated-control level change after the confirmed intervention date</td>
-</tr>
-<tr class="even">
-<td><code>treated_post_time_weeks</code></td>
-<td>Additional treated-control weekly slope change after the confirmed intervention date</td>
-</tr>
-</tbody>
-</table>
-<p>Seasonality is modelled using sine and cosine terms based on week of year. Standard errors are clustered by countline. Models are weighted by observed days so that partial weeks contribute proportionally.</p>
 </section>
-<section id="causal-diagnostics" class="level3">
-<h3 class="anchored" data-anchor-id="causal-diagnostics">4.12 Causal Diagnostics</h3>
-<p>Two diagnostic checks are used to assess whether stronger causal interpretation is plausible:</p>
-<ol type="1">
-<li>Pre-trend tests using only pre-intervention observations.</li>
-<li>Event-study diagnostics using relative-week bins before and after intervention.</li>
-</ol>
-<p>The previous diagnostic outputs found weak causal readiness for all three modelled schemes:</p>
+<section id="results" class="level2">
+<h2 class="anchored" data-anchor-id="results">6. Results</h2>
+<section id="descriptive-fixed-year-changes" class="level3">
+<h3 class="anchored" data-anchor-id="descriptive-fixed-year-changes">6.1 Descriptive fixed-year changes</h3>
+<p>The fixed-year panels show observed change at scheme sensors:</p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
 <th>Scheme</th>
-<th style="text-align: right;">Pre-trend warnings</th>
-<th style="text-align: right;">Event-study warnings</th>
-<th>Interpretation</th>
+<th>Comparison</th>
+<th style="text-align: right;">Active-travel change</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>12d</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">0 pre; 2 post</td>
-<td>Not credible for strong causal wording</td>
+<td>2022 to 2025</td>
+<td style="text-align: right;">approximately +20%</td>
 </tr>
 <tr class="even">
 <td>12f</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1 pre; 4 post</td>
-<td>Partly credible but still exploratory</td>
+<td>2022 to 2025</td>
+<td style="text-align: right;">approximately +51%</td>
 </tr>
 <tr class="odd">
 <td>13</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">1 pre; 0 post</td>
-<td>Partly credible but still exploratory</td>
+<td>2023 to 2025</td>
+<td style="text-align: right;">approximately -18%</td>
 </tr>
 </tbody>
 </table>
-<p>These diagnostics use the confirmed intervention dates. The diagnostic framework remains appropriate, while the short pre-period and limited control pool still constrain causal interpretation.</p>
+<p>These figures do not control for wider change. Positive absolute growth can coexist with a negative difference-in-differences estimate if comparison areas grow faster.</p>
 </section>
+<section id="wider-lcr-benchmark" class="level3">
+<h3 class="anchored" data-anchor-id="wider-lcr-benchmark">6.2 Wider LCR benchmark</h3>
+<p>Across schemes 12d and 12f, eligible LCR countlines changed by approximately +2.5% in active travel over the matched 2022–2024 window, while scheme countlines changed by approximately -31.3%. The relative estimate is about -33.0%. Its clustered interval includes zero, so the active-travel direction is lower but statistically inconclusive.</p>
+<p>Cycling shows the most consistent negative relative result: eligible LCR countlines increased by about +12.7%, while scheme countlines changed by about -22.2%, a relative difference near -31.0%.</p>
 </section>
-<section id="data-preprocessing-summary" class="level2">
-<h2 class="anchored" data-anchor-id="data-preprocessing-summary">5. Data Preprocessing Summary</h2>
-<p>The preprocessing workflow can be summarised as follows:</p>
-<ol type="1">
-<li>Load raw Vivacity treated and control classified-count CSVs.</li>
-<li>Standardise column names and mode-count fields.</li>
-<li>Aggregate hourly/directional observations to daily countline totals.</li>
-<li>Apply the full-day cutoff to 26 May 2026.</li>
-<li>Create daily pedestrian, cyclist, active travel and motorised outcomes.</li>
-<li>Encode confirmed exact scheme intervention dates.</li>
-<li>Identify each countline’s first reliable date.</li>
-<li>Remove rows before the first reliable date from the analysis-ready dataset.</li>
-<li>Remove low-availability and error-flagged days.</li>
-<li>Assign pre/post periods using confirmed intervention dates.</li>
-<li>Spatially join countlines to LSOA 2021.</li>
-<li>Attach IMD 2019 and Census 2021 context variables.</li>
-<li>Select matched-control candidates using LSOA contextual similarity.</li>
-<li>Apply the integrity gate to determine causal, descriptive-only and excluded roles.</li>
-<li>Aggregate valid daily rows to weekly countline-level modelling data.</li>
-<li>Produce descriptive, mode-specific, route-type and modelling-ready outputs.</li>
-</ol>
-<p>This preprocessing is not a technical side step; it is central to the dissertation’s validity. Without the first reliable date rule, pre-sensor zeros could be misread as behavioural change. Without the integrity gate, weak controls could enter the model and distort treated-control comparisons. Without separating pedestrian/cyclist and road/path outcomes, meaningful differences in behaviour and route function could be hidden by overly broad aggregation.</p>
+<section id="per-scheme-heterogeneity" class="level3">
+<h3 class="anchored" data-anchor-id="per-scheme-heterogeneity">6.3 Per-scheme heterogeneity</h3>
+<p>The pooled citywide estimate masks different scheme trajectories:</p>
+<ul>
+<li>scheme 12d active travel is about -14.5% relative to the city benchmark and statistically uncertain;</li>
+<li>scheme 12f active travel is about -50.2% relative to the city benchmark and statistically uncertain; and</li>
+<li>scheme 12f cycling is about -41.7% relative to the city benchmark in the current countline-clustered model.</li>
+</ul>
+<p>These per-scheme results should be treated cautiously because the two schemes contain only four and three treated countlines respectively.</p>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">6. Results</h2>
-<p>The modelled evidence is mixed and does not produce a clear positive uptake signal relative to controls. Most treated-control estimates are uncertain, and the statistically flagged terms are negative for 12d cyclist counts and 12f active travel. These results use the confirmed dates but should still be interpreted as exploratory rather than definitive scheme effects.</p>
-<p>The results chapter should present pedestrian and cyclist outcomes separately first, then road/path route-type patterns, and only then active travel total as a summary. It should also report how many countlines and controls remain after the confirmed-date integrity gate.</p>
+<section id="imd-matched-contexts" class="level3">
+<h3 class="anchored" data-anchor-id="imd-matched-contexts">6.4 IMD-matched contexts</h3>
+<p>The preferred equal-context estimate for schemes 12d and 12f is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Outcome</th>
+<th style="text-align: right;">Scheme relative to matched streets</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Active travel</td>
+<td style="text-align: right;">-9.9%</td>
+</tr>
+<tr class="even">
+<td>Cyclist</td>
+<td style="text-align: right;">-32.9%</td>
+</tr>
+<tr class="odd">
+<td>Pedestrian</td>
+<td style="text-align: right;">-3.1%</td>
+</tr>
+</tbody>
+</table>
+<p>The active-travel estimate is materially smaller than the citywide estimate. This difference demonstrates that effect magnitude depends on the comparison design and weighting structure. The stable conclusion is directional: the analysable scheme contexts did not outperform their selected matches.</p>
+</section>
+<section id="weather-and-trajectory-sensitivity" class="level3">
+<h3 class="anchored" data-anchor-id="weather-and-trajectory-sensitivity">6.5 Weather and trajectory sensitivity</h3>
+<p>Weather adjustment changes the headline relative estimates by less than one percentage point. Broad daily weather does not explain their direction.</p>
+<p>Outcome-specific trajectory matching also produces a stronger negative cycling comparison than pedestrian comparison. These results remain conditional on the selected control streets.</p>
+</section>
 </section>
 <section id="discussion" class="level2">
 <h2 class="anchored" data-anchor-id="discussion">7. Discussion</h2>
-<p>The discussion should argue that the dissertation contributes a transparent evaluation workflow for active travel monitoring data under real-world constraints. If the rerun still produces weak or mixed relationships, that should not be framed as failure. Instead, it should be interpreted as evidence that active travel evaluation depends on monitoring design, pre-intervention coverage, control-site quality, and the ability to distinguish walking from cycling and road from path use.</p>
-<p>The discussion should avoid overclaiming causal effects or deprived-versus-affluent differences. The more defensible claim is that the dissertation shows how much can be learned from Vivacity sensor data, and where the current evidence base remains too uneven for strong causal or equity-impact conclusions.</p>
+<p>The dissertation’s strongest contribution is a transparent monitoring and comparison workflow rather than a definitive verdict on scheme effectiveness. It shows why active travel evaluation depends on reliable pre-intervention coverage, explicit treatment dates, suitable controls, disaggregated outcomes and a clear distinction between absolute and comparison-adjusted change.</p>
+<p>The wider LCR, IMD-matched and trajectory-matched estimates should be presented as complementary sensitivity analyses. The variation between approximately -33% and -10% for active travel is substantive evidence of model dependence, not a nuisance to conceal.</p>
+<p>Equity interpretation remains descriptive. Scheme and comparison countlines can be located within deprivation contexts, but the sample is too small and unbalanced for a credible deprivation × intervention interaction.</p>
+</section>
+<section id="limitations-and-next-work" class="level2">
+<h2 class="anchored" data-anchor-id="limitations-and-next-work">8. Limitations and Next Work</h2>
+<ul>
+<li>Schemes 12b and 12e lack usable pre-installation treated baselines.</li>
+<li>Only seven treated countlines enter the common 2022–2024 model.</li>
+<li>Multiple countlines may belong to the same physical sensor or corridor, so countline clustering may overstate the number of independent treated units.</li>
+<li>Comparison streets require external checks for concurrent interventions.</li>
+<li>Parallel trends cannot be established robustly from the common short baseline.</li>
+<li>Leave-one-site-out and site-level small-sample inference should be added.</li>
+<li>Countline sensors measure flows at fixed points and cannot identify trip purpose, individual users or wider route substitution.</li>
+</ul>
 </section>
 <section id="conclusion" class="level2">
-<h2 class="anchored" data-anchor-id="conclusion">8. Conclusion</h2>
-<p>This dissertation investigates active travel uptake around selected Liverpool City Region schemes using high-frequency Vivacity sensor data, contextualised with LSOA-level deprivation and Census variables. The study adopts an exploratory matched-control interrupted time-series design and places strong emphasis on data preprocessing, first reliable sensor dates, confirmed intervention dates, matched-control selection and causal diagnostics.</p>
-<p>The analysis should be presented as a cautious but valuable contribution. It does not simply ask whether active travel schemes worked. It asks whether the available monitoring data are strong enough to evaluate walking and cycling trajectories across different neighbourhood contexts. The answer is likely to be qualified: Vivacity data provide detailed local evidence, but robust causal and equity interpretation requires reliable pre-intervention coverage, verified control sites, confirmed intervention dates, and disaggregated pedestrian/cyclist and road/path analysis.</p>
+<h2 class="anchored" data-anchor-id="conclusion">9. Conclusion</h2>
+<p>The Vivacity data provide detailed local evidence, but the current monitoring structure does not support a strong causal or deprivation-stratified impact claim. Descriptive changes are mixed, and scheme countlines generally do not outperform comparison baselines over the available windows, particularly for cycling. The magnitude is sensitive to benchmark choice.</p>
+<p>The dissertation should therefore present a careful exploratory difference-in-differences study and emphasise the practical monitoring conditions required for stronger future evaluation.</p>
 </section>
 
 </main>

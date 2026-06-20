@@ -1,0 +1,16 @@
+outcome,term,comparison,change_pct,lower95,upper95,p_value,model,pre_year,post_year,n_obs
+Active travel,City average change (benchmark),absolute,1.1,-8.3,11.4,0.8299,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Active travel,12d total change,absolute,-13.6,-31.6,9.2,0.221,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Active travel,12f total change,absolute,-49.6,-76.0,5.9,0.0706,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Active travel,12d vs city benchmark,relative_to_city,-14.5,-33.5,10.0,0.2232,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Active travel,12f vs city benchmark,relative_to_city,-50.2,-76.5,5.7,0.0693,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Cyclist,City average change (benchmark),absolute,8.4,-1.0,18.7,0.08,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Cyclist,12d total change,absolute,-15.0,-33.8,9.0,0.2002,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Cyclist,12f total change,absolute,-36.8,-44.8,-27.6,0.0,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Cyclist,12d vs city benchmark,relative_to_city,-21.6,-39.8,2.1,0.0707,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Cyclist,12f vs city benchmark,relative_to_city,-41.7,-50.4,-31.5,0.0,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Pedestrian,City average change (benchmark),absolute,-1.5,-11.3,9.3,0.7695,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Pedestrian,12d total change,absolute,-22.0,-38.1,-1.8,0.0348,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Pedestrian,12f total change,absolute,-39.2,-73.0,36.8,0.229,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Pedestrian,12d vs city benchmark,relative_to_city,-20.8,-38.5,1.9,0.0695,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
+Pedestrian,12f vs city benchmark,relative_to_city,-38.3,-72.8,40.0,0.2484,"per-scheme interaction DiD, countline FE + matched month-day + weekday + weather; CR1 cluster SE by countline",2022,2024,11872
